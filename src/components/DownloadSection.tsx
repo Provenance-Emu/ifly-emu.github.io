@@ -11,7 +11,7 @@ export type DownloadSectionProps = {
 
 const DefaultDescription = () => (
   <p className="text-gray-600 dark:text-gray-300 mb-6">
-    iCube isn’t on the App Store. You can sideload it from the sources below. We recommend
+    iFly isn’t on the App Store. You can sideload it from the sources below. We recommend
     <a
       href="https://sideloadly.io"
       target="_blank"
@@ -45,12 +45,12 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
         {description ?? <DefaultDescription />}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-          <ButtonLink href="https://github.com/Provenance-Emu/iCube/releases" leftIcon={<GitHubIcon className="w-5 h-5" />}>Sideload via GitHub</ButtonLink>
-          <ButtonLink href="https://provenance.itch.io/icube" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
+          <ButtonLink href="https://github.com/Provenance-Emu/iFly/releases" leftIcon={<GitHubIcon className="w-5 h-5" />}>Sideload via GitHub</ButtonLink>
+          <ButtonLink href="https://provenance-emu.itch.io/ifly" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
         </div>
         {showEmbed && (
           <div className="flex justify-center">
-            <ItchIoEmbed itchId="3854531" linkColor="#5b96fa" title="iCube for iOS and tvOS by Provenance EMU" />
+            <ItchIoEmbed itchId="3923686" linkColor="#5b96fa" title="iFly - Dreamcast Emulator for iOS and tvOS by Provenance EMU" />
           </div>
         )}
       </div>

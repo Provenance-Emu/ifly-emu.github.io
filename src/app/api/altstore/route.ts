@@ -11,7 +11,7 @@ export const revalidate = 3600; // Revalidate every hour
  */
 export async function GET() {
   try {
-    const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 'https://icube-emu.com';
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 'https://ifly-emu.com';
     const buildsDir = path.join(process.cwd(), 'public', 'builds');
 
     const app = generateAltStoreApp(baseURL, buildsDir);
@@ -21,26 +21,26 @@ export async function GET() {
     app.versions = app.versions.filter(v => v.platform === 'iOS');
 
     const source = {
-      name: 'iCube',
-      identifier: 'com.joemattiello.icube.source',
-      subtitle: 'GameCube & Wii Emulator',
-      description: 'Official source for iCube - GameCube and Wii emulator for iOS and tvOS.',
+      name: 'iFly',
+      identifier: 'com.provenance.ifly.source',
+      subtitle: 'Dreamcast Emulator',
+      description: 'Official source for iFly - Dreamcast emulator for iOS and tvOS.',
       iconURL: `${baseURL}/icon-512.png`,
       headerURL: `${baseURL}/header.png`,
-      website: 'https://icube-emu.com',
+      website: 'https://ifly-emu.com',
       tintColor: '#3B82F6',
       featuredApps: [app.bundleIdentifier],
       apps: [app],
       news: [
         {
-          title: 'Welcome to iCube',
-          identifier: 'welcome-to-icube',
+          title: 'Welcome to iFly',
+          identifier: 'welcome-to-ifly',
           caption: 'GameCube & Wii emulation on iOS and tvOS',
           date: new Date().toISOString().split('T')[0],
           tintColor: '#3B82F6',
           imageURL: `${baseURL}/news-welcome.png`,
           notify: false,
-          url: 'https://icube-emu.com',
+          url: 'https://ifly-emu.com',
         },
       ],
     };

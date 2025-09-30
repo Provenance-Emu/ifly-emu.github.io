@@ -18,14 +18,14 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            iCube
+            iFly
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4">
-            GameCube & Wii Emulator
+            Dreamcast Emulator
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Experience classic Nintendo GameCube and Wii games on your iOS devices and Apple TV.
-            Built on the proven Dolphin emulator foundation.
+            Experience classic Sega Dreamcast games on your iOS devices and Apple TV.
+            Fast, accurate emulation with a great user experience.
           </p>
 
           {/* App Store Button Placeholder */}
@@ -72,7 +72,7 @@ export default function Home() {
       <section className="container mx-auto px-4 pb-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Support Development</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iCube helpful, consider supporting the project.</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iFly helpful, consider supporting the project.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
             <SocialButton href="https://patreon.com/provenanceemu" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />

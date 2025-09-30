@@ -12,7 +12,7 @@ declare global {
 
 const TESTFLIGHT_URL = "https://testflight.apple.com/join/9ZEfnyMP";
 const TWITTER_URL = "https://x.com/provenanceapp";
-const STORAGE_KEY = "icube_testflight_gate_passed";
+const STORAGE_KEY = "ifly_testflight_gate_passed";
 
 export default function TestFlightGate() {
   const [gatePassed, setGatePassed] = useState<boolean>(false);
@@ -47,9 +47,9 @@ export default function TestFlightGate() {
     <main className="min-h-screen container mx-auto px-4 py-12">
       <div className="mx-auto max-w-2xl space-y-6">
         <header className="space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight">Join the iCube TestFlight</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">Join the iFly TestFlight</h1>
           <p className="text-muted-foreground">
-            Get early access to iCube builds via Apple TestFlight. Seats may be limited.
+            Get early access to iFly builds via Apple TestFlight. Seats may be limited.
           </p>
         </header>
 
@@ -118,7 +118,7 @@ export default function TestFlightGate() {
         <section className="rounded-lg border p-6 shadow-sm bg-background/60 backdrop-blur">
           <h2 className="text-xl font-medium mb-2">Support Development</h2>
           <p className="text-sm text-muted-foreground mb-4">
-            If you find iCube helpful, consider supporting ongoing development. Thank you!
+            If you find iFly helpful, consider supporting ongoing development. Thank you!
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-items-start">
             <SocialButton
@@ -140,7 +140,7 @@ export default function TestFlightGate() {
               variant="venmo"
             />
             <SocialButton
-              href="mailto:mail@joemattiello.com?subject=Zelle%20Donation%20for%20iCube"
+              href="mailto:mail@joemattiello.com?subject=Zelle%20Donation%20for%20iFly"
               label="Zelle: mail@joemattiello.com"
               leftIcon={<ZelleIcon className="w-5 h-5" />}
               variant="zelle"

@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 export const revalidate = 3600;
 
 export default function DownloadsPage() {
-  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 'https://icube-emu.com';
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 'https://ifly-emu.com';
   const buildsDir = path.join(process.cwd(), 'public', 'builds');
   const versions = parseBuilds(buildsDir, baseURL);
 
@@ -35,7 +35,7 @@ export default function DownloadsPage() {
             Downloads
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-2xl mx-auto">
-            Download iCube for iOS or tvOS. For sideloading with AltStore or SideStore, add our source feed.
+            Download iFly for iOS or tvOS. For sideloading with AltStore or SideStore, add our source feed.
           </p>
 
           {/* AltStore/SideStore Source */}
@@ -79,11 +79,11 @@ export default function DownloadsPage() {
               🌐 Other Download Sources
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              You can also download iCube from these platforms. These may have different versions or additional release notes:
+              You can also download iFly from these platforms. These may have different versions or additional release notes:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <a
-                href="https://github.com/Provenance-Emu/iCube/releases"
+                href="https://github.com/Provenance-Emu/iFly/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
@@ -102,7 +102,7 @@ export default function DownloadsPage() {
                 </div>
               </a>
               <a
-                href="https://provenance-emu.itch.io/icube"
+                href="https://provenance-emu.itch.io/ifly"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
@@ -231,7 +231,7 @@ export default function DownloadsPage() {
                 <ol className="list-decimal list-inside space-y-2 ml-4">
                   <li>Install <a href="https://altstore.io" className="text-blue-600 dark:text-blue-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" className="text-blue-600 dark:text-blue-400 hover:underline">SideStore</a> on your device</li>
                   <li>Tap the &quot;Add to AltStore&quot; or &quot;Add to SideStore&quot; button above</li>
-                  <li>Browse to iCube in the app and tap &quot;Install&quot;</li>
+                  <li>Browse to iFly in the app and tap "Install"</li>
                   <li>Enjoy automatic updates!</li>
                 </ol>
               </div>

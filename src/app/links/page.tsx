@@ -14,7 +14,7 @@ export default function Links() {
           {/* Download Links */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Download iCube
+              Download iFly
             </h2>
             <DownloadSection showEmbed />
           </div>
@@ -25,7 +25,7 @@ export default function Links() {
               Dolphin Emulator Resources
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              iCube is built on the Dolphin emulator. Learn more about the project and get additional resources:
+              Related emulation resources and community links:
             </p>
 
             <div className="grid md:grid-cols-2 gap-4">
@@ -118,7 +118,7 @@ export default function Links() {
           {/* Donate Section (compact) */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Support Development</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iCube helpful, consider supporting the project.</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iFly helpful, consider supporting the project.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
               <SocialButton href="https://www.patreon.com/provenance" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
@@ -153,7 +153,7 @@ export default function Links() {
                 <div>
                   <h3 className="font-semibold text-blue-900 dark:text-blue-300">DolphinIOS</h3>
                   <p className="text-sm text-blue-700 dark:text-blue-400">
-                    iOS port of Dolphin emulator that inspired iCube
+                    iOS port of Dolphin emulator (related project)
                   </p>
                 </div>
               </a>

@@ -1,8 +1,8 @@
 import TestFlightGate from "@/components/TestFlightGate";
 
 export const metadata = {
-  title: "Join TestFlight | iCube",
-  description: "Access the iCube TestFlight build.",
+  title: "Join TestFlight | iFly",
+  description: "Access the iFly TestFlight build.",
   robots: {
     index: false,
     follow: false,

@@ -8,7 +8,7 @@ export default function DonatePage() {
           <div className="bg-blue-600 text-white rounded-lg p-8 text-center shadow-lg">
             <h1 className="text-4xl md:text-5xl font-bold mb-3">Support Development</h1>
             <p className="opacity-90">
-              Your support helps keep iCube fast, polished, and moving forward for iOS and tvOS.
+              Your support helps keep iFly fast, polished, and moving forward for iOS and tvOS.
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function DonatePage() {
               variant="venmo"
             />
             <SocialButton
-              href="mailto:mail@joemattiello.com?subject=Zelle%20Donation%20for%20iCube"
+              href="mailto:mail@joemattiello.com?subject=Zelle%20Donation%20for%20iFly"
               label="Zelle: mail@joemattiello.com"
               leftIcon={<ZelleIcon className="w-5 h-5" />}
               variant="zelle"

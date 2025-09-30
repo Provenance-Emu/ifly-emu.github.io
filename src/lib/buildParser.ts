@@ -89,7 +89,7 @@ export function parseBuilds(buildsDir: string, baseURL: string): BuildVersion[] 
           const distSummaryContent = fs.readFileSync(distSummaryPath, 'utf8');
           const distSummary = plist.parse(distSummaryContent) as DistributionSummary;
 
-          // Get the first app entry (should be iCube.ipa)
+          // Get the first app entry (should be the .ipa)
           const appKey = Object.keys(distSummary).find(key => key.endsWith('.ipa'));
           if (appKey && distSummary[appKey] && distSummary[appKey][0]) {
             buildNumber = distSummary[appKey][0].buildNumber || buildNumber;
@@ -107,7 +107,7 @@ export function parseBuilds(buildsDir: string, baseURL: string): BuildVersion[] 
       const downloadURL = `${baseURL}/builds/${versionDir}/${platformDir}/${ipaFile}`;
 
       // Create version description
-      let description = `iCube ${versionNumber}`;
+      let description = `iFly ${versionNumber}`;
       if (isBeta) {
         description += ` Beta ${betaNumber}`;
       }
@@ -179,14 +179,14 @@ export function generateAltStoreApp(
   const versions = parseBuilds(buildsDir, baseURL);
 
   return {
-    name: 'iCube',
-    bundleIdentifier: 'com.joemattiello.iCube',
+    name: 'iFly',
+    bundleIdentifier: 'com.provenance.ifly',
     developerName: 'Provenance Emu',
-    subtitle: 'GameCube & Wii Emulator for iOS & tvOS',
-    localizedDescription: `Experience classic Nintendo GameCube and Wii games on your iOS devices and Apple TV. Built on the proven Dolphin emulator foundation.
+    subtitle: 'Dreamcast Emulator for iOS & tvOS',
+    localizedDescription: `Experience classic Sega Dreamcast games on your iOS devices and Apple TV.
 
 Features:
-• Full GameCube and Wii emulation
+• Full Dreamcast emulation
 • Controller support (MFi, PlayStation, Xbox)
 • Save states and real-time saves
 • High-resolution rendering
@@ -195,9 +195,9 @@ Features:
 • Game library management
 • And much more!
 
-iCube is a fork of DolphiniOS, optimized for iOS and tvOS devices.`,
+This is an early build of iFly optimized for iOS and tvOS devices.`,
     iconURL: `${baseURL}/icon-1024.png`,
-    tintColor: '#3B82F6',
+    tintColor: '#ff6900',
     category: 'games',
     screenshots: [
       `${baseURL}/screenshots/iphone1-library.jpg`,

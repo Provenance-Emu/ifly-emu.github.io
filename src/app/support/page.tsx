@@ -18,10 +18,10 @@ export default function Support() {
             <div className="space-y-6">
               <div className="border-b border-gray-200 dark:border-gray-700 pb-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  How do I install games on iCube?
+                  How do I install games on iFly?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  You&apos;ll need to provide your own GameCube (ISO) and Wii (WBFS/ISO) game files.
+                  You&apos;ll need to provide your own Dreamcast game files (such as CHD, CDI, or GDI).
                   These can be imported through iTunes file sharing, cloud storage, or other file management apps.
                   Make sure you own the original games before using ROM files.
                 </p>
@@ -29,10 +29,10 @@ export default function Support() {
 
               <div className="border-b border-gray-200 dark:border-gray-700 pb-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  How do I install iCube (sideload)?
+                  How do I install iFly (sideload)?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  iCube is distributed via sideloading for iOS and tvOS. <br /> We recommend using{' '}
+                  iFly is distributed via sideloading for iOS and tvOS. <br /> We recommend using{' '}
                   <a href="https://sideloadly.io" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Sideloadly</a>{' '}
                   to install the app on your device. For enabling JIT on Apple TV, we recommend{' '}
                   <a href="https://apps.apple.com/us/app/stikdebug/id6744045754" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">StikDebug</a>.
@@ -44,7 +44,7 @@ export default function Support() {
                   Which controllers are supported?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  iCube supports MFi (Made for iPhone) controllers, PlayStation DualShock 4,
+                  iFly supports MFi (Made for iPhone) controllers, PlayStation DualShock 4,
                   PlayStation DualSense, Xbox Wireless Controllers, and the Siri Remote on Apple TV.
                   Touch controls are also available on iPhone and iPad.
                 </p>
@@ -55,9 +55,8 @@ export default function Support() {
                   What devices are compatible?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  iCube requires iOS 16.0 or later for iPhone and iPad, and tvOS 17.0 or later for Apple TV.
-                  For optimal performance, we recommend newer devices like iPhone 16 or later,
-                  iPad (7th generation) or later, and Apple TV 4K (4th generation).
+                  iFly requires iOS 15.6 or later for iPhone and iPad, and tvOS 16.6 or later for Apple TV.
+                  For optimal performance, we recommend newer devices.
                 </p>
               </div>
 
@@ -66,7 +65,7 @@ export default function Support() {
                   Can I save my game progress?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Yes! iCube supports both in-game saves (like the original consoles) and save states,
+                  Yes! iFly supports both in-game saves (like the original consoles) and save states,
                   which allow you to save and load your progress at any point during gameplay.
                   All saves are stored locally on your device.
                 </p>
@@ -77,7 +76,7 @@ export default function Support() {
                   Why are some games not working properly?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  While iCube has high compatibility, some games may have issues due to their complexity
+                  While iFly aims for high compatibility, some games may have issues due to their complexity
                   or specific hardware requirements. We&apos;re constantly working to improve compatibility
                   through regular updates.
                 </p>
@@ -111,7 +110,7 @@ export default function Support() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Send us your questions or bug reports
                 </p>
-                <a href="mailto:support@provenance-emu.com?subject=iCube%20Support"
+                <a href="mailto:support@provenance-emu.com?subject=iFly%20Support"
                    className="text-blue-600 dark:text-blue-400 hover:underline">
                   support@provenance-emu.com
                 </a>
@@ -135,7 +134,7 @@ export default function Support() {
           {/* Donate Section (compact) */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Support Development</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iCube helpful, consider supporting the project.</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iFly helpful, consider supporting the project.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
               <SocialButton href="https://www.patreon.com/provenance" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
@@ -154,7 +153,7 @@ export default function Support() {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Restart the app</h4>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Close iCube completely and reopen it to resolve minor issues.
+                    Close iFly completely and reopen it to resolve minor issues.
                   </p>
                 </div>
               </div>
@@ -174,7 +173,7 @@ export default function Support() {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Update to latest version</h4>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Make sure you&apos;re running the latest available build of iCube.
+                    Make sure you&apos;re running the latest available build of iFly.
                   </p>
                 </div>
               </div>

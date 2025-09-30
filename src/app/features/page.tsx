@@ -11,9 +11,8 @@ export default function FeaturesPage() {
             Features
           </h1>
           <p className="text-gray-600 dark:text-gray-300 mb-10 text-center max-w-3xl mx-auto">
-            A modern, native-first Dolphin experience tailored for iPhone, iPad, and Apple TV. iCube pairs the latest
-            Dolphin core with a SwiftUI interface, robust controller support, and iOS/tvOS-specific performance
-            enhancements.
+            A modern Dreamcast emulation experience tailored for iPhone, iPad, and Apple TV. iFly focuses on smooth
+            performance, robust controller support, and a clean interface designed for iOS and tvOS.
           </p>
 
           <Features />

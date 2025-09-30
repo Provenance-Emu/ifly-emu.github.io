@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-950">
       {/* Hero */}
-      <section className="container py-16">
+      <section className="w-full max-w-[1100px] mx-auto px-4 py-16">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
             iFly
@@ -36,7 +36,7 @@ export default function Home() {
       <DownloadSection className="pb-4" showEmbed />
 
       {/* Community Section */}
-      <section className="container py-16">
+      <section className="w-full max-w-[1100px] mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Community</h2>
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="container py-20">
+      <section className="w-full max-w-[1100px] mx-auto px-4 py-20">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
             Features

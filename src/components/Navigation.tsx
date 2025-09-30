@@ -45,12 +45,12 @@ const Navigation = () => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex lg:items-center lg:justify-center flex-1">
-            <div className="flex items-center space-x-1.5">
+            <div className="flex items-center space-x-2">
               {primaryNavItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     pathname === item.href
                       ? 'bg-orange-600 text-white shadow-lg'
                       : 'text-gray-300 hover:bg-gray-800 hover:text-white'
@@ -63,12 +63,12 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Secondary Nav */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-1.5">
+          <div className="hidden lg:flex lg:items-center lg:space-x-2">
             {secondaryNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   pathname === item.href
                     ? 'bg-orange-600 text-white'
                     : 'text-gray-400 hover:bg-gray-800 hover:text-white'

@@ -1,22 +1,26 @@
 import React from 'react';
 
-const ItchIoEmbed: React.FC = () => {
+export type ItchIoEmbedProps = {
+  itchId: string; // e.g., '3854531'
+  linkColor?: string; // hex string like '#5b96fa'
+  title?: string; // accessible link text
+  className?: string;
+};
+
+const ItchIoEmbed: React.FC<ItchIoEmbedProps> = ({ itchId, linkColor = '#5b96fa', title, className }) => {
+  const src = `https://itch.io/embed/${itchId}?link_color=${encodeURIComponent(linkColor.replace('#', ''))}`;
+  const anchorTitle = title ?? 'iFly - Dreamcast Emulator for iOS and tvOS by Provenance EMU';
+
   return (
-    <div className="max-w-2xl mx-auto">
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 text-center">
-        Alternative Downloads
-      </h3>
-      <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 text-center">
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Development builds and alternative download options will be available here soon.
-        </p>
-        <div className="bg-white dark:bg-gray-700 rounded border p-4">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            itch.io embed placeholder - will be activated when builds are available
-          </p>
-        </div>
-      </div>
-    </div>
+    <iframe
+      title={anchorTitle}
+      src={src}
+      width={552}
+      height={167}
+      frameBorder={0}
+      className={className}
+      loading="lazy"
+    />
   );
 };
 

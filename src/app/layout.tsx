@@ -1,10 +1,7 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-
-export const viewport: Viewport = {
-  themeColor: "#ff6900",
-};
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "iFly - Dreamcast Emulator for iOS & tvOS",
@@ -34,6 +31,7 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicons/manifest.json",
+  themeColor: "#ff6900",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -47,8 +45,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body suppressHydrationWarning className="antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-R9V4MJ0BR2"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R9V4MJ0BR2');
+          `}
+        </Script>
         <Navigation />
         <main className="min-h-screen">
           {children}

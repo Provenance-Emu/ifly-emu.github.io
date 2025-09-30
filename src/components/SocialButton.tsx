@@ -58,9 +58,21 @@ export const PatreonIcon: React.FC<{ className?: string }> = ({ className }) => 
   </svg>
 );
 
-export const ItchIoIcon: React.FC<{ className?: string }> = ({ className }) => (
+export const VenmoIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className ?? 'w-5 h-5'} aria-hidden="true">
-    <path d="M3 10.5c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5v-3zm5 0c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5v-3zm5 0c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5v-3zm5 0c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5v-3zM2 7l10-4 10 4v10l-10 4L2 17V7z"/>
+    <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H9l3.5-8.5c.3-.8.5-1.5.5-2.2 0-1.4-.8-2.3-2.2-2.3-1.5 0-2.7 1.1-3.1 2.4L6.6 19H4V4a1 1 0 0 1 1-1Z"/>
+  </svg>
+);
+
+export const ZelleIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className ?? 'w-5 h-5'} aria-hidden="true">
+    <path d="M7 3h10l-6 7h6l-10 11v-7H7l6-7H7V3Z"/>
+  </svg>
+);
+
+export const OpenCollectiveIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className ?? 'w-5 h-5'} aria-hidden="true">
+    <path d="M12 2a10 10 0 1 0 7.1 17.1l-2.1-2.1A7 7 0 1 1 12 5a7 7 0 0 1 4.9 2.1L19 5A10 10 0 0 0 12 2Z"/>
   </svg>
 );
 

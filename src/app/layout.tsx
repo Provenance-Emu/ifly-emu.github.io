@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+
+export const viewport: Viewport = {
+  themeColor: "#ff6900",
+};
 
 export const metadata: Metadata = {
   title: "iFly - Dreamcast Emulator for iOS & tvOS",
@@ -30,7 +34,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicons/manifest.json",
-  themeColor: "#ff6900",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

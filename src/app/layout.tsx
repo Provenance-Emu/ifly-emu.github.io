@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning className="antialiased">
         <Navigation />
-        <main className="min-h-screen">
+        <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>
       </body>

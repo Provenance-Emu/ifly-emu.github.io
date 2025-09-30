@@ -4,30 +4,27 @@ import Features from '@/components/Features';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-900 dark:to-orange-900">
-      {/* Hero Section */}
-      <section className="w-full py-20 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 dark:text-white mb-8">
+    <div className="min-h-screen bg-white dark:bg-neutral-950">
+      {/* Hero */}
+      <section className="container py-16">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
             iFly
           </h1>
-          <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-200 mb-6 font-medium">
+          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 mb-6">
             Dreamcast Emulator for iOS & tvOS
           </p>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Experience classic Sega Dreamcast games on your iOS devices and Apple TV.
-            Relive the magic of games like Shenmue, Jet Set Radio, and Crazy Taxi.
+          <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Experience classic Sega Dreamcast games on your iPhone, iPad, and Apple TV.
           </p>
 
-          {/* Placeholder for app screenshots or promotional images */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-200 dark:bg-gray-700 rounded-2xl p-8 shadow-2xl">
-              <div className="aspect-video bg-gray-300 dark:bg-gray-600 rounded-xl flex items-center justify-center">
+          {/* Visual placeholder */}
+          <div className="max-w-3xl mx-auto">
+            <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-6">
+              <div className="aspect-video rounded-md bg-neutral-200 dark:bg-neutral-800 grid place-items-center">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">🎮</div>
-                  <p className="text-xl text-gray-600 dark:text-gray-400 font-medium">
-                    Screenshots coming soon
-                  </p>
+                  <div className="text-4xl mb-2">🎮</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400">Screenshots coming soon</p>
                 </div>
               </div>
             </div>
@@ -39,10 +36,10 @@ export default function Home() {
       <DownloadSection className="pb-4" showEmbed />
 
       {/* Community Section */}
-      <section className="w-full px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="container py-16">
+        <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Community</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Join the Provenance EMU community for updates, tips, and support.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
@@ -56,10 +53,10 @@ export default function Home() {
       </section>
 
       {/* Donate Section */}
-      <section className="w-full px-4 py-16 bg-white/50 dark:bg-gray-800/50">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="container py-16">
+        <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Support Development</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             If you find iFly helpful, consider supporting the project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -70,14 +67,14 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="w-full bg-white dark:bg-gray-800 py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
+      <section className="container py-20">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
             Features
           </h2>
           <Features compact />
-          <div className="text-center mt-12">
-            <a href="/features" className="text-lg text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-semibold transition-colors">
+          <div className="text-center mt-10">
+            <a href="/features" className="text-base md:text-lg text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-semibold transition-colors">
               See all features →
             </a>
           </div>

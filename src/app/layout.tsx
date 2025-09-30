@@ -4,8 +4,8 @@ import Navigation from "@/components/Navigation";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "iCube - GameCube & Wii Emulator",
-  description: "GameCube and Wii emulator for iOS and tvOS, based on Dolphin",
+  title: "iFly - Dreamcast Emulator for iOS & tvOS",
+  description: "Dreamcast emulator for iOS and tvOS devices, bringing classic Sega games to your Apple devices",
   icons: {
     icon: [
       { url: "/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicons/manifest.json",
-  themeColor: "#5b96fa",
+  themeColor: "#ff6900",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "iCube",
+    title: "iFly",
   },
 };
 

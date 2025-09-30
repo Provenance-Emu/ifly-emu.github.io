@@ -22,7 +22,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-blue-400">iCube</span>
+              <span className="text-2xl font-bold text-orange-500">iFly</span>
             </Link>
           </div>
           <div className="hidden md:block">
@@ -33,7 +33,7 @@ const Navigation = () => {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     pathname === item.href
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-orange-600 text-white'
                       : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                   }`}
                 >
@@ -51,7 +51,7 @@ const Navigation = () => {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-xs font-medium transition-colors ${
                     pathname === item.href
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-orange-600 text-white'
                       : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                   }`}
                 >

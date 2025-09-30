@@ -3,133 +3,64 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-950">
-        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-          <div className="text-center space-y-6">
-            <div className="inline-block">
-              <span className="inline-flex items-center rounded-full bg-orange-100 dark:bg-orange-900/30 px-4 py-1.5 text-sm font-medium text-orange-700 dark:text-orange-300">
-                ✨ Now in development
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 dark:text-white">
-              Dreamcast on iOS
-            </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
-              Experience classic Sega Dreamcast games on your iPhone, iPad, and Apple TV with iFly.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link
-                href="#download"
-                className="inline-flex items-center justify-center rounded-xl bg-orange-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-orange-700 transition-all hover:scale-105"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/features"
-                className="inline-flex items-center justify-center rounded-xl border-2 border-neutral-300 dark:border-neutral-700 px-8 py-4 text-base font-semibold text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="mt-16">
-            <div className="relative rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 p-8 shadow-2xl">
-              <div className="aspect-video rounded-xl bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
-                <div className="text-center space-y-3">
-                  <div className="text-6xl">🎮</div>
-                  <p className="text-neutral-600 dark:text-neutral-400 font-medium">Gameplay preview coming soon</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="w-full py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">
-              Built for Performance
-            </h2>
-            <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Fast, accurate emulation with a focus on great user experience.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: '🎯', title: 'Accurate Emulation', desc: 'High compatibility with your favorite Dreamcast games' },
-              { icon: '⚡', title: 'High Performance', desc: 'Optimized for modern iOS devices with smooth gameplay' },
-              { icon: '🎮', title: 'Controller Support', desc: 'Full MFi controller and touch control support' },
-            ].map((feature, i) => (
-              <div key={i} className="group p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-orange-500 dark:hover:border-orange-500 transition-all hover:shadow-xl">
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">{feature.title}</h3>
-                <p className="text-neutral-600 dark:text-neutral-400">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Download CTA */}
-      <section id="download" className="w-full py-20 md:py-28 bg-neutral-50 dark:bg-neutral-900">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">
-            Download iFly
-          </h2>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300">
-            Get iFly for your iOS devices and Apple TV.
+      {/* Hero */}
+      <section className="w-full bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-20 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">iFly</h1>
+          <p className="text-2xl md:text-3xl mb-4">Dreamcast Emulator for iOS & tvOS</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Experience classic Sega Dreamcast games on your iPhone, iPad, and Apple TV.
           </p>
+          <div className="flex gap-4 justify-center">
+            <Link href="#download" className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700">
+              Download
+            </Link>
+            <Link href="/features" className="border-2 border-gray-300 dark:border-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800">
+              Features
+            </Link>
+          </div>
+        </div>
+      </section>
 
-          <div className="inline-block w-full max-w-2xl">
-            <div className="rounded-2xl border-2 border-orange-200 dark:border-orange-900 bg-orange-50 dark:bg-orange-950/30 p-8">
-              <div className="space-y-4">
-                <div className="text-2xl font-bold text-orange-900 dark:text-orange-200">Coming Soon</div>
-                <p className="text-orange-800 dark:text-orange-300">
-                  iFly is currently in development. Check back soon for download links and installation instructions.
-                </p>
-              </div>
+      {/* Features */}
+      <section className="w-full py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Why iFly?</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center p-6">
+              <div className="text-5xl mb-4">🎯</div>
+              <h3 className="text-xl font-bold mb-2">Accurate</h3>
+              <p className="text-gray-600 dark:text-gray-400">High compatibility with Dreamcast games</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-5xl mb-4">⚡</div>
+              <h3 className="text-xl font-bold mb-2">Fast</h3>
+              <p className="text-gray-600 dark:text-gray-400">Optimized for modern iOS devices</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-5xl mb-4">🎮</div>
+              <h3 className="text-xl font-bold mb-2">Controllers</h3>
+              <p className="text-gray-600 dark:text-gray-400">Full MFi controller support</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 gap-4 max-w-md mx-auto pt-4 opacity-50">
-            <div className="rounded-xl bg-neutral-900 dark:bg-neutral-800 text-white p-6 text-center">
-              <div className="text-sm mb-1">Download on the</div>
-              <div className="text-xl font-semibold">App Store</div>
-            </div>
-            <div className="rounded-xl bg-neutral-900 dark:bg-neutral-800 text-white p-6 text-center">
-              <div className="text-sm mb-1">Available on</div>
-              <div className="text-xl font-semibold">Apple TV</div>
-            </div>
+      {/* Download */}
+      <section id="download" className="w-full py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Download iFly</h2>
+          <div className="max-w-2xl mx-auto bg-orange-100 dark:bg-orange-900/30 border-2 border-orange-300 dark:border-orange-700 rounded-lg p-8 mb-8">
+            <p className="text-xl font-bold mb-2">Coming Soon</p>
+            <p className="text-gray-700 dark:text-gray-300">iFly is currently in development. Check back soon!</p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="w-full border-t border-neutral-200 dark:border-neutral-800 py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <div className="text-xl font-bold text-neutral-900 dark:text-white mb-2">iFly</div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Part of the Provenance EMU project
-              </p>
-            </div>
-            <div className="flex gap-6 text-sm text-neutral-600 dark:text-neutral-400">
-              <Link href="/about" className="hover:text-neutral-900 dark:hover:text-white transition-colors">About</Link>
-              <Link href="/features" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Features</Link>
-              <Link href="/support" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Support</Link>
-              <Link href="/donate" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Donate</Link>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-500">
-            © 2025 Provenance EMU. All rights reserved.
-          </div>
+      <footer className="w-full border-t py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-600 dark:text-gray-400">© 2025 Provenance EMU. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -1,89 +1,179 @@
 import React from 'react';
 
-interface FeaturesProps {
+// Simple, consistent SVG icon set
+const IconWrap: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-300">
+    {children}
+  </div>
+);
+
+const ControllerIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M6 8h12a4 4 0 0 1 3.8 5.2l-1.1 3A3 3 0 0 1 17 18h-2l-2-2h-2l-2 2H7a3 3 0 0 1-3.7-1.8l-1.1-3A4 4 0 0 1 6 8Zm2 2v2H6v2h2v2h2v-2h2v-2h-2v-2H8Zm8 .5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+  </svg>
+);
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/>
+  </svg>
+);
+const BoltIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/>
+  </svg>
+);
+const SpeedIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M12 4a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V4Zm6.2 5.2-4.9 4.9a2.5 2.5 0 1 1-3.5-3.5l4.9-4.9a8 8 0 0 1 3.5 3.5Z"/>
+  </svg>
+);
+const SparklesIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M11 2 9 7l-5 2 5 2 2 5 2-5 5-2-5-2-2-5Zm8 9-1 3-3 1 3 1 1 3 1-3 3-1-3-1-1-3Z"/>
+  </svg>
+);
+const CpuIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M9 3h6v2h3a2 2 0 0 1 2 2v3h2v2h-2v3a2 2 0 0 1-2 2h-3v2H9v-2H6a2 2 0 0 1-2-2v-3H2v-2h2V7a2 2 0 0 1 2-2h3V3Zm-1 6v6h8V9H8Z"/>
+  </svg>
+);
+const TargetIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M12 2v2a8 8 0 1 1-8 8H2a10 10 0 1 0 10-10Zm0 6a4 4 0 1 0 4 4h2a6 6 0 1 1-6-6v2Z"/>
+  </svg>
+);
+const CursorIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M3 2l8 20 2-7 7-2L3 2Z"/>
+  </svg>
+);
+const CloudIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M7 18h9a4 4 0 1 0-1.1-7.9A5 5 0 0 0 5 12a4 4 0 0 0 2 6Z"/>
+  </svg>
+);
+const SearchIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm8.7 13.3 3.3 3.3-1.4 1.4-3.3-3.3 1.4-1.4Z"/>
+  </svg>
+);
+const SaveIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M5 3h11l3 3v15a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 4v4h8V7H7Zm8 12v-5H9v5h6Z"/>
+  </svg>
+);
+const ChartIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden>
+    <path d="M4 20V4h2v16H4Zm4 0v-9h2v9H8Zm4 0v-6h2v6h-2Zm4 0v-12h2v12h-2Z"/>
+  </svg>
+);
+
+export type Feature = {
+  title: string;
+  description: string;
+  icon?: React.ReactNode;
+};
+
+export type FeaturesProps = {
   compact?: boolean;
-}
+  className?: string;
+};
 
-const Features: React.FC<FeaturesProps> = ({ compact = false }) => {
-  const features = [
-    {
-      title: 'Dreamcast Games',
-      description: 'Play classic Sega Dreamcast games on your iOS devices and Apple TV.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'High Performance',
-      description: 'Optimized for modern iOS devices with smooth gameplay and accurate emulation.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'Controller Support',
-      description: 'Full support for MFi controllers and touch controls for the best gaming experience.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'Save States',
-      description: 'Save and load your game progress anywhere with instant save states.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'Apple TV Support',
-      description: 'Experience Dreamcast games on your big screen with Apple TV compatibility.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'Multiple Formats',
-      description: 'Support for CDI, GDI, CHD, and other Dreamcast ROM formats.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z"/>
-        </svg>
-      ),
-    },
-  ];
+const allFeatures: Feature[] = [
+  {
+    title: 'DSU Controller Support',
+    description:
+      'Use DSU-compatible controllers for precise input and low-latency control.',
+    icon: <IconWrap><ControllerIcon /></IconWrap>,
+  },
+  {
+    title: 'SwiftUI Interface',
+    description:
+      'Modern, native-first UI tailored for iPhone, iPad, and Apple TV with fast, polished navigation.',
+    icon: <IconWrap><PhoneIcon /></IconWrap>,
+  },
+  {
+    title: 'Quick Toggles In-Game',
+    description:
+      'Handy performance and rendering quick toggles directly in the emulation scene.',
+    icon: <IconWrap><BoltIcon /></IconWrap>,
+  },
+  {
+    title: 'Auto VBI Skip Mode',
+    description:
+      'Automatically skips vertical blanks to improve frame pacing and boost frame rates in some games.',
+    icon: <IconWrap><SpeedIcon /></IconWrap>,
+  },
+  {
+    title: '1k+ Native Metal Shaders',
+    description:
+      'Large library of native shaders for visual quality and performance on Apple GPUs.',
+    icon: <IconWrap><SparklesIcon /></IconWrap>,
+  },
+  {
+    title: 'ARM64 Optimized Interpreter',
+    description:
+      'ARM64-specific optimizations in the CPU interpreter for faster JIT-less performance on iOS/tvOS.',
+    icon: <IconWrap><CpuIcon /></IconWrap>,
+  },
+];
 
-  const displayFeatures = compact ? features.slice(0, 3) : features;
+// Additional extended features for the full page
+const extendedOnly: Feature[] = [
+  {
+    title: 'Enhanced Controller Mappings',
+    description:
+      'Thoughtful defaults incl. DualShock/DualSense touchpad → Wii IR, reliable turbo (hold all paddles).',
+    icon: <IconWrap><TargetIcon /></IconWrap>,
+  },
+  {
+    title: 'Touchscreen Wii IR',
+    description:
+      'Precise, tuned on-screen cursor that “just works” for Wii IR input on iOS.',
+    icon: <IconWrap><CursorIcon /></IconWrap>,
+  },
+  {
+    title: 'WebDAV Library Support',
+    description:
+      'Add remote sources with caching and change detection for snappy, bandwidth‑friendly browsing.',
+    icon: <IconWrap><CloudIcon /></IconWrap>,
+  },
+  {
+    title: 'Smart Search & Filters',
+    description:
+      'Find by title, ID, maker, region, or path on iOS and tvOS with fast, stable results.',
+    icon: <IconWrap><SearchIcon /></IconWrap>,
+  },
+  {
+    title: 'Save States & Pause Menu',
+    description:
+      'Fast access to core actions with platform-appropriate UI and stable on‑screen controls toggle.',
+    icon: <IconWrap><SaveIcon /></IconWrap>,
+  },
+  {
+    title: 'Performance Controls',
+    description:
+      'Quick turbo (hold paddles) and VBI/CPU quick sheet to fine-tune smoothness vs. frame rate.',
+    icon: <IconWrap><ChartIcon /></IconWrap>,
+  },
+];
+
+const Features: React.FC<FeaturesProps> = ({ compact = false, className }) => {
+  const items = compact ? allFeatures.slice(0, 6) : [...allFeatures, ...extendedOnly];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {displayFeatures.map((feature, index) => (
-        <div
-          key={index}
-          className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow"
-        >
-          <div className="flex items-center mb-4">
-            <div className="text-orange-600 dark:text-orange-400 mr-3">
-              {feature.icon}
+    <div className={className}>
+      <div className={`grid gap-8 ${compact ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+        {items.map((f) => (
+          <div key={f.title} className="text-center bg-white/60 dark:bg-gray-800/60 rounded-lg p-6 shadow">
+            <div className="text-4xl mb-3" aria-hidden>
+              {f.icon ?? '🔹'}
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              {feature.title}
-            </h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{f.title}</h3>
+            <p className="text-gray-600 dark:text-gray-400">{f.description}</p>
           </div>
-          <p className="text-gray-600 dark:text-gray-300">
-            {feature.description}
-          </p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,14 +1,11 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-
-export const viewport: Viewport = {
-  themeColor: "#ff6900",
-};
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "iFly - Dreamcast Emulator for iOS & tvOS",
-  description: "Dreamcast emulator for iOS and tvOS devices, bringing classic Sega games to your Apple devices",
+  title: "iCube - GameCube & Wii Emulator",
+  description: "GameCube and Wii emulator for iOS and tvOS, based on Dolphin",
   icons: {
     icon: [
       { url: "/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
@@ -34,10 +31,11 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicons/manifest.json",
+  themeColor: "#5b96fa",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "iFly",
+    title: "iCube",
   },
 };
 
@@ -47,8 +45,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body suppressHydrationWarning className="antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-R9V4MJ0BR2"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R9V4MJ0BR2');
+          `}
+        </Script>
         <Navigation />
         <main className="min-h-screen">
           {children}

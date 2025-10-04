@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import iphone1 from '@/images/screenshots/ios/iphone1-library.jpg';
-import iphone2 from '@/images/screenshots/ios/iphone2-search.jpg';
+import iphone2 from '@/images/screenshots/ios/iphone2-settings.png';
 import iphone3 from '@/images/screenshots/ios/iphone3-emu.png';
 import ipad1 from '@/images/screenshots/ipad/ipad1-library.jpg';
 import ipad2 from '@/images/screenshots/ipad/ipad2-search.jpg';

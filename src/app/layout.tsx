@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Script from "next/script";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "iFly - Dreamcast Emulator for iOS & tvOS",
@@ -48,7 +49,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning className="antialiased">
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-R9V4MJ0BR2"
+          src="https://www.googletagmanager.com/gtag/js?id=G-D2HKD61NJ1"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -56,10 +57,11 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-R9V4MJ0BR2');
+            gtag('config', 'G-D2HKD61NJ1');
           `}
         </Script>
         <Navigation />
+        <GoogleAnalytics />
         <main className="min-h-screen">
           {children}
         </main>

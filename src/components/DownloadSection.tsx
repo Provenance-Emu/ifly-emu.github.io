@@ -46,7 +46,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
         {description ?? <DefaultDescription />}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
           <ButtonLink href="https://github.com/Provenance-Emu/iFly/releases" leftIcon={<GitHubIcon className="w-5 h-5" />}>Sideload via GitHub</ButtonLink>
-          <ButtonLink href="https://provenance-emu.itch.io/ifly" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
+          <ButtonLink href="https://provenance.itch.io/ifly" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
         </div>
         {showEmbed && (
           <div className="flex justify-center">

@@ -102,7 +102,7 @@ export default function DownloadsPage() {
                 </div>
               </a>
               <a
-                href="https://provenance-emu.itch.io/ifly"
+                href="https://provenance.itch.io/ifly"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
@@ -248,7 +248,7 @@ export default function DownloadsPage() {
               </div>
               <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
                 <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                  <strong>Note:</strong> Beta builds may contain bugs and are intended for testing purposes. 
+                  <strong>Note:</strong> Beta builds may contain bugs and are intended for testing purposes.
                   For the most stable experience, use the latest non-beta release.
                 </p>
               </div>

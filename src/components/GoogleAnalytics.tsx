@@ -7,7 +7,7 @@ const GA_MEASUREMENT_ID = "G-D2HKD61NJ1";
 
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 

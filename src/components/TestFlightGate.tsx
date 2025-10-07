@@ -10,11 +10,16 @@ declare global {
   }
 }
 
-const TESTFLIGHT_URL = "https://testflight.apple.com/join/9ZEfnyMP";
+const DEFAULT_TESTFLIGHT_URL = "https://testflight.apple.com/join/9ZEfnyMP";
 const TWITTER_URL = "https://x.com/provenanceapp";
 const STORAGE_KEY = "ifly_testflight_gate_passed";
 
-export default function TestFlightGate() {
+interface TestFlightGateProps {
+  testflightUrl?: string;
+}
+
+export default function TestFlightGate({ testflightUrl }: TestFlightGateProps = {}) {
+  const TESTFLIGHT_URL = testflightUrl || DEFAULT_TESTFLIGHT_URL;
   const [gatePassed, setGatePassed] = useState<boolean>(false);
   const [checking, setChecking] = useState<boolean>(true);
 

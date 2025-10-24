@@ -16,9 +16,10 @@ const STORAGE_KEY = "ifly_testflight_gate_passed";
 
 interface TestFlightGateProps {
   testflightUrl?: string;
+  skipGate?: boolean;
 }
 
-export default function TestFlightGate({ testflightUrl }: TestFlightGateProps = {}) {
+export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGateProps = {}) {
   const TESTFLIGHT_URL = testflightUrl || DEFAULT_TESTFLIGHT_URL;
   const [gatePassed, setGatePassed] = useState<boolean>(false);
   const [checking, setChecking] = useState<boolean>(true);
@@ -26,10 +27,10 @@ export default function TestFlightGate({ testflightUrl }: TestFlightGateProps = 
   useEffect(() => {
     try {
       const stored = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
-      setGatePassed(stored === "true");
+      setGatePassed(stored === "true" || skipGate === true);
     } catch {}
     setChecking(false);
-  }, []);
+  }, [skipGate]);
 
   function markPassed(method: "follow" | "skip") {
     try {

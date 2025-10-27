@@ -81,9 +81,9 @@ export type FeaturesProps = {
 
 const allFeatures: Feature[] = [
   {
-    title: 'DSU Controller Support',
+    title: 'MFi/PS/XBox/Switch Controller Support',
     description:
-      'Use DSU-compatible controllers for precise input and low-latency control.',
+      'Use MFi/PS/XBox/Switch controllers for precise input and low-latency control.',
     icon: <IconWrap><ControllerIcon /></IconWrap>,
   },
   {
@@ -99,9 +99,9 @@ const allFeatures: Feature[] = [
     icon: <IconWrap><BoltIcon /></IconWrap>,
   },
   {
-    title: 'Auto VBI Skip Mode',
+    title: 'Auto Artwork Loading',
     description:
-      'Automatically skips vertical blanks to improve frame pacing and boost frame rates in some games.',
+      'Automatically loads artwork for games in the library.',
     icon: <IconWrap><SpeedIcon /></IconWrap>,
   },
   {
@@ -127,15 +127,15 @@ const extendedOnly: Feature[] = [
     icon: <IconWrap><TargetIcon /></IconWrap>,
   },
   {
-    title: 'Touchscreen Wii IR',
+    title: 'Automatic Cheat Download',
     description:
-      'Precise, tuned on-screen cursor that “just works” for Wii IR input on iOS.',
+      'Automatically download cheats for games in the library.',
     icon: <IconWrap><CursorIcon /></IconWrap>,
   },
   {
-    title: 'WebDAV Library Support',
+    title: 'Artwork Search',
     description:
-      'Add remote sources with caching and change detection for snappy, bandwidth‑friendly browsing.',
+      'Search for artwork in the library from multiple sources.',
     icon: <IconWrap><CloudIcon /></IconWrap>,
   },
   {
@@ -153,7 +153,7 @@ const extendedOnly: Feature[] = [
   {
     title: 'Performance Controls',
     description:
-      'Quick turbo (hold paddles) and VBI/CPU quick sheet to fine-tune smoothness vs. frame rate.',
+      'Extensive performance controls to fine-tune smoothness vs. frame rate.',
     icon: <IconWrap><ChartIcon /></IconWrap>,
   },
 ];

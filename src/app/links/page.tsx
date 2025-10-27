@@ -19,56 +19,56 @@ export default function Links() {
             <DownloadSection showEmbed />
           </div>
 
-          {/* Dolphin Resources */}
+          {/* Flycast Resources */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Dolphin Emulator Resources
+              Flycast Resources
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
               Related emulation resources and community links:
             </p>
 
             <div className="grid md:grid-cols-2 gap-4">
-              <a href="https://dolphin-emu.org/"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
-                <div className="text-2xl mr-4">🐬</div>
-                <div>
-                  <h3 className="font-semibold text-blue-900 dark:text-blue-300">Official Dolphin Website</h3>
-                  <p className="text-sm text-blue-700 dark:text-blue-400">Learn about the Dolphin project</p>
-                </div>
-              </a>
-
-              <a href="https://dolphinios.oatmealdome.me"
+              <a href="https://github.com/flyinghead/flycast"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
                 <div className="text-2xl mr-4">💻</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Dolphin GitHub</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">Flycast GitHub</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Source code and development</p>
                 </div>
               </a>
 
-              <a href="https://wiki.dolphin-emu.org/"
+              <a href="https://github.com/TheArcadeStriker/flycast-wiki/wiki"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
                 <div className="text-2xl mr-4">📚</div>
                 <div>
-                  <h3 className="font-semibold text-green-900 dark:text-green-300">Dolphin Wiki</h3>
+                  <h3 className="font-semibold text-green-900 dark:text-green-300">Flycast Wiki</h3>
+                  <p className="text-sm text-green-700 dark:text-green-400">Documentation and guides</p>
+                </div>
+              </a>
+
+              <a href="https://www.rinnegatamante.eu/newflycast/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
+                <div className="text-2xl mr-4">📚</div>
+                <div>
+                  <h3 className="font-semibold text-green-900 dark:text-green-300">Flycast Compatibility</h3>
                   <p className="text-sm text-green-700 dark:text-green-400">Compatibility and game guides</p>
                 </div>
               </a>
 
-              <a href="https://forums.dolphin-emu.org/"
+              <a href="https://discord.gg/X8YWP8w"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
                 <div className="text-2xl mr-4">💬</div>
                 <div>
-                  <h3 className="font-semibold text-purple-900 dark:text-purple-300">Dolphin Forums</h3>
+                  <h3 className="font-semibold text-purple-900 dark:text-purple-300">Flycast Discord</h3>
                   <p className="text-sm text-purple-700 dark:text-purple-400">Community discussions</p>
                 </div>
               </a>
@@ -145,13 +145,13 @@ export default function Links() {
                 </div>
               </a>
 
-              <a href="https://dolphinios.oatmealdome.me"
+              <a href="https://icube-emu.com"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
                 <div className="text-2xl mr-4">🐬</div>
                 <div>
-                  <h3 className="font-semibold text-blue-900 dark:text-blue-300">DolphinIOS</h3>
+                  <h3 className="font-semibold text-blue-900 dark:text-blue-300">iCube</h3>
                   <p className="text-sm text-blue-700 dark:text-blue-400">
                     iOS port of Dolphin emulator (related project)
                   </p>

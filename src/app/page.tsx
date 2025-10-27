@@ -7,9 +7,11 @@ import ipad2 from '@/images/screenshots/ipad/ipad2-search.jpg';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
-import tvos1 from '@/images/screenshots/tvos/tvos-pause.png';
-import tvos2 from '@/images/screenshots/tvos/tvos-settings.png';
-import tvos3 from '@/images/screenshots/tvos/tvos-sources.png';
+import tvos1 from '@/images/screenshots/tvos/tvos-library.png';
+import tvos2 from '@/images/screenshots/tvos/tvos-gameplay.png';
+import tvos3 from '@/images/screenshots/tvos/tvos-cheats.png';
+import tvos4 from '@/images/screenshots/tvos/tvos-settings-themes.png';
+import tvos5 from '@/images/screenshots/tvos/tvos-settings-video.png';
 
 export default function Home() {
   return (
@@ -108,34 +110,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* iPad Screenshots */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 text-center">
-            iPad
-          </h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {[ipad1, ipad2].map((img, idx) => (
-              <div key={`ipad-${idx}`} className="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 shadow-lg">
-                <div className="rounded-lg overflow-hidden w-80 h-60">
-                  <Image
-                    src={img}
-                    alt={`iPad screenshot ${idx + 1}`}
-                    className="h-full w-full object-cover"
-                    sizes="(max-width: 768px) 320px, 320px"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Apple TV Screenshots */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 text-center">
             Apple TV
           </h3>
           <div className="flex flex-wrap justify-center gap-6">
-            {[tvos1, tvos2, tvos3].map((img, idx) => (
+            {[tvos1, tvos2, tvos3, tvos4].map((img, idx) => (
               <div key={`appletv-${idx}`} className="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 shadow-lg">
                 <div className="rounded-lg overflow-hidden w-[384px] aspect-video">
                   <Image

@@ -5,21 +5,22 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navItems = [
-  { href: '/',           label: 'Home' },
-  { href: '/downloads',  label: 'Downloads' },
-  { href: '/about',      label: 'About' },
-  { href: '/features',   label: 'Features' },
-  { href: '/support',    label: 'Support' },
-  { href: '/links',      label: 'Links' },
-  { href: '/donate',     label: 'Donate' },
-  { href: '/status',     label: 'Status' },
+  { href: '/',            label: 'Home' },
+  { href: '/downloads/',  label: 'Downloads' },
+  { href: '/about/',      label: 'About' },
+  { href: '/features/',   label: 'Features' },
+  { href: '/support/',    label: 'Support' },
+  { href: '/links/',      label: 'Links' },
+  { href: '/donate/',     label: 'Donate' },
+  { href: '/status/',     label: 'Status' },
 ];
 
 const Navigation = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const normalizedPath = pathname.replace(/\/$/, '') || '/';
+  // Normalize both to have trailing slash (except root which is already '/')
+  const normalizedPath = pathname === '/' ? '/' : (pathname.endsWith('/') ? pathname : `${pathname}/`);
 
   const linkClass = (href: string) =>
     `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -29,7 +30,7 @@ const Navigation = () => {
     }`;
 
   return (
-    <nav className="bg-gray-900/95 backdrop-blur-sm text-white border-b border-gray-800 sticky top-0 z-50">
+    <nav aria-label="Main navigation" className="bg-gray-900/95 backdrop-blur-sm text-white border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 

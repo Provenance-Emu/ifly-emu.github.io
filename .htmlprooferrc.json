@@ -1,0 +1,17 @@
+{
+  "ignore_urls": [
+    "/sideloadly\\.io/",
+    "/altstore\\.io/",
+    "/sidestore\\.io/",
+    "/opencollective\\.com/",
+    "/account\\.venmo\\.com/",
+    "/venmo\\.com/",
+    "/reddit\\.com/",
+    "/rinnegatamante\\.eu/",
+    "/icube-emu\\.com/",
+    "/altstore:\\/\\//",
+    "/sidestore:\\/\\//",
+    "/firebase\\.google\\.com/",
+    "/policies\\.google\\.com/"
+  ]
+}

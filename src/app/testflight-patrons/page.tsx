@@ -1,6 +1,7 @@
+import type { Metadata } from 'next';
 import TestFlightGate from "@/components/TestFlightGate";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Join TestFlight Patrons | iFly",
   description: "Access the iFly TestFlight build for patrons.",
   robots: {

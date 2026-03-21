@@ -5,14 +5,14 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navItems = [
-  { href: '/',           label: 'Home' },
-  { href: '/downloads',  label: 'Downloads' },
-  { href: '/about',      label: 'About' },
-  { href: '/features',   label: 'Features' },
-  { href: '/support',    label: 'Support' },
-  { href: '/links',      label: 'Links' },
-  { href: '/donate',     label: 'Donate' },
-  { href: '/status',     label: 'Status' },
+  { href: '/',                label: 'Home' },
+  { href: '/downloads/',      label: 'Downloads' },
+  { href: '/about/',          label: 'About' },
+  { href: '/features/',       label: 'Features' },
+  { href: '/support/',        label: 'Support' },
+  { href: '/links/',          label: 'Links' },
+  { href: '/donate/',         label: 'Donate' },
+  { href: '/status/',         label: 'Status' },
 ];
 
 const Navigation = () => {

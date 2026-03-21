@@ -90,7 +90,7 @@ export default function DownloadsPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <a
-                href="https://provenance.itch.io/ifly"
+                href="https://github.com/Provenance-Emu/iFly/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"

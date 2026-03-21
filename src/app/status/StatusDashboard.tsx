@@ -64,7 +64,7 @@ export default function StatusDashboard() {
     : null;
 
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100 px-4 py-12">
+    <div className="min-h-screen bg-gray-950 text-gray-100 px-4 py-12">
       <div className="max-w-2xl mx-auto space-y-8">
         <div>
           <h1 className="text-3xl font-bold text-white">Site Status</h1>
@@ -142,6 +142,6 @@ export default function StatusDashboard() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

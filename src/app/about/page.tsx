@@ -59,7 +59,7 @@ export default function About() {
               Key Features
             </h2>
             <ul className="space-y-2 text-gray-400 mb-4">
-              {['High compatibility with Dreamcast games', 'Native iOS/tvOS integration and performance optimization', 'Support for MFi controllers and gamepad accessories', 'Save state functionality and game management', 'Customizable controls and settings', 'Regular updates and improvements'].map(item => (
+              {['MFi, PlayStation, Xbox, and Switch controller support', '1,000+ native Metal shaders for visual quality and performance', 'ARM64-optimized interpreter for fast JIT-less performance', 'Save states and pause menu with quick in-game toggles', 'Automatic artwork and cheat code downloads', 'Smart search, filters, and full game library management'].map(item => (
                 <li key={item} className="flex gap-2"><span className="text-orange-500 mt-1">•</span><span>{item}</span></li>
               ))}
             </ul>

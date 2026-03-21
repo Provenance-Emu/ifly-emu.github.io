@@ -36,7 +36,7 @@ export async function GET() {
           title: 'Welcome to iFly',
           identifier: 'welcome-to-ifly',
           caption: 'Dreamcast emulation on iOS and tvOS',
-          date: new Date().toISOString().split('T')[0],
+          date: '2025-01-01',
           tintColor: '#ff6900',
           imageURL: `${baseURL}/news-welcome.png`,
           notify: false,

@@ -66,7 +66,7 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
                 href={TWITTER_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center justify-center rounded-md border bg-black text-white px-4 py-2 text-sm font-medium hover:opacity-90 transition"
+                className="inline-flex items-center justify-center rounded-md border border-gray-700 bg-black text-white px-4 py-2 text-sm font-medium hover:bg-neutral-900 transition"
               >
                 Follow on X (@provenanceapp)
               </a>

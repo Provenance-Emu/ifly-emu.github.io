@@ -1,13 +1,6 @@
-'use client';
-
 import React from 'react';
-import dynamic from 'next/dynamic';
 import ButtonLink, { GitHubIcon, ItchIcon } from '@/components/ButtonLink';
-
-const ItchIoEmbed = dynamic(() => import('@/components/ItchIoEmbed'), {
-  ssr: false,
-  loading: () => <div style={{ width: 552, height: 167 }} />,
-});
+import ItchIoEmbed from '@/components/ItchIoEmbed';
 
 export type DownloadSectionProps = {
   title?: string;

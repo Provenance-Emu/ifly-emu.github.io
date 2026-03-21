@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import DownloadSection from '@/components/DownloadSection';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Learn about iFly, a Dreamcast emulator for iOS and tvOS. Platform support, system requirements, and the story behind the project.',
+  alternates: { canonical: 'https://ifly-emu.com/about/' },
+};
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 
 export default function About() {

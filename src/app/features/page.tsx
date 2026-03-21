@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import Features from '@/components/Features';
+
+export const metadata: Metadata = {
+  title: 'Features',
+  description: 'Full feature list for iFly Dreamcast emulator: MFi/PS/Xbox/Switch controller support, Metal shaders, save states, automatic cheat downloads, ARM64 optimized interpreter, and more.',
+  alternates: { canonical: 'https://ifly-emu.com/features/' },
+};
 import Link from 'next/link';
 import SocialButton, { DiscordIcon, XIcon } from '@/components/SocialButton';
 

@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import { parseBuilds } from '@/lib/buildParser';
+
+export const metadata: Metadata = {
+  title: 'Downloads',
+  description: 'Download iFly Dreamcast emulator IPA for iOS and tvOS. Install via AltStore, SideStore, or direct IPA download. Free and open source.',
+  alternates: { canonical: 'https://ifly-emu.com/downloads/' },
+};
 import path from 'path';
 import Link from 'next/link';
 

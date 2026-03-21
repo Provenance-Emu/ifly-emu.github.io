@@ -116,9 +116,9 @@ export default function StatusPage() {
             <span className="text-sm text-gray-300">
               {data?.html_check.passed === null
                 ? 'No data yet'
-                : data.html_check.passed
+                : data?.html_check.passed
                 ? 'All checks passed'
-                : `${data.html_check.error_count} error${data.html_check.error_count !== 1 ? 's' : ''} found`}
+                : `${data?.html_check.error_count} error${data?.html_check.error_count !== 1 ? 's' : ''} found`}
             </span>
           </div>
         </section>

@@ -22,7 +22,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">Overview</h2>
               <p className="text-gray-700 dark:text-gray-300">
-                iFly (the "App") is a Dreamcast emulator for iOS and tvOS. We respect your privacy. We do not collect or sell personal data. The App and our website use limited, aggregated analytics and anonymous crash reporting strictly to improve stability, performance, and user experience.
+                iFly (the &quot;App&quot;) is a Dreamcast emulator for iOS and tvOS. We respect your privacy. We do not collect or sell personal data. The App and our website use limited, aggregated analytics and anonymous crash reporting strictly to improve stability, performance, and user experience.
               </p>
             </section>
 

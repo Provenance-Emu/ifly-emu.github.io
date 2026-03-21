@@ -67,7 +67,7 @@ export default function About() {
               See full feature list →
             </Link>
 
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-white mb-4 mt-8">
               System Requirements
             </h2>
             <div className="bg-gray-800/40 border border-gray-700/50 p-4 rounded-xl">

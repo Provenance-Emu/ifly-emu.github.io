@@ -53,7 +53,7 @@ export default function DonatePage() {
             />
           </div>
 
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mt-8">
             Donations are voluntary and non‑refundable. Thanks for supporting the project!
           </p>
         </div>

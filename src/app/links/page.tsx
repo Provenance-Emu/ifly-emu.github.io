@@ -33,7 +33,7 @@ export default function Links() {
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                <div className="text-2xl mr-4">💻</div>
+                <div className="text-2xl mr-4" aria-hidden="true">💻</div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">Flycast GitHub</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Source code and development</p>
@@ -44,7 +44,7 @@ export default function Links() {
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
-                <div className="text-2xl mr-4">📚</div>
+                <div className="text-2xl mr-4" aria-hidden="true">📚</div>
                 <div>
                   <h3 className="font-semibold text-green-900 dark:text-green-300">Flycast Wiki</h3>
                   <p className="text-sm text-green-700 dark:text-green-400">Documentation and guides</p>
@@ -55,7 +55,7 @@ export default function Links() {
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
-                <div className="text-2xl mr-4">📚</div>
+                <div className="text-2xl mr-4" aria-hidden="true">📚</div>
                 <div>
                   <h3 className="font-semibold text-green-900 dark:text-green-300">Flycast Compatibility</h3>
                   <p className="text-sm text-green-700 dark:text-green-400">Compatibility and game guides</p>
@@ -66,7 +66,7 @@ export default function Links() {
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
-                <div className="text-2xl mr-4">💬</div>
+                <div className="text-2xl mr-4" aria-hidden="true">💬</div>
                 <div>
                   <h3 className="font-semibold text-purple-900 dark:text-purple-300">Flycast Discord</h3>
                   <p className="text-sm text-purple-700 dark:text-purple-400">Community discussions</p>
@@ -88,7 +88,7 @@ export default function Links() {
             <div className="grid md:grid-cols-3 gap-4">
               <a href="https://x.com/ProvenanceApp"
                   className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
-                <div className="text-2xl mr-4">🐦</div>
+                <div className="text-2xl mr-4" aria-hidden="true">🐦</div>
                 <div>
                   <h3 className="font-semibold text-blue-900 dark:text-blue-300">X / Twitter</h3>
                   <p className="text-sm text-blue-700 dark:text-blue-400">@ProvenanceApp</p>
@@ -97,7 +97,7 @@ export default function Links() {
 
               <a href="https://reddit.com/r/EmulationOniOS"
                   className="flex items-center p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors">
-                <div className="text-2xl mr-4">📱</div>
+                <div className="text-2xl mr-4" aria-hidden="true">📱</div>
                 <div>
                   <h3 className="font-semibold text-indigo-900 dark:text-indigo-300">Reddit</h3>
                   <p className="text-sm text-indigo-700 dark:text-indigo-400">r/EmulationOniOS</p>
@@ -106,7 +106,7 @@ export default function Links() {
 
               <a href="https://discord.com/invite/4TK7PU5"
                   className="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                <div className="text-2xl mr-4">💬</div>
+                <div className="text-2xl mr-4" aria-hidden="true">💬</div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">Discord</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Join our server</p>
@@ -136,7 +136,7 @@ export default function Links() {
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-red-50 dark:bg-red-900/20 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors">
-                <div className="text-2xl mr-4">🎮</div>
+                <div className="text-2xl mr-4" aria-hidden="true">🎮</div>
                 <div>
                   <h3 className="font-semibold text-red-900 dark:text-red-300">Provenance</h3>
                   <p className="text-sm text-red-700 dark:text-red-400">
@@ -149,7 +149,7 @@ export default function Links() {
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
-                <div className="text-2xl mr-4">🐬</div>
+                <div className="text-2xl mr-4" aria-hidden="true">🐬</div>
                 <div>
                   <h3 className="font-semibold text-blue-900 dark:text-blue-300">iCube</h3>
                   <p className="text-sm text-blue-700 dark:text-blue-400">

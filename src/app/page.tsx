@@ -69,7 +69,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/testflight"
-              className="bg-orange-500 hover:bg-orange-400 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors shadow-lg shadow-orange-500/25"
+              className="bg-orange-700 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors shadow-lg shadow-orange-700/25"
             >
               TestFlight Beta
             </Link>

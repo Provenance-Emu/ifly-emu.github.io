@@ -22,7 +22,13 @@ function ScoreBar({ score }: { score: number | null }) {
   const color = score >= 90 ? 'bg-green-500' : score >= 70 ? 'bg-yellow-500' : 'bg-red-500';
   return (
     <div className="flex items-center gap-3">
-      <div className="flex-1 bg-gray-700 rounded-full h-2">
+      <div
+        className="flex-1 bg-gray-700 rounded-full h-2"
+        role="progressbar"
+        aria-valuenow={score}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
         <div className={`${color} h-2 rounded-full transition-all`} style={{ width: `${score}%` }} />
       </div>
       <span className="text-sm font-mono w-8 text-right text-white">{score}</span>
@@ -42,8 +48,8 @@ function GradeBadge({ grade }: { grade: string | null }) {
 }
 
 function StatusDot({ ok }: { ok: boolean | null }) {
-  if (ok === null) return <span className="inline-block w-2.5 h-2.5 rounded-full bg-gray-500" />;
-  return <span className={`inline-block w-2.5 h-2.5 rounded-full ${ok ? 'bg-green-500' : 'bg-red-500'}`} />;
+  if (ok === null) return <span className="inline-block w-2.5 h-2.5 rounded-full bg-gray-500" aria-label="Unknown" />;
+  return <span className={`inline-block w-2.5 h-2.5 rounded-full ${ok ? 'bg-green-500' : 'bg-red-500'}`} aria-label={ok ? 'Passed' : 'Failed'} />;
 }
 
 export default function StatusPage() {
@@ -63,7 +69,7 @@ export default function StatusPage() {
     : null;
 
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100 px-4 py-12">
+    <div className="min-h-screen bg-gray-950 text-gray-100 px-4 py-12">
       <div className="max-w-2xl mx-auto space-y-8">
         <div>
           <h1 className="text-3xl font-bold text-white">Site Status</h1>
@@ -143,6 +149,6 @@ export default function StatusPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

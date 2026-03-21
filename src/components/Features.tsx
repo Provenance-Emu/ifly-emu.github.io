@@ -167,7 +167,11 @@ const Features: React.FC<FeaturesProps> = ({ compact = false, className }) => {
         {items.map((f) => (
           <div key={f.title} className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-gray-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 transition-all duration-200">
             <div aria-hidden>
-              {f.icon ?? '🔹'}
+              {f.icon ?? (
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-orange-500/10 text-orange-400 ring-1 ring-orange-500/20">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
+                </div>
+              )}
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-1.5 text-white">{f.title}</h3>

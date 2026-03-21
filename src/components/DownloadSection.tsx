@@ -45,7 +45,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
         {description ?? <DefaultDescription />}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-          <ButtonLink href="/downloads" leftIcon={<GitHubIcon className="w-5 h-5" />}>All Downloads</ButtonLink>
+          <ButtonLink href="/downloads/" external={false} leftIcon={<GitHubIcon className="w-5 h-5" />}>All Downloads</ButtonLink>
           <ButtonLink href="https://provenance.itch.io/ifly" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
         </div>
         {showEmbed && (

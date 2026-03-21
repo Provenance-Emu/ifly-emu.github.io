@@ -12,15 +12,17 @@ const ItchIoEmbed: React.FC<ItchIoEmbedProps> = ({ itchId, linkColor = '#5b96fa'
   const anchorTitle = title ?? 'iFly - Dreamcast Emulator for iOS and tvOS by Provenance EMU';
 
   return (
-    <iframe
-      title={anchorTitle}
-      src={src}
-      width={552}
-      height={167}
-      frameBorder={0}
-      className={className}
-      loading="lazy"
-    />
+    <div className="w-full overflow-x-auto">
+      <iframe
+        title={anchorTitle}
+        src={src}
+        width={552}
+        height={167}
+        style={{ border: 0, maxWidth: '100%' }}
+        className={className}
+        loading="lazy"
+      />
+    </div>
   );
 };
 

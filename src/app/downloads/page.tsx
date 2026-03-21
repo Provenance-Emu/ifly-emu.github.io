@@ -109,6 +109,7 @@ export default function DownloadsPage() {
           {/* iOS Downloads */}
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
               iOS Builds
             </h2>
             {iosVersions.length === 0 ? (
@@ -118,7 +119,7 @@ export default function DownloadsPage() {
                 {iosVersions.map((version, idx) => (
                   <div
                     key={idx}
-                    className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800 transition-colors"
+                    className="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 hover:border-gray-600 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex-1">
@@ -154,6 +155,7 @@ export default function DownloadsPage() {
           {/* tvOS Downloads */}
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>
               tvOS Builds
             </h2>
             {tvosVersions.length === 0 ? (
@@ -163,7 +165,7 @@ export default function DownloadsPage() {
                 {tvosVersions.map((version, idx) => (
                   <div
                     key={idx}
-                    className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800 transition-colors"
+                    className="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 hover:border-gray-600 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex-1">
@@ -207,7 +209,7 @@ export default function DownloadsPage() {
                   Using AltStore / SideStore (Recommended)
                 </h3>
                 <ol className="list-decimal list-inside space-y-2 ml-4">
-                  <li>Install <a href="https://altstore.io" className="text-orange-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" className="text-orange-400 hover:underline">SideStore</a> on your device</li>
+                  <li>Install <a href="https://altstore.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">SideStore</a> on your device</li>
                   <li>Tap the &quot;Add to AltStore&quot; or &quot;Add to SideStore&quot; button above</li>
                   <li>Browse to iFly in the app and tap &quot;Install&quot;</li>
                   <li>Enjoy automatic updates!</li>

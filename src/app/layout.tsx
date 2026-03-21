@@ -69,15 +69,17 @@ export const metadata: Metadata = {
 // (e.g. Cloudflare). See: https://observatory.mozilla.org/analyze/ifly-emu.com
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://static.itch.io",
+  "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https: blob:",
   "frame-src https://itch.io https://html.itch.zone https://v6p9d9t4.ssl.hwcdn.net",
   "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com",
   "font-src 'self'",
   "object-src 'none'",
+  "worker-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
+  "upgrade-insecure-requests",
 ].join('; ');
 
 const jsonLd = {

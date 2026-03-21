@@ -31,10 +31,10 @@ jobs:
       passed: ${{ steps.result.outputs.passed }}
       error_count: ${{ steps.result.outputs.error_count }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
           cache: 'npm'
@@ -94,7 +94,7 @@ jobs:
 
       - name: Comment on PR
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const passed = '${{ steps.htmlproofer.outputs.exit_code }}' === '0';
@@ -117,7 +117,7 @@ jobs:
 
       - name: Upload output
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: htmlproofer-output
           path: htmlproofer-output.txt
@@ -137,7 +137,7 @@ jobs:
       seo: ${{ steps.scores.outputs.seo }}
       report_url: ${{ steps.scores.outputs.report_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Wait for CDN to serve this commit
         if: github.event_name == 'push'
@@ -157,7 +157,7 @@ jobs:
 
       - name: Run Lighthouse CI
         id: lhci
-        uses: treosh/lighthouse-ci-action@v11
+        uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
             https://ifly-emu.com
@@ -303,7 +303,7 @@ jobs:
     needs: [html-check, lighthouse, security-scan]
     if: github.event_name != 'pull_request' && always()
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Generate public/status.json
         env:
@@ -365,7 +365,7 @@ jobs:
           git push
 
       - name: Open or close issues per audit check
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           PERF:        ${{ needs.lighthouse.outputs.performance }}
           A11Y:        ${{ needs.lighthouse.outputs.accessibility }}

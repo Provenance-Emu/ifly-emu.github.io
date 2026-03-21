@@ -110,7 +110,7 @@ export default function Support() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-4">📧</div>
+                <div className="text-3xl mb-4" aria-hidden="true">📧</div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                   Email Support
                 </h3>
@@ -124,7 +124,7 @@ export default function Support() {
               </div>
 
               <div className="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-4">💬</div>
+                <div className="text-3xl mb-4" aria-hidden="true">💬</div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                   Discord
                 </h3>
@@ -156,7 +156,7 @@ export default function Support() {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="text-green-500 text-xl" aria-hidden="true">✓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Restart the app</h4>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -166,7 +166,7 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="text-green-500 text-xl" aria-hidden="true">✓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Check available storage</h4>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -176,7 +176,7 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="text-green-500 text-xl" aria-hidden="true">✓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Update to latest version</h4>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -186,7 +186,7 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="text-green-500 text-xl" aria-hidden="true">✓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Disable Low Power Mode</h4>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -196,7 +196,7 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="text-green-500 text-xl" aria-hidden="true">✓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Use VBI/CPU tuning</h4>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -206,7 +206,7 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="text-green-500 text-xl" aria-hidden="true">✓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Restart your device</h4>
                   <p className="text-gray-600 dark:text-gray-300">

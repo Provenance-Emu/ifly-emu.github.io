@@ -18,20 +18,20 @@ interface StatusData {
 }
 
 function ScoreBar({ score }: { score: number | null }) {
-  if (score === null) return <span className="text-gray-500 text-sm">–</span>;
+  if (score === null) return <span className="text-gray-400 text-sm">–</span>;
   const color = score >= 90 ? 'bg-green-500' : score >= 70 ? 'bg-yellow-500' : 'bg-red-500';
   return (
     <div className="flex items-center gap-3">
-      <div className="flex-1 bg-gray-700 rounded-full h-2">
+      <div className="flex-1 bg-gray-700 rounded-full h-2" role="progressbar" aria-valuenow={score} aria-valuemin={0} aria-valuemax={100} aria-label={`Score: ${score} out of 100`}>
         <div className={`${color} h-2 rounded-full transition-all`} style={{ width: `${score}%` }} />
       </div>
-      <span className="text-sm font-mono w-8 text-right text-white">{score}</span>
+      <span className="text-sm font-mono w-8 text-right text-white" aria-hidden="true">{score}</span>
     </div>
   );
 }
 
 function GradeBadge({ grade }: { grade: string | null }) {
-  if (!grade) return <span className="text-gray-500">–</span>;
+  if (!grade) return <span className="text-gray-400">–</span>;
   const color =
     grade === 'A+' || grade === 'A' ? 'bg-green-600' :
     grade === 'B' ? 'bg-yellow-600' :
@@ -43,8 +43,8 @@ function GradeBadge({ grade }: { grade: string | null }) {
 }
 
 function StatusDot({ ok }: { ok: boolean | null }) {
-  if (ok === null) return <span className="inline-block w-2.5 h-2.5 rounded-full bg-gray-500" />;
-  return <span className={`inline-block w-2.5 h-2.5 rounded-full ${ok ? 'bg-green-500' : 'bg-red-500'}`} />;
+  if (ok === null) return <span className="inline-block w-2.5 h-2.5 rounded-full bg-gray-500" aria-hidden="true" />;
+  return <span className={`inline-block w-2.5 h-2.5 rounded-full ${ok ? 'bg-green-500' : 'bg-red-500'}`} aria-hidden="true" />;
 }
 
 export default function StatusDashboard() {
@@ -131,7 +131,7 @@ export default function StatusDashboard() {
               <div className="flex items-center gap-2">
                 <GradeBadge grade={data?.observatory.grade ?? null} />
                 {data?.observatory.score != null && (
-                  <span className="text-xs text-gray-500">{data.observatory.score}/100</span>
+                  <span className="text-xs text-gray-400">{data.observatory.score}/100</span>
                 )}
               </div>
             </div>

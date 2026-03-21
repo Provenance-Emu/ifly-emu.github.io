@@ -9,7 +9,7 @@ export type SocialButtonProps = {
 };
 
 const baseClasses =
-  'inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors transition-shadow shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
+  'inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors transition-shadow shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500';
 
 const variantClasses = {
   default: 'bg-gray-900 text-white hover:bg-gray-800',

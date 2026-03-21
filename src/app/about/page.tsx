@@ -40,21 +40,21 @@ export default function About() {
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-2">📱</div>
+                <div className="text-3xl mb-2" aria-hidden="true">📱</div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">iPhone</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Optimized touch controls and responsive design
                 </p>
               </div>
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-2">📋</div>
+                <div className="text-3xl mb-2" aria-hidden="true">📋</div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">iPad</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Larger screen experience with enhanced controls
                 </p>
               </div>
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-2">📺</div>
+                <div className="text-3xl mb-2" aria-hidden="true">📺</div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">Apple TV</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Big screen gaming with gamepad support

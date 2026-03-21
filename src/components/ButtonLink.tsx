@@ -10,7 +10,7 @@ type ButtonLinkProps = {
 };
 
 const baseClasses =
-  'inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
+  'inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500';
 
 const defaultClasses = 'bg-gray-900 text-white hover:bg-gray-800';
 

@@ -73,14 +73,14 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
               <button
                 type="button"
                 onClick={() => markPassed("follow")}
-                className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-gray-800 transition"
+                className="inline-flex items-center justify-center rounded-md border border-gray-700 text-gray-300 px-4 py-2 text-sm font-medium hover:bg-gray-800 hover:text-white transition"
               >
                 I followed
               </button>
               <button
                 type="button"
                 onClick={() => markPassed("skip")}
-                className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-gray-800 transition"
+                className="inline-flex items-center justify-center rounded-md border border-gray-700 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-800 hover:text-gray-300 transition"
               >
                 Proceed without following
               </button>
@@ -103,7 +103,7 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
               </a>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-gray-800 transition"
+                className="inline-flex items-center justify-center rounded-md border border-gray-700 text-gray-300 px-4 py-2 text-sm font-medium hover:bg-gray-800 hover:text-white transition"
               >
                 Go home
               </Link>

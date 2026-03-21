@@ -84,7 +84,7 @@ export default function StatusDashboard() {
         {loading && (
           <div className="space-y-4 animate-pulse">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="bg-gray-900 rounded-xl h-32" />
+              <div key={i} className="bg-gray-900 border border-gray-800 rounded-2xl h-32" />
             ))}
           </div>
         )}
@@ -102,7 +102,7 @@ export default function StatusDashboard() {
 
         {data && <>
         {/* Lighthouse */}
-        <section className="bg-gray-900 rounded-xl p-6 space-y-4">
+        <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">Lighthouse</h2>
             {lh?.report_url && (
@@ -127,7 +127,7 @@ export default function StatusDashboard() {
         </section>
 
         {/* HTML & Links */}
-        <section className="bg-gray-900 rounded-xl p-6">
+        <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
           <h2 className="text-lg font-semibold mb-4">HTML &amp; Links</h2>
           <div className="flex items-center gap-3">
             <StatusDot ok={data?.html_check.passed ?? null} />
@@ -142,7 +142,7 @@ export default function StatusDashboard() {
         </section>
 
         {/* Security */}
-        <section className="bg-gray-900 rounded-xl p-6 space-y-4">
+        <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6 space-y-4">
           <h2 className="text-lg font-semibold">Security</h2>
           <div className="space-y-3">
             <div className="flex items-center justify-between">

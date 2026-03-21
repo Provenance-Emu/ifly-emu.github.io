@@ -5,6 +5,8 @@ import iphone2 from '@/images/screenshots/ios/iphone2-settings.webp';
 import iphone3 from '@/images/screenshots/ios/iphone3-emu.webp';
 import ipad1 from '@/images/screenshots/ipad/ipad1-library.webp';
 import ipad2 from '@/images/screenshots/ipad/ipad2-search.webp';
+import ipad3 from '@/images/screenshots/ipad/ipad3-shaders.webp';
+import ipad4 from '@/images/screenshots/ipad/ipad4-emu.webp';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
@@ -174,6 +176,8 @@ export default function Home() {
             {([
               [ipad1, 'iFly iPad – game library'],
               [ipad2, 'iFly iPad – search'],
+              [ipad3, 'iFly iPad – Metal shaders'],
+              [ipad4, 'iFly iPad – gameplay'],
             ] as const).map(([img, alt], idx) => (
               <div key={`ipad-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
                 <div className="rounded-xl overflow-hidden w-[340px] h-[260px]">

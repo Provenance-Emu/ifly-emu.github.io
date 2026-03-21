@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-gray-600 text-xs">
+          <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} Provenance Emu. Built on{' '}
             <a href="https://github.com/flyinghead/flycast" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Flycast</a>.
           </p>

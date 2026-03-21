@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import SocialButton, { BmcIcon, PatreonIcon } from '@/components/SocialButton';
+
+export const metadata: Metadata = {
+  title: 'Support',
+  description: 'Get help with iFly Dreamcast emulator. Find answers about installation, sideloading, controller setup, JIT on Apple TV, and common issues.',
+  alternates: { canonical: 'https://ifly-emu.com/support/' },
+};
 
 export default function Support() {
   return (

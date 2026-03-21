@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Links',
+  description: 'All official iFly links: Discord community, X/Twitter, GitHub, itch.io, Patreon, and more.',
+  alternates: { canonical: 'https://ifly-emu.com/links/' },
+};
+
 // (no direct button imports needed here since we use DownloadSection)
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';

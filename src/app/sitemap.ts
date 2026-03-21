@@ -14,5 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/support/`,    lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/donate/`,     lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/links/`,      lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/privacy/`,    lastModified: now, changeFrequency: 'yearly',  priority: 0.2 },
   ]
 }

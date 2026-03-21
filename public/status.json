@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-03-21T06:23:55Z",
-  "run_url": "https://github.com/Provenance-Emu/ifly-emu.github.io/actions/runs/23373810712",
+  "last_updated": "2026-03-21T06:25:28Z",
+  "run_url": "https://github.com/Provenance-Emu/ifly-emu.github.io/actions/runs/23373818903",
   "html_check": {
-    "passed": false,
+    "passed": true,
     "error_count": 0
   },
   "lighthouse": {
@@ -13,8 +13,8 @@
     "report_url": ""
   },
   "observatory": {
-    "grade": "N/A",
-    "score": null
+    "grade": "C",
+    "score": 55
   },
   "ssl": {
     "grade": "N/A"

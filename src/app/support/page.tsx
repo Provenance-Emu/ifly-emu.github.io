@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import React from 'react';
 import SocialButton, { BmcIcon, PatreonIcon } from '@/components/SocialButton';
 
 export const metadata: Metadata = {
@@ -22,84 +23,21 @@ export default function Support() {
               Frequently Asked Questions
             </h2>
 
-            <div className="space-y-6">
-              <div className="border-b border-gray-700 pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  How do I install games on iFly?
-                </h3>
-                <p className="text-gray-400">
-                  You&apos;ll need to provide your own Dreamcast game files (such as CHD, CDI, or GDI).
-                  These can be imported through iTunes file sharing, cloud storage, or other file management apps.
-                  Make sure you own the original games before using ROM files.
-                </p>
-              </div>
-
-              <div className="border-b border-gray-700 pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  How do I install iFly (sideload)?
-                </h3>
-                <p className="text-gray-400">
-                  iFly is distributed via sideloading for iOS and tvOS. <br /> We recommend using{' '}
-                  <a href="https://sideloadly.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Sideloadly</a>{' '}
-                  to install the app on your device. For enabling JIT on Apple TV, ask in our{' '}
-                  <a href="https://discord.com/invite/4TK7PU5" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Discord</a>{' '}
-                  for current JIT enabler recommendations.
-                </p>
-              </div>
-
-              <div className="border-b border-gray-700 pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Which controllers are supported?
-                </h3>
-                <p className="text-gray-400">
-                  iFly supports MFi (Made for iPhone) controllers, PlayStation DualShock 4,
-                  PlayStation DualSense, Xbox Wireless Controllers, and the Siri Remote on Apple TV.
-                  Touch controls are also available on iPhone and iPad.
-                </p>
-              </div>
-
-              <div className="border-b border-gray-700 pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  What devices are compatible?
-                </h3>
-                <p className="text-gray-400">
-                  iFly requires iOS 15.6 or later for iPhone and iPad, and tvOS 16.6 or later for Apple TV.
-                  For optimal performance, we recommend newer devices.
-                </p>
-              </div>
-
-              <div className="border-b border-gray-700 pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Can I save my game progress?
-                </h3>
-                <p className="text-gray-400">
-                  Yes! iFly supports both in-game saves (like the original consoles) and save states,
-                  which allow you to save and load your progress at any point during gameplay.
-                  All saves are stored locally on your device.
-                </p>
-              </div>
-
-              <div className="border-b border-gray-700 pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Why are some games not working properly?
-                </h3>
-                <p className="text-gray-400">
-                  While iFly aims for high compatibility, some games may have issues due to their complexity
-                  or specific hardware requirements. We&apos;re constantly working to improve compatibility
-                  through regular updates.
-                </p>
-              </div>
-
-              <div className="pb-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  How can I improve performance?
-                </h3>
-                <p className="text-gray-400">
-                  For better performance, try reducing the internal resolution, disabling enhanced features
-                  like anti-aliasing, closing other apps, and ensuring your device isn&apos;t overheating.
-                  Performance varies based on the game and your device&apos;s capabilities.
-                </p>
-              </div>
+            <div className="divide-y divide-gray-700">
+              {([
+                ['How do I install games on iFly?', <>You&apos;ll need to provide your own Dreamcast game files (such as CHD, CDI, or GDI). These can be imported through iTunes file sharing, cloud storage, or other file management apps. Make sure you own the original games before using ROM files.</>],
+                ['How do I install iFly (sideload)?', <>iFly is distributed via sideloading for iOS and tvOS. We recommend using <a href="https://sideloadly.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Sideloadly</a> to install the app on your device. For enabling JIT on Apple TV, ask in our <a href="https://discord.com/invite/4TK7PU5" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Discord</a> for current JIT enabler recommendations.</>],
+                ['Which controllers are supported?', <>iFly supports MFi (Made for iPhone) controllers, PlayStation DualShock 4, PlayStation DualSense, Xbox Wireless Controllers, and the Siri Remote on Apple TV. Touch controls are also available on iPhone and iPad.</>],
+                ['What devices are compatible?', <>iFly requires iOS 15.6 or later for iPhone and iPad, and tvOS 16.6 or later for Apple TV. For optimal performance, we recommend newer devices.</>],
+                ['Can I save my game progress?', <>Yes! iFly supports both in-game saves (like the original consoles) and save states, which allow you to save and load your progress at any point during gameplay. All saves are stored locally on your device.</>],
+                ['Why are some games not working properly?', <>While iFly aims for high compatibility, some games may have issues due to their complexity or specific hardware requirements. We&apos;re constantly working to improve compatibility through regular updates.</>],
+                ['How can I improve performance?', <>For better performance, try reducing the internal resolution, disabling enhanced features like anti-aliasing, closing other apps, and ensuring your device isn&apos;t overheating. Performance varies based on the game and your device&apos;s capabilities.</>],
+              ] as [string, React.ReactNode][]).map(([q, a]) => (
+                <div key={q} className="py-4 first:pt-0 last:pb-0">
+                  <h3 className="text-lg font-semibold text-white mb-2">{q}</h3>
+                  <p className="text-gray-400">{a}</p>
+                </div>
+              ))}
             </div>
           </div>
 

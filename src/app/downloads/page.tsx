@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ifly-emu.com/downloads/' },
 };
 import path from 'path';
-import Link from 'next/link';
 
 export const dynamic = 'force-static';
 export const revalidate = 3600;
@@ -71,12 +70,15 @@ export default function DownloadsPage() {
               >
                 Add to SideStore
               </a>
-              <Link
-                href="/api/altstore"
+              <a
+                href="/api/altstore/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                data-proofer-ignore
               >
                 View JSON Feed
-              </Link>
+              </a>
             </div>
           </div>
 

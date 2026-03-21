@@ -1,0 +1,14 @@
+# HTMLProofer configuration
+# Extends the --ignore-urls passed via CLI in site-audit.yml
+# Add patterns here for external URLs that are valid but fail in CI
+# (rate-limited, block headless requests, or are new/unstable)
+ignore_urls:
+  - /rinnegatamante\.eu/
+  - /icube-emu\.com/
+  - /account\.venmo\.com/
+  - /opencollective\.com/
+  - /sideloadly\.io/
+  - /altstore\.io/
+  - /sidestore\.io/
+  - /reddit\.com/
+  - /0oAstro\/StikDebug/

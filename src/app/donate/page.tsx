@@ -12,11 +12,14 @@ export default function DonatePage() {
     <div className="min-h-screen bg-gray-950">
       <section className="container mx-auto px-4 pt-12">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-orange-700 text-white rounded-lg p-8 text-center shadow-lg shadow-orange-900/30">
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">Support Development</h1>
-            <p className="opacity-90">
-              Your support helps keep iFly fast, polished, and moving forward for iOS and tvOS.
-            </p>
+          <div className="relative bg-gradient-to-br from-orange-700 to-orange-900 text-white rounded-2xl p-10 text-center shadow-xl shadow-orange-900/30 overflow-hidden">
+            <div className="absolute inset-0 -z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 80% 20%, #fff 0%, transparent 60%)' }} aria-hidden="true" />
+            <div className="relative z-10">
+              <h1 className="text-4xl md:text-5xl font-bold mb-3">Support Development</h1>
+              <p className="text-orange-100 max-w-md mx-auto">
+                Your support helps keep iFly fast, polished, and moving forward for iOS and tvOS.
+              </p>
+            </div>
           </div>
         </div>
       </section>

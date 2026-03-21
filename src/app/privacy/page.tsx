@@ -133,8 +133,8 @@ export default function Privacy() {
                 </li>
                 <li>
                   Firebase Crashlytics: {" "}
-                  <a href="https://firebase.google.com/support/privacy#crash-logs" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
-                    https://firebase.google.com/support/privacy#crash-logs
+                  <a href="https://firebase.google.com/support/privacy#crash-stored-info" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+                    https://firebase.google.com/support/privacy#crash-stored-info
                   </a>
                 </li>
               </ul>

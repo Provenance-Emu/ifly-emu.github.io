@@ -64,6 +64,22 @@ export const metadata: Metadata = {
   },
 };
 
+// CSP — sets the policy via <meta> since GitHub Pages doesn't support custom HTTP headers.
+// HSTS and X-Frame-Options still require HTTP headers and must be set at the CDN layer
+// (e.g. Cloudflare). See: https://observatory.mozilla.org/analyze/ifly-emu.com
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://static.itch.io",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https: blob:",
+  "frame-src https://itch.io https://html.itch.zone https://v6p9d9t4.ssl.hwcdn.net",
+  "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com",
+  "font-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+].join('; ');
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -94,6 +110,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta httpEquiv="Content-Security-Policy" content={CSP} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -104,14 +122,7 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}');
-          `}
-        </Script>
+        <Script src="/gtag-init.js" strategy="afterInteractive" />
         <Navigation />
         <GoogleAnalytics />
         <main className="min-h-screen">

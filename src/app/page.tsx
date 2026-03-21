@@ -132,11 +132,17 @@ export default function Home() {
 
       {/* Screenshots */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">Screenshots</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-3">See It In Action</h2>
+          <p className="text-gray-400 max-w-xl mx-auto">Classic Dreamcast games on your iPhone, iPad, and Apple TV.</p>
+        </div>
 
         {/* iPhone */}
         <div className="mb-16">
-          <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">iPhone</h3>
+          <h3 className="flex items-center justify-center gap-2 text-lg font-semibold text-gray-300 mb-6">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
+            iPhone
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {([
               [iphone1, 'iFly iPhone – game library'],
@@ -160,7 +166,10 @@ export default function Home() {
 
         {/* iPad */}
         <div className="mb-16">
-          <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">iPad</h3>
+          <h3 className="flex items-center justify-center gap-2 text-lg font-semibold text-gray-300 mb-6">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
+            iPad
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {([
               [ipad1, 'iFly iPad – game library'],
@@ -182,7 +191,10 @@ export default function Home() {
 
         {/* Apple TV */}
         <div>
-          <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">Apple TV</h3>
+          <h3 className="flex items-center justify-center gap-2 text-lg font-semibold text-gray-300 mb-6">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>
+            Apple TV
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {([
               [tvos1, 'iFly Apple TV – game library'],

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - iFly",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for the iFly app and website. We do not collect personal data. We use anonymous crash reports and basic analytics to improve stability and performance.",
+  alternates: { canonical: 'https://ifly-emu.com/privacy/' },
 };
 
 export default function Privacy() {

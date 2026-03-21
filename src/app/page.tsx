@@ -68,13 +68,13 @@ export default function Home() {
           {/* Primary CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              href="/testflight"
+              href="/testflight/"
               className="bg-orange-500 hover:bg-orange-400 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors shadow-lg shadow-orange-500/25"
             >
               TestFlight Beta
             </Link>
             <Link
-              href="/downloads"
+              href="/downloads/"
               className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors border border-gray-700"
             >
               Download IPA
@@ -179,7 +179,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center text-white mb-12">Features</h2>
           <Features compact />
           <div className="text-center mt-8">
-            <Link href="/features" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">
+            <Link href="/features/" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">
               See all features →
             </Link>
           </div>

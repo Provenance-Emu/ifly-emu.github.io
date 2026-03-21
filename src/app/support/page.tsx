@@ -96,7 +96,7 @@ export default function Support() {
                 ['Check available storage', 'Ensure you have at least 1GB of free space on your device for games and save files.'],
                 ['Update to latest version', "Make sure you're running the latest available build of iFly."],
                 ['Disable Low Power Mode', 'For best performance, ensure your device is not in Low Power Mode and has sufficient battery.'],
-                ['Use VBI/CPU tuning', 'Use the VBI/CPU over/underclock quick sheet in the emulation window to fine-tune smoothness at the cost of frame rate.'],
+                ['Adjust CPU tuning options', 'iFly exposes several CPU tuning controls in the emulation settings — experiment with clock speed, threading, and accuracy options to balance performance and compatibility.'],
                 ['Restart your device', 'A device restart can resolve performance issues and free up memory.'],
               ] as [string, string][]).map(([title, desc]) => (
                 <div key={title} className="flex items-start gap-3">

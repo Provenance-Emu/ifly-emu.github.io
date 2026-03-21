@@ -101,7 +101,15 @@ const jsonLd = {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
+    url: 'https://ifly-emu.com/downloads/',
   },
+  downloadUrl: 'https://ifly-emu.com/downloads/',
+  screenshot: [
+    'https://ifly-emu.com/screenshots/iphone1-library.jpg',
+    'https://ifly-emu.com/screenshots/iphone2-search.jpg',
+    'https://ifly-emu.com/screenshots/iphone3-emu.png',
+    'https://ifly-emu.com/screenshots/iphone4-shaders.png',
+  ],
 };
 
 export default function RootLayout({

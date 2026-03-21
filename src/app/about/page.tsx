@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 
@@ -57,11 +58,14 @@ export default function About() {
             <h2 className="text-2xl font-semibold text-white mb-4">
               Key Features
             </h2>
-            <ul className="space-y-2 text-gray-400 mb-6">
+            <ul className="space-y-2 text-gray-400 mb-4">
               {['High compatibility with Dreamcast games', 'Native iOS/tvOS integration and performance optimization', 'Support for MFi controllers and gamepad accessories', 'Save state functionality and game management', 'Customizable controls and settings', 'Regular updates and improvements'].map(item => (
                 <li key={item} className="flex gap-2"><span className="text-orange-500 mt-1">•</span><span>{item}</span></li>
               ))}
             </ul>
+            <Link href="/features/" className="text-sm text-orange-400 hover:text-orange-300 font-medium transition-colors">
+              See full feature list →
+            </Link>
 
             <h2 className="text-2xl font-semibold text-white mb-4">
               System Requirements

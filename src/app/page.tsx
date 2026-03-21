@@ -30,12 +30,12 @@ export default function Home() {
 
           {/* App icon */}
           <div className="flex justify-center mb-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/icon-512.png"
               alt="iFly app icon"
               width={96}
               height={96}
+              priority
               className="rounded-[22px] shadow-2xl shadow-orange-500/20 ring-1 ring-white/10"
             />
           </div>

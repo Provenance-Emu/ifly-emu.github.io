@@ -59,14 +59,14 @@ export default function Links() {
                 </div>
               </a>
 
-              <a href="https://www.rinnegatamante.eu/newflycast/"
+              <a href="https://github.com/flyinghead/flycast/issues"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
                 <div className="text-2xl mr-4">📚</div>
                 <div>
                   <h3 className="font-semibold text-green-900 dark:text-green-300">Flycast Compatibility</h3>
-                  <p className="text-sm text-green-700 dark:text-green-400">Compatibility and game guides</p>
+                  <p className="text-sm text-green-700 dark:text-green-400">Game compatibility reports and issues</p>
                 </div>
               </a>
 
@@ -153,7 +153,7 @@ export default function Links() {
                 </div>
               </a>
 
-              <a href="https://icube-emu.com"
+              <a href="https://github.com/Provenance-Emu"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">

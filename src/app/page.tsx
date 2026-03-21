@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import iphone1 from '@/images/screenshots/ios/iphone1-library.jpg';
-import iphone2 from '@/images/screenshots/ios/iphone2-settings.png';
-import iphone3 from '@/images/screenshots/ios/iphone3-emu.png';
-import ipad1 from '@/images/screenshots/ipad/ipad1-library.jpg';
-import ipad2 from '@/images/screenshots/ipad/ipad2-search.jpg';
+import iphone1 from '@/images/screenshots/ios/iphone1-library.webp';
+import iphone2 from '@/images/screenshots/ios/iphone2-settings.webp';
+import iphone3 from '@/images/screenshots/ios/iphone3-emu.webp';
+import ipad1 from '@/images/screenshots/ipad/ipad1-library.webp';
+import ipad2 from '@/images/screenshots/ipad/ipad2-search.webp';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
-import tvos1 from '@/images/screenshots/tvos/tvos-library.png';
-import tvos2 from '@/images/screenshots/tvos/tvos-gameplay.png';
-import tvos3 from '@/images/screenshots/tvos/tvos-cheats.png';
-import tvos4 from '@/images/screenshots/tvos/tvos-settings-themes.png';
+import tvos1 from '@/images/screenshots/tvos/tvos-library.webp';
+import tvos2 from '@/images/screenshots/tvos/tvos-gameplay.webp';
+import tvos3 from '@/images/screenshots/tvos/tvos-cheats.webp';
+import tvos4 from '@/images/screenshots/tvos/tvos-settings-themes.webp';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

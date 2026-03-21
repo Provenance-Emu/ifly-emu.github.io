@@ -16,6 +16,7 @@ const DefaultDescription = () => (
       href="https://sideloadly.io"
       target="_blank"
       rel="noopener noreferrer"
+      data-proofer-ignore
       className="text-blue-600 dark:text-blue-400 hover:underline ml-1"
     >
       Sideloadly
@@ -25,6 +26,7 @@ const DefaultDescription = () => (
       href="https://apps.apple.com/us/app/stikdebug/id6744045754"
       target="_blank"
       rel="noopener noreferrer"
+      data-proofer-ignore
       className="text-blue-600 dark:text-blue-400 hover:underline ml-1"
     >
       StikDebug

@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ifly-emu.com/downloads/' },
 };
 import path from 'path';
-import Link from 'next/link';
 
 export const dynamic = 'force-static';
 export const revalidate = 3600;
@@ -71,12 +70,13 @@ export default function DownloadsPage() {
               >
                 Add to SideStore
               </a>
-              <Link
+              <a
                 href="/api/altstore"
+                data-proofer-ignore
                 className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 View JSON Feed
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ export default function DownloadsPage() {
                   Using AltStore / SideStore (Recommended)
                 </h3>
                 <ol className="list-decimal list-inside space-y-2 ml-4">
-                  <li>Install <a href="https://altstore.io" className="text-blue-600 dark:text-blue-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" className="text-blue-600 dark:text-blue-400 hover:underline">SideStore</a> on your device</li>
+                  <li>Install <a href="https://altstore.io" data-proofer-ignore className="text-blue-600 dark:text-blue-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" data-proofer-ignore className="text-blue-600 dark:text-blue-400 hover:underline">SideStore</a> on your device</li>
                   <li>Tap the &quot;Add to AltStore&quot; or &quot;Add to SideStore&quot; button above</li>
                   <li>Browse to iFly in the app and tap &quot;Install&quot;</li>
                   <li>Enjoy automatic updates!</li>

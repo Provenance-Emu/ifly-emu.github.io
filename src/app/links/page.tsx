@@ -54,6 +54,7 @@ export default function Links() {
               <a href="https://www.rinnegatamante.eu/newflycast/"
                  target="_blank"
                  rel="noopener noreferrer"
+                 data-proofer-ignore
                  className="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
                 <div className="text-2xl mr-4">📚</div>
                 <div>
@@ -148,6 +149,7 @@ export default function Links() {
               <a href="https://icube-emu.com"
                  target="_blank"
                  rel="noopener noreferrer"
+                 data-proofer-ignore
                  className="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
                 <div className="text-2xl mr-4">🐬</div>
                 <div>

@@ -1,71 +1,63 @@
 import type { Metadata } from 'next';
 import DownloadSection from '@/components/DownloadSection';
+import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 
 export const metadata: Metadata = {
   title: 'About',
   description: 'Learn about iFly, a Dreamcast emulator for iOS and tvOS. Platform support, system requirements, and the story behind the project.',
   alternates: { canonical: 'https://ifly-emu.com/about/' },
 };
-import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900">
+    <div className="min-h-screen bg-gray-950">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
             About iFly
           </h1>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+            <h2 className="text-2xl font-semibold text-white mb-4">
               What is iFly?
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-gray-400 mb-6">
               iFly is a Dreamcast emulator designed specifically for iOS and tvOS platforms.
               It brings the beloved Sega Dreamcast experience to your iPhone, iPad, and Apple TV,
               allowing you to play your favorite Dreamcast games anywhere.
             </p>
 
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-white mb-4">
               Focused on Performance
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-gray-400 mb-6">
               iFly focuses on fast, accurate Dreamcast emulation with a simple, modern UI on Apple devices.
               This is an early project and features will evolve over time.
             </p>
 
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-white mb-4">
               Platform Support
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-2">📱</div>
-                <h3 className="font-semibold text-gray-900 dark:text-white">iPhone</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Optimized touch controls and responsive design
-                </p>
-              </div>
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-2">📋</div>
-                <h3 className="font-semibold text-gray-900 dark:text-white">iPad</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Larger screen experience with enhanced controls
-                </p>
-              </div>
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-3xl mb-2">📺</div>
-                <h3 className="font-semibold text-gray-900 dark:text-white">Apple TV</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Big screen gaming with gamepad support
-                </p>
-              </div>
+            <div className="grid md:grid-cols-3 gap-4 mb-6">
+              {([
+                ['iPhone', 'Optimized touch controls and responsive design', 'M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z'],
+                ['iPad', 'Larger screen experience with enhanced controls', 'M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z'],
+                ['Apple TV', 'Big screen gaming with controller support', 'M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z'],
+              ] as const).map(([name, desc, path]) => (
+                <div key={name} className="flex flex-col items-center text-center p-5 bg-gray-800/40 border border-gray-700/50 rounded-xl">
+                  <div className="w-11 h-11 rounded-xl bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 mb-3">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true"><path d={path} /></svg>
+                  </div>
+                  <h3 className="font-semibold text-white mb-1">{name}</h3>
+                  <p className="text-sm text-gray-400">{desc}</p>
+                </div>
+              ))}
             </div>
 
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-white mb-4">
               Key Features
             </h2>
-            <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+            <ul className="list-disc list-inside text-gray-400 space-y-2 mb-6">
               <li>High compatibility with Dreamcast games</li>
               <li>Native iOS/tvOS integration and performance optimization</li>
               <li>Support for MFi controllers and gamepad accessories</li>
@@ -74,11 +66,11 @@ export default function About() {
               <li>Regular updates and improvements</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-white mb-4">
               System Requirements
             </h2>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <ul className="text-gray-600 dark:text-gray-300 space-y-1">
+            <div className="bg-gray-800/50 p-4 rounded-lg">
+              <ul className="text-gray-400 space-y-1">
                 <li><strong>iOS:</strong> iOS 15.6 or later</li>
                 <li><strong>tvOS:</strong> tvOS 16.6 or later</li>
                 <li><strong>Device:</strong> iPhone 12 or newer, iPad (6th generation) or newer, Apple TV 4K with JIT support</li>
@@ -90,31 +82,25 @@ export default function About() {
 
           <DownloadSection className="mt-8" showEmbed />
 
-          {/* Community Section */}
-          <section className="container mx-auto px-4 py-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Community</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Join our community for updates, tips, and support.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* Community + Donate */}
+          <div className="grid sm:grid-cols-2 gap-4 mt-6">
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+              <h2 className="text-xl font-bold text-white mb-2">Community</h2>
+              <p className="text-gray-400 text-sm mb-5">Join for updates, tips, and support.</p>
+              <div className="flex flex-col gap-3 items-center">
                 <SocialButton href="https://discord.com/invite/4TK7PU5" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
                 <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
               </div>
             </div>
-          </section>
-
-          {/* Donate Section (compact) */}
-          <section className="container mx-auto px-4 py-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Support Development</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">If you find iFly helpful, consider supporting the project.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+              <h2 className="text-xl font-bold text-white mb-2">Support Development</h2>
+              <p className="text-gray-400 text-sm mb-5">Help keep iFly free and improving.</p>
+              <div className="flex flex-col gap-3 items-center">
                 <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
                 <SocialButton href="https://www.patreon.com/provenance" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>

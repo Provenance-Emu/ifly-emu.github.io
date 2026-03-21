@@ -22,10 +22,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <div className="min-h-screen bg-gray-950">
 
       {/* Hero */}
-      <section className="container mx-auto px-4 pt-20 pb-16 text-center">
+      <section className="relative container mx-auto px-4 pt-20 pb-16 text-center overflow-hidden">
+        {/* Radial glow */}
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-orange-500/10 blur-3xl" />
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-orange-600/5 blur-2xl" />
+        </div>
         <div className="max-w-3xl mx-auto">
 
           {/* App icon — priority ensures it's preloaded as the LCP element */}
@@ -83,29 +88,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Download Section */}
-      <DownloadSection className="pb-4" showEmbed />
-
-      {/* Community */}
-      <section className="container mx-auto px-4 pb-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-3">Community</h2>
-          <p className="text-gray-400 mb-6">Join for updates, tips, and support.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <SocialButton href="https://discord.com/invite/4TK7PU5" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
-            <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
-          </div>
+      {/* Stats row */}
+      <section className="container mx-auto px-4 pb-12">
+        <div className="max-w-2xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {([
+            ['1K+', 'Metal Shaders'],
+            ['Free', 'Always'],
+            ['3', 'Platforms'],
+            ['Open', 'Source'],
+          ] as const).map(([value, label]) => (
+            <div key={label} className="text-center py-4 px-2 bg-gray-900 border border-gray-800 rounded-xl">
+              <div className="text-xl font-black text-orange-400">{value}</div>
+              <div className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Support Development */}
-      <section className="container mx-auto px-4 pb-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-white mb-3">Support Development</h2>
-          <p className="text-gray-400 mb-6">If you find iFly helpful, consider supporting the project.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
-            <SocialButton href="https://patreon.com/provenanceemu" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
+      {/* Download Section */}
+      <DownloadSection className="pb-4" showEmbed />
+
+      {/* Community + Donate */}
+      <section className="container mx-auto px-4 pb-12">
+        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+            <h2 className="text-xl font-bold text-white mb-2">Community</h2>
+            <p className="text-gray-400 text-sm mb-5">Join for updates, tips, and support.</p>
+            <div className="flex flex-col gap-3 items-center">
+              <SocialButton href="https://discord.com/invite/4TK7PU5" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
+              <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
+            </div>
+          </div>
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+            <h2 className="text-xl font-bold text-white mb-2">Support Development</h2>
+            <p className="text-gray-400 text-sm mb-5">Help keep iFly free and actively developed.</p>
+            <div className="flex flex-col gap-3 items-center">
+              <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
+              <SocialButton href="https://www.patreon.com/provenance" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
+            </div>
           </div>
         </div>
       </section>
@@ -118,12 +138,16 @@ export default function Home() {
         <div className="mb-16">
           <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">iPhone</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {[iphone1, iphone2, iphone3].map((img, idx) => (
+            {([
+              [iphone1, 'iFly iPhone – game library'],
+              [iphone2, 'iFly iPhone – settings'],
+              [iphone3, 'iFly iPhone – gameplay'],
+            ] as const).map(([img, alt], idx) => (
               <div key={`iphone-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
                 <div className="rounded-xl overflow-hidden w-52 h-[22rem]">
                   <Image
                     src={img}
-                    alt={`iFly iPhone screenshot ${idx + 1}`}
+                    alt={alt}
                     className="h-full w-full object-cover"
                     sizes="208px"
                     priority={idx === 0}
@@ -138,12 +162,15 @@ export default function Home() {
         <div className="mb-16">
           <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">iPad</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {[ipad1, ipad2].map((img, idx) => (
+            {([
+              [ipad1, 'iFly iPad – game library'],
+              [ipad2, 'iFly iPad – search'],
+            ] as const).map(([img, alt], idx) => (
               <div key={`ipad-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
                 <div className="rounded-xl overflow-hidden w-[340px] h-[260px]">
                   <Image
                     src={img}
-                    alt={`iFly iPad screenshot ${idx + 1}`}
+                    alt={alt}
                     className="h-full w-full object-cover"
                     sizes="340px"
                   />
@@ -157,12 +184,17 @@ export default function Home() {
         <div>
           <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">Apple TV</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {[tvos1, tvos2, tvos3, tvos4].map((img, idx) => (
+            {([
+              [tvos1, 'iFly Apple TV – game library'],
+              [tvos2, 'iFly Apple TV – gameplay'],
+              [tvos3, 'iFly Apple TV – cheat codes'],
+              [tvos4, 'iFly Apple TV – settings and themes'],
+            ] as const).map(([img, alt], idx) => (
               <div key={`appletv-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
                 <div className="rounded-xl overflow-hidden w-80 aspect-video">
                   <Image
                     src={img}
-                    alt={`iFly Apple TV screenshot ${idx + 1}`}
+                    alt={alt}
                     className="h-full w-full object-cover"
                     sizes="320px"
                   />
@@ -174,9 +206,12 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="bg-gray-900/50 border-t border-gray-800 py-16">
+      <section className="border-t border-gray-800/60 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">Features</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-white mb-3">Built for Apple silicon</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">Optimized from the ground up for iPhone, iPad, and Apple TV.</p>
+          </div>
           <Features compact />
           <div className="text-center mt-8">
             <Link href="/features/" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">

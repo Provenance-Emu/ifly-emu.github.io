@@ -1,23 +1,23 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Features from '@/components/Features';
+import SocialButton, { DiscordIcon, XIcon } from '@/components/SocialButton';
 
 export const metadata: Metadata = {
   title: 'Features',
   description: 'Full feature list for iFly Dreamcast emulator: MFi/PS/Xbox/Switch controller support, Metal shaders, save states, automatic cheat downloads, ARM64 optimized interpreter, and more.',
   alternates: { canonical: 'https://ifly-emu.com/features/' },
 };
-import Link from 'next/link';
-import SocialButton, { DiscordIcon, XIcon } from '@/components/SocialButton';
 
 export default function FeaturesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900">
+    <div className="min-h-screen bg-gray-950">
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
             Features
           </h1>
-          <p className="text-gray-600 dark:text-gray-300 mb-10 text-center max-w-3xl mx-auto">
+          <p className="text-gray-400 mb-10 text-center max-w-3xl mx-auto">
             A modern Dreamcast emulation experience tailored for iPhone, iPad, and Apple TV. iFly focuses on smooth
             performance, robust controller support, and a clean interface designed for iOS and tvOS.
           </p>
@@ -27,7 +27,7 @@ export default function FeaturesPage() {
           <div className="text-center mt-12">
             <Link
               href="/"
-              className="inline-block text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+              className="inline-block text-orange-500 hover:text-orange-400 font-semibold transition-colors"
             >
               Back to Home →
             </Link>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
@@ -132,9 +133,10 @@ export default function RootLayout({
         <Script src="/gtag-init.js" strategy="afterInteractive" />
         <Navigation />
         <GoogleAnalytics />
-        <main className="min-h-screen">
+        <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

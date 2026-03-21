@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function DonatePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900">
+    <div className="min-h-screen bg-gray-950">
       <section className="container mx-auto px-4 pt-12">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-blue-600 text-white rounded-lg p-8 text-center shadow-lg">
+          <div className="bg-orange-700 text-white rounded-lg p-8 text-center shadow-lg shadow-orange-900/30">
             <h1 className="text-4xl md:text-5xl font-bold mb-3">Support Development</h1>
             <p className="opacity-90">
               Your support helps keep iFly fast, polished, and moving forward for iOS and tvOS.
@@ -23,7 +23,7 @@ export default function DonatePage() {
 
       <section className="container mx-auto px-4 py-10">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-gray-400 mb-6">
             Choose a donation option below. Thank you!
           </p>
 
@@ -60,7 +60,7 @@ export default function DonatePage() {
             />
           </div>
 
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
+          <p className="text-sm text-gray-500 mt-8">
             Donations are voluntary and non‑refundable. Thanks for supporting the project!
           </p>
         </div>

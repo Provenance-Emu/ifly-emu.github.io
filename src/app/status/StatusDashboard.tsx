@@ -49,13 +49,14 @@ function StatusDot({ ok }: { ok: boolean | null }) {
 
 export default function StatusDashboard() {
   const [data, setData] = useState<StatusData | null>(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch('/status.json')
       .then(r => r.json())
-      .then(setData)
-      .catch(() => setError(true));
+      .then(d => { setData(d); setLoading(false); })
+      .catch(() => { setError(true); setLoading(false); });
   }, []);
 
   const lh = data?.lighthouse;
@@ -75,13 +76,31 @@ export default function StatusDashboard() {
                 {lastRun}
               </a>
             </p>
-          ) : (
+          ) : !loading ? (
             <p className="mt-1 text-sm text-gray-500">Audit data not yet available — runs on push and weekly.</p>
-          )}
+          ) : null}
         </div>
 
-        {error && <p className="text-red-400 text-sm">Could not load status data.</p>}
+        {loading && (
+          <div className="space-y-4 animate-pulse">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="bg-gray-900 rounded-xl h-32" />
+            ))}
+          </div>
+        )}
 
+        {error && (
+          <div className="bg-red-950 border border-red-800 rounded-xl p-6 text-center">
+            <p className="text-red-400 font-medium">Could not load status data.</p>
+            <p className="text-red-500 text-sm mt-1">The audit workflow may not have run yet.</p>
+          </div>
+        )}
+
+        {!loading && !error && !data && (
+          <p className="text-gray-500 text-sm text-center">No status data available.</p>
+        )}
+
+        {data && <>
         {/* Lighthouse */}
         <section className="bg-gray-900 rounded-xl p-6 space-y-4">
           <div className="flex items-center justify-between">
@@ -141,6 +160,7 @@ export default function StatusDashboard() {
             </div>
           </div>
         </section>
+        </>}
       </div>
     </div>
   );

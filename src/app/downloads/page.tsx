@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import path from 'path';
+import Link from 'next/link';
 import { parseBuilds } from '@/lib/buildParser';
 
 export const metadata: Metadata = {
@@ -6,8 +8,6 @@ export const metadata: Metadata = {
   description: 'Download iFly Dreamcast emulator IPA for iOS and tvOS. Install via AltStore, SideStore, or direct IPA download. Free and open source.',
   alternates: { canonical: 'https://ifly-emu.com/downloads/' },
 };
-import path from 'path';
-import Link from 'next/link';
 
 export const dynamic = 'force-static';
 export const revalidate = 3600;
@@ -35,26 +35,26 @@ export default function DownloadsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900">
+    <div className="min-h-screen bg-gray-950">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
             Downloads
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 mb-8 text-center max-w-2xl mx-auto">
             Download iFly for iOS or tvOS. For sideloading with AltStore or SideStore, add our source feed.
           </p>
 
           {/* AltStore/SideStore Source */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              📱 AltStore / SideStore Source
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              AltStore / SideStore Source
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-400 mb-4">
               Add our source to AltStore or SideStore for easy installation and automatic updates:
             </p>
-            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 mb-4">
-              <code className="text-sm text-blue-600 dark:text-blue-400 break-all">
+            <div className="bg-gray-800 rounded-lg p-4 mb-4">
+              <code className="text-sm text-orange-400 break-all">
                 {baseURL}/api/altstore
               </code>
             </div>
@@ -81,11 +81,11 @@ export default function DownloadsPage() {
           </div>
 
           {/* External Download Sources */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              🌐 Other Download Sources
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Other Download Sources
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-gray-400 mb-6">
               You can also download iFly from these platforms. These may have different versions or additional release notes:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
@@ -93,17 +93,17 @@ export default function DownloadsPage() {
                 href="https://provenance.itch.io/ifly"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                className="flex items-start gap-4 p-4 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors"
               >
                 <div className="text-3xl">🎮</div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                  <h3 className="font-semibold text-white mb-1">
                     itch.io
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  <p className="text-sm text-gray-400 mb-2">
                     Download from itch.io with optional pay-what-you-want support.
                   </p>
-                  <span className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                  <span className="text-sm text-orange-400 hover:underline">
                     Visit itch.io →
                   </span>
                 </div>
@@ -112,33 +112,33 @@ export default function DownloadsPage() {
           </div>
 
           {/* iOS Downloads */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <span>📱</span> iOS Builds
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              iOS Builds
             </h2>
             {iosVersions.length === 0 ? (
-              <p className="text-gray-600 dark:text-gray-400">No iOS builds available yet.</p>
+              <p className="text-gray-400">No iOS builds available yet.</p>
             ) : (
               <div className="space-y-4">
                 {iosVersions.map((version, idx) => (
                   <div
                     key={idx}
-                    className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="text-lg font-semibold text-white">
                           {version.version}
                           {version.isBeta && (
-                            <span className="ml-2 text-sm bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded">
+                            <span className="ml-2 text-sm bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-1 rounded">
                               Beta {version.betaNumber}
                             </span>
                           )}
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        <p className="text-sm text-gray-400 mt-1">
                           Build {version.buildVersion} • {formatDate(version.date)}
                         </p>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                        <p className="text-sm text-gray-500 mt-1">
                           Size: {formatFileSize(version.size)} • Min iOS: {version.minOSVersion}
                         </p>
                       </div>
@@ -157,33 +157,33 @@ export default function DownloadsPage() {
           </div>
 
           {/* tvOS Downloads */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <span>📺</span> tvOS Builds
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              tvOS Builds
             </h2>
             {tvosVersions.length === 0 ? (
-              <p className="text-gray-600 dark:text-gray-400">No tvOS builds available yet.</p>
+              <p className="text-gray-400">No tvOS builds available yet.</p>
             ) : (
               <div className="space-y-4">
                 {tvosVersions.map((version, idx) => (
                   <div
                     key={idx}
-                    className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    className="border border-gray-700 rounded-lg p-4 hover:bg-gray-800 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="text-lg font-semibold text-white">
                           {version.version}
                           {version.isBeta && (
-                            <span className="ml-2 text-sm bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded">
+                            <span className="ml-2 text-sm bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-1 rounded">
                               Beta {version.betaNumber}
                             </span>
                           )}
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        <p className="text-sm text-gray-400 mt-1">
                           Build {version.buildVersion} • {formatDate(version.date)}
                         </p>
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                        <p className="text-sm text-gray-500 mt-1">
                           Size: {formatFileSize(version.size)} • Min tvOS: {version.minOSVersion}
                         </p>
                       </div>
@@ -202,24 +202,24 @@ export default function DownloadsPage() {
           </div>
 
           {/* Installation Instructions */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              📖 Installation Instructions
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Installation Instructions
             </h2>
-            <div className="space-y-4 text-gray-600 dark:text-gray-300">
+            <div className="space-y-4 text-gray-400">
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="font-semibold text-white mb-2">
                   Using AltStore / SideStore (Recommended)
                 </h3>
                 <ol className="list-decimal list-inside space-y-2 ml-4">
-                  <li>Install <a href="https://altstore.io" className="text-blue-600 dark:text-blue-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" className="text-blue-600 dark:text-blue-400 hover:underline">SideStore</a> on your device</li>
+                  <li>Install <a href="https://altstore.io" className="text-orange-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" className="text-orange-400 hover:underline">SideStore</a> on your device</li>
                   <li>Tap the &quot;Add to AltStore&quot; or &quot;Add to SideStore&quot; button above</li>
                   <li>Browse to iFly in the app and tap &quot;Install&quot;</li>
                   <li>Enjoy automatic updates!</li>
                 </ol>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="font-semibold text-white mb-2">
                   Manual Installation
                 </h3>
                 <ol className="list-decimal list-inside space-y-2 ml-4">
@@ -229,8 +229,8 @@ export default function DownloadsPage() {
                   <li>Trust the certificate in Settings → General → VPN & Device Management</li>
                 </ol>
               </div>
-              <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-                <p className="text-sm text-yellow-800 dark:text-yellow-200">
+              <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+                <p className="text-sm text-amber-300">
                   <strong>Note:</strong> Beta builds may contain bugs and are intended for testing purposes.
                   For the most stable experience, use the latest non-beta release.
                 </p>

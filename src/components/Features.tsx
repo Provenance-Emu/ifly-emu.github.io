@@ -2,7 +2,7 @@ import React from 'react';
 
 // Simple, consistent SVG icon set
 const IconWrap: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-300">
+  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-orange-500/10 text-orange-400 ring-1 ring-orange-500/20">
     {children}
   </div>
 );
@@ -165,12 +165,14 @@ const Features: React.FC<FeaturesProps> = ({ compact = false, className }) => {
     <div className={className}>
       <div className={`grid gap-8 ${compact ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
         {items.map((f) => (
-          <div key={f.title} className="text-center bg-white/60 dark:bg-gray-800/60 rounded-lg p-6 shadow">
-            <div className="text-4xl mb-3" aria-hidden>
+          <div key={f.title} className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-colors">
+            <div aria-hidden>
               {f.icon ?? '🔹'}
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{f.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400">{f.description}</p>
+            <div>
+              <h3 className="text-lg font-semibold mb-1.5 text-white">{f.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{f.description}</p>
+            </div>
           </div>
         ))}
       </div>

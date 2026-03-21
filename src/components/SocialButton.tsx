@@ -79,7 +79,7 @@ export const OpenCollectiveIcon: React.FC<{ className?: string }> = ({ className
 const SocialButton: React.FC<SocialButtonProps> = ({ href, label, leftIcon, className, variant = 'default' }) => {
   const classes = `${baseClasses} ${variantClasses[variant]} ${className ?? ''}`;
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={classes}>
       {leftIcon}
       <span>{label}</span>
     </a>

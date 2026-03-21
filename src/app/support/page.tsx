@@ -154,7 +154,9 @@ export default function Support() {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-white">Restart the app</h4>
                   <p className="text-gray-400">
@@ -164,7 +166,9 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-white">Check available storage</h4>
                   <p className="text-gray-400">
@@ -174,7 +178,9 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-white">Update to latest version</h4>
                   <p className="text-gray-400">
@@ -184,7 +190,9 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-white">Disable Low Power Mode</h4>
                   <p className="text-gray-400">
@@ -194,7 +202,9 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-white">Use VBI/CPU tuning</h4>
                   <p className="text-gray-400">
@@ -204,7 +214,9 @@ export default function Support() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="text-green-500 text-xl">✓</div>
+                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-white">Restart your device</h4>
                   <p className="text-gray-400">

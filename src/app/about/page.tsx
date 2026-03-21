@@ -57,25 +57,22 @@ export default function About() {
             <h2 className="text-2xl font-semibold text-white mb-4">
               Key Features
             </h2>
-            <ul className="list-disc list-inside text-gray-400 space-y-2 mb-6">
-              <li>High compatibility with Dreamcast games</li>
-              <li>Native iOS/tvOS integration and performance optimization</li>
-              <li>Support for MFi controllers and gamepad accessories</li>
-              <li>Save state functionality and game management</li>
-              <li>Customizable controls and settings</li>
-              <li>Regular updates and improvements</li>
+            <ul className="space-y-2 text-gray-400 mb-6">
+              {['High compatibility with Dreamcast games', 'Native iOS/tvOS integration and performance optimization', 'Support for MFi controllers and gamepad accessories', 'Save state functionality and game management', 'Customizable controls and settings', 'Regular updates and improvements'].map(item => (
+                <li key={item} className="flex gap-2"><span className="text-orange-500 mt-1">•</span><span>{item}</span></li>
+              ))}
             </ul>
 
             <h2 className="text-2xl font-semibold text-white mb-4">
               System Requirements
             </h2>
-            <div className="bg-gray-800/50 p-4 rounded-lg">
-              <ul className="text-gray-400 space-y-1">
-                <li><strong>iOS:</strong> iOS 15.6 or later</li>
-                <li><strong>tvOS:</strong> tvOS 16.6 or later</li>
-                <li><strong>Device:</strong> iPhone 12 or newer, iPad (6th generation) or newer, Apple TV 4K with JIT support</li>
-                <li><strong>Recommendation:</strong> Newer devices recommended for best performance</li>
-                <li><strong>Storage:</strong> Varies by game size</li>
+            <div className="bg-gray-800/40 border border-gray-700/50 p-4 rounded-xl">
+              <ul className="text-gray-400 space-y-1.5">
+                <li><span className="font-medium text-gray-300">iOS:</span> iOS 15.6 or later</li>
+                <li><span className="font-medium text-gray-300">tvOS:</span> tvOS 16.6 or later</li>
+                <li><span className="font-medium text-gray-300">Device:</span> iPhone 12 or newer, iPad (6th generation) or newer, Apple TV 4K with JIT support</li>
+                <li><span className="font-medium text-gray-300">Recommendation:</span> Newer devices recommended for best performance</li>
+                <li><span className="font-medium text-gray-300">Storage:</span> Varies by game size</li>
               </ul>
             </div>
           </div>

@@ -95,7 +95,9 @@ export default function DownloadsPage() {
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors"
               >
-                <div className="text-3xl">🎮</div>
+                <div className="w-10 h-10 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path d="M3 6.5C3 5.12 4.12 4 5.5 4h13c1.38 0 2.5 1.12 2.5 2.5v8.75A2.75 2.75 0 0 1 18.25 18H5.75A2.75 2.75 0 0 1 3 15.25V6.5Zm4.02-.75a2.75 2.75 0 0 0-2.75 2.75v4.5c0 1.518 1.232 2.75 2.75 2.75h9.96A2.75 2.75 0 0 0 19.73 13V8.5a2.75 2.75 0 0 0-2.75-2.75H7.02Zm5.48 2.25c1.494 0 2.75 1.256 2.75 2.75S14 13.5 12.5 13.5 9.75 12.244 9.75 10.75 11.006 8 12.5 8Z"/></svg>
+                </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-white mb-1">
                     itch.io
@@ -145,7 +147,7 @@ export default function DownloadsPage() {
                       <a
                         href={version.downloadURL}
                         download
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center whitespace-nowrap"
+                        className="bg-orange-700 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center whitespace-nowrap"
                       >
                         Download IPA
                       </a>
@@ -190,7 +192,7 @@ export default function DownloadsPage() {
                       <a
                         href={version.downloadURL}
                         download
-                        className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center whitespace-nowrap"
+                        className="bg-orange-700 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-center whitespace-nowrap"
                       >
                         Download IPA
                       </a>

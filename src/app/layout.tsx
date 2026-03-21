@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       {
         url: "/header.png",
         width: 1200,
-        height: 630,
+        height: 400,
         alt: "iFly – Dreamcast Emulator for iOS & tvOS",
       },
     ],

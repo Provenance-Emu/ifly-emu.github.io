@@ -201,8 +201,13 @@ This is an early build of iFly optimized for iOS and tvOS devices.`,
     category: 'games',
     screenshots: [
       `${baseURL}/screenshots/iphone1-library.jpg`,
-      `${baseURL}/screenshots/iphone2-settings.png`,
+      `${baseURL}/screenshots/iphone2-search.jpg`,
       `${baseURL}/screenshots/iphone3-emu.png`,
+      `${baseURL}/screenshots/iphone4-shaders.png`,
+      `${baseURL}/screenshots/iphone5-emu_shader.png`,
+      `${baseURL}/screenshots/iphone7-touchcontrols.jpg`,
+      `${baseURL}/screenshots/iphone8-pause.jpg`,
+      `${baseURL}/screenshots/iphone9-cheats.png`,
     ],
     versions: versions.map(v => ({
       // Make beta versions unique by appending beta number to version string

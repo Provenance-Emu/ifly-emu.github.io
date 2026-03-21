@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import SocialButton, { BmcIcon, PatreonIcon, VenmoIcon, ZelleIcon, OpenCollectiveIcon } from '@/components/SocialButton';
+
+export const metadata: Metadata = {
+  title: 'Donate',
+  description: 'Support iFly development. Donate via Buy Me a Coffee, Patreon, Venmo, Zelle, or Open Collective to keep iFly fast and free.',
+  alternates: { canonical: 'https://ifly-emu.com/donate/' },
+};
 
 export default function DonatePage() {
   return (

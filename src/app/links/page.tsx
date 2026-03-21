@@ -1,5 +1,12 @@
 // (no direct button imports needed here since we use DownloadSection)
+import type { Metadata } from 'next';
 import DownloadSection from '@/components/DownloadSection';
+
+export const metadata: Metadata = {
+  title: 'Links & Resources',
+  description: 'Download links, community resources, and related projects for iFly Dreamcast emulator. Find Discord, Twitter, Flycast resources, and more.',
+  alternates: { canonical: 'https://ifly-emu.com/links/' },
+};
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 
 export default function Links() {

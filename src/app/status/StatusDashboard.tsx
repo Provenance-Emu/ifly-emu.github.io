@@ -47,17 +47,18 @@ function StatusDot({ ok }: { ok: boolean | null }) {
   return <span className={`inline-block w-2.5 h-2.5 rounded-full ${ok ? 'bg-green-500' : 'bg-red-500'}`} />;
 }
 
-export default function StatusDashboard() {
-  const [data, setData] = useState<StatusData | null>(null);
-  const [loading, setLoading] = useState(true);
+export default function StatusDashboard({ initialData }: { initialData?: StatusData | null }) {
+  const [data, setData] = useState<StatusData | null>(initialData ?? null);
+  const [loading, setLoading] = useState(initialData == null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (initialData != null) return;
     fetch('/status.json')
       .then(r => r.json())
       .then(d => { setData(d); setLoading(false); })
       .catch(() => { setError(true); setLoading(false); });
-  }, []);
+  }, [initialData]);
 
   const lh = data?.lighthouse;
   const lastRun = data?.last_updated

@@ -117,8 +117,6 @@ export default function RootLayout({
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -127,9 +125,9 @@ export default function RootLayout({
       <body suppressHydrationWarning className="antialiased">
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script src="/gtag-init.js" strategy="afterInteractive" />
+        <Script src="/gtag-init.js" strategy="lazyOnload" />
         <Navigation />
         <GoogleAnalytics />
         <main className="min-h-screen">

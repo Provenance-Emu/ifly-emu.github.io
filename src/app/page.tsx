@@ -126,7 +126,6 @@ export default function Home() {
                     alt={`iFly iPhone screenshot ${idx + 1}`}
                     className="h-full w-full object-cover"
                     sizes="208px"
-                    priority={idx === 0}
                   />
                 </div>
               </div>

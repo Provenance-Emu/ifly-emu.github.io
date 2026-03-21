@@ -163,7 +163,7 @@ const Features: React.FC<FeaturesProps> = ({ compact = false, className }) => {
 
   return (
     <div className={className}>
-      <div className={`grid gap-8 ${compact ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+      <div className={`grid gap-5 ${compact ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
         {items.map((f) => (
           <div key={f.title} className="flex flex-col gap-4 bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-gray-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 transition-all duration-200">
             <div aria-hidden>

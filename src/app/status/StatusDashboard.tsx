@@ -17,15 +17,22 @@ interface StatusData {
   ssl: { grade: string | null };
 }
 
-function ScoreBar({ score }: { score: number | null }) {
+function ScoreBar({ score, label }: { score: number | null; label: string }) {
   if (score === null) return <span className="text-gray-500 text-sm">–</span>;
   const color = score >= 90 ? 'bg-green-500' : score >= 70 ? 'bg-yellow-500' : 'bg-red-500';
   return (
     <div className="flex items-center gap-3">
-      <div className="flex-1 bg-gray-700 rounded-full h-2">
+      <div
+        className="flex-1 bg-gray-700 rounded-full h-2"
+        role="progressbar"
+        aria-valuenow={score}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={`${label}: ${score} out of 100`}
+      >
         <div className={`${color} h-2 rounded-full transition-all`} style={{ width: `${score}%` }} />
       </div>
-      <span className="text-sm font-mono w-8 text-right text-white">{score}</span>
+      <span className="text-sm font-mono w-8 text-right text-white" aria-hidden="true">{score}</span>
     </div>
   );
 }
@@ -43,8 +50,14 @@ function GradeBadge({ grade }: { grade: string | null }) {
 }
 
 function StatusDot({ ok }: { ok: boolean | null }) {
-  if (ok === null) return <span className="inline-block w-2.5 h-2.5 rounded-full bg-gray-500" />;
-  return <span className={`inline-block w-2.5 h-2.5 rounded-full ${ok ? 'bg-green-500' : 'bg-red-500'}`} />;
+  const label = ok === null ? 'Unknown' : ok ? 'Passed' : 'Failed';
+  const colorClass = ok === null ? 'bg-gray-500' : ok ? 'bg-green-500' : 'bg-red-500';
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className={`inline-block w-2.5 h-2.5 rounded-full ${colorClass}`} aria-hidden="true" />
+      <span className="sr-only">{label}</span>
+    </span>
+  );
 }
 
 export default function StatusDashboard() {
@@ -71,7 +84,7 @@ export default function StatusDashboard() {
           {lastRun ? (
             <p className="mt-1 text-sm text-gray-400">
               Last audit:{' '}
-              <a href={data?.run_url || '#'} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+              <a href={data?.run_url || '#'} target="_blank" rel="noopener noreferrer" className="text-orange-300 hover:underline">
                 {lastRun}
               </a>
             </p>
@@ -87,7 +100,7 @@ export default function StatusDashboard() {
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">Lighthouse</h2>
             {lh?.report_url && (
-              <a href={lh.report_url} target="_blank" rel="noopener noreferrer" className="text-xs text-orange-400 hover:underline">
+              <a href={lh.report_url} target="_blank" rel="noopener noreferrer" className="text-xs text-orange-300 hover:underline">
                 Full report →
               </a>
             )}
@@ -101,7 +114,7 @@ export default function StatusDashboard() {
             ] as [string, number | null][]).map(([label, score]) => (
               <div key={label} className="grid grid-cols-[120px_1fr] items-center gap-4">
                 <span className="text-sm text-gray-400">{label}</span>
-                <ScoreBar score={score} />
+                <ScoreBar score={score} label={label} />
               </div>
             ))}
           </div>

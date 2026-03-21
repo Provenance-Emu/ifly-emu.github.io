@@ -48,7 +48,7 @@ export default function DownloadsPage() {
           {/* AltStore/SideStore Source */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              📱 AltStore / SideStore Source
+              <span aria-hidden="true">📱 </span>AltStore / SideStore Source
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               Add our source to AltStore or SideStore for easy installation and automatic updates:
@@ -83,7 +83,7 @@ export default function DownloadsPage() {
           {/* External Download Sources */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              🌐 Other Download Sources
+              <span aria-hidden="true">🌐 </span>Other Download Sources
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
               You can also download iFly from these platforms. These may have different versions or additional release notes:
@@ -95,7 +95,7 @@ export default function DownloadsPage() {
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
-                <div className="text-3xl">📦</div>
+                <div className="text-3xl" aria-hidden="true">📦</div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                     GitHub Releases
@@ -114,7 +114,7 @@ export default function DownloadsPage() {
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
-                <div className="text-3xl">🎮</div>
+                <div className="text-3xl" aria-hidden="true">🎮</div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                     itch.io
@@ -130,7 +130,7 @@ export default function DownloadsPage() {
             </div>
             <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-sm text-blue-800 dark:text-blue-200">
-                <strong>💡 Tip:</strong> Check GitHub Releases for detailed changelogs and release notes for each version.
+                <strong><span aria-hidden="true">💡 </span>Tip:</strong> Check GitHub Releases for detailed changelogs and release notes for each version.
               </p>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function DownloadsPage() {
           {/* iOS Downloads */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <span>📱</span> iOS Builds
+              <span aria-hidden="true">📱</span> iOS Builds
             </h2>
             {iosVersions.length === 0 ? (
               <p className="text-gray-600 dark:text-gray-400">No iOS builds available yet.</p>
@@ -183,7 +183,7 @@ export default function DownloadsPage() {
           {/* tvOS Downloads */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <span>📺</span> tvOS Builds
+              <span aria-hidden="true">📺</span> tvOS Builds
             </h2>
             {tvosVersions.length === 0 ? (
               <p className="text-gray-600 dark:text-gray-400">No tvOS builds available yet.</p>
@@ -228,7 +228,7 @@ export default function DownloadsPage() {
           {/* Installation Instructions */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              📖 Installation Instructions
+              <span aria-hidden="true">📖 </span>Installation Instructions
             </h2>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <div>

@@ -16,8 +16,8 @@ const variantClasses = {
   discord: 'bg-indigo-600 text-white hover:bg-indigo-500',
   x: 'bg-black text-white hover:bg-neutral-800',
   bmc: 'bg-yellow-400 text-black hover:bg-yellow-300',
-  patreon: 'bg-orange-600 text-white hover:bg-orange-500',
-  venmo: 'bg-sky-500 text-white hover:bg-sky-400',
+  patreon: 'bg-orange-700 text-white hover:bg-orange-600',
+  venmo: 'bg-sky-700 text-white hover:bg-sky-600',
   zelle: 'bg-purple-700 text-white hover:bg-purple-600',
   opencollective: 'bg-blue-600 text-white hover:bg-blue-500',
 } as const;

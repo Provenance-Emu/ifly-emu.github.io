@@ -29,7 +29,7 @@ const DefaultDescription = () => (
     </a>
     for installing on iOS/tvOS, and for Apple TV JIT we recommend
     <a
-      href="https://apps.apple.com/us/app/stikdebug/id6744045754"
+      href="https://github.com/0oAstro/StikDebug"
       target="_blank"
       rel="noopener noreferrer"
       className="text-blue-600 dark:text-blue-400 hover:underline ml-1"

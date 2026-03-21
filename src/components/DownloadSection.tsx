@@ -20,16 +20,16 @@ const DefaultDescription = () => (
     >
       Sideloadly
     </a>
-    for installing on iOS/tvOS, and for Apple TV JIT we recommend
+    for installing on iOS/tvOS. For enabling JIT on Apple TV, ask in our{' '}
     <a
-      href="https://github.com/0oAstro/StikDebug"
+      href="https://discord.com/invite/4TK7PU5"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-blue-600 dark:text-blue-400 hover:underline ml-1"
+      className="text-blue-600 dark:text-blue-400 hover:underline"
     >
-      StikDebug
+      Discord
     </a>
-    .
+    {' '}for current JIT enabler recommendations.
   </p>
 );
 

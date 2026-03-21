@@ -41,8 +41,9 @@ export default function Support() {
                 <p className="text-gray-600 dark:text-gray-300">
                   iFly is distributed via sideloading for iOS and tvOS. <br /> We recommend using{' '}
                   <a href="https://sideloadly.io" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Sideloadly</a>{' '}
-                  to install the app on your device. For enabling JIT on Apple TV, we recommend{' '}
-                  <a href="https://github.com/0oAstro/StikDebug" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">StikDebug</a>.
+                  to install the app on your device. For enabling JIT on Apple TV, ask in our{' '}
+                  <a href="https://discord.com/invite/4TK7PU5" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Discord</a>{' '}
+                  for current JIT enabler recommendations.
                 </p>
               </div>
 

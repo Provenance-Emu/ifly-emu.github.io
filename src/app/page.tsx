@@ -28,14 +28,14 @@ export default function Home() {
       <section className="container mx-auto px-4 pt-20 pb-16 text-center">
         <div className="max-w-3xl mx-auto">
 
-          {/* App icon */}
+          {/* App icon — priority ensures it's preloaded as the LCP element */}
           <div className="flex justify-center mb-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/icon-512.png"
               alt="iFly app icon"
               width={96}
               height={96}
+              priority
               className="rounded-[22px] shadow-2xl shadow-orange-500/20 ring-1 ring-white/10"
             />
           </div>

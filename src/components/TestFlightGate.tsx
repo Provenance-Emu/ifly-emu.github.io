@@ -43,14 +43,14 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
 
   if (checking) {
     return (
-      <main className="min-h-screen container mx-auto px-4 py-12">
+      <div className="min-h-screen container mx-auto px-4 py-12">
         <div className="mx-auto max-w-2xl animate-pulse text-center text-muted-foreground">Loading…</div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="min-h-screen container mx-auto px-4 py-12">
+    <div className="min-h-screen container mx-auto px-4 py-12">
       <div className="mx-auto max-w-2xl space-y-6">
         <header className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight">Join the iFly TestFlight</h1>
@@ -160,6 +160,6 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

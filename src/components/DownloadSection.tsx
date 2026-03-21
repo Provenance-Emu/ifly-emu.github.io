@@ -1,6 +1,13 @@
+'use client';
+
 import React from 'react';
+import dynamic from 'next/dynamic';
 import ButtonLink, { GitHubIcon, ItchIcon } from '@/components/ButtonLink';
-import ItchIoEmbed from '@/components/ItchIoEmbed';
+
+const ItchIoEmbed = dynamic(() => import('@/components/ItchIoEmbed'), {
+  ssr: false,
+  loading: () => <div style={{ width: 552, height: 167 }} />,
+});
 
 export type DownloadSectionProps = {
   title?: string;
@@ -22,7 +29,7 @@ const DefaultDescription = () => (
     </a>
     for installing on iOS/tvOS, and for Apple TV JIT we recommend
     <a
-      href="https://github.com/0oAstro/StikDebug"
+      href="https://apps.apple.com/us/app/stikdebug/id6744045754"
       target="_blank"
       rel="noopener noreferrer"
       className="text-blue-600 dark:text-blue-400 hover:underline ml-1"

@@ -53,7 +53,8 @@ export default function DownloadsPage() {
             <p className="text-gray-400 mb-4">
               Add our source to AltStore or SideStore for easy installation and automatic updates:
             </p>
-            <div className="bg-gray-800 rounded-lg p-4 mb-4">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+              <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">Source URL</p>
               <code className="text-sm text-orange-400 break-all">
                 {baseURL}/api/altstore
               </code>
@@ -73,7 +74,7 @@ export default function DownloadsPage() {
               </a>
               <Link
                 href="/api/altstore"
-                className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                className="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-gray-700"
               >
                 View JSON Feed
               </Link>

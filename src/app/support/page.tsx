@@ -153,77 +153,24 @@ export default function Support() {
             </h2>
 
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              {([
+                ['Restart the app', 'Close iFly completely and reopen it to resolve minor issues.'],
+                ['Check available storage', 'Ensure you have at least 1GB of free space on your device for games and save files.'],
+                ['Update to latest version', "Make sure you're running the latest available build of iFly."],
+                ['Disable Low Power Mode', 'For best performance, ensure your device is not in Low Power Mode and has sufficient battery.'],
+                ['Use VBI/CPU tuning', 'Use the VBI/CPU over/underclock quick sheet in the emulation window to fine-tune smoothness at the cost of frame rate.'],
+                ['Restart your device', 'A device restart can resolve performance issues and free up memory.'],
+              ] as [string, string][]).map(([title, desc]) => (
+                <div key={title} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">{title}</h4>
+                    <p className="text-gray-400">{desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white">Restart the app</h4>
-                  <p className="text-gray-400">
-                    Close iFly completely and reopen it to resolve minor issues.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Check available storage</h4>
-                  <p className="text-gray-400">
-                    Ensure you have at least 1GB of free space on your device for games and save files.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Update to latest version</h4>
-                  <p className="text-gray-400">
-                    Make sure you&apos;re running the latest available build of iFly.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Disable Low Power Mode</h4>
-                  <p className="text-gray-400">
-                    For best performance, ensure your device is not in Low Power Mode and has sufficient battery.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Use VBI/CPU tuning</h4>
-                  <p className="text-gray-400">
-                    Use the VBI/CPU over/underclock quick sheet in the emulation window to fine-tune smoothness at the cost of frame rate.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-3.5 h-3.5 text-green-400" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Restart your device</h4>
-                  <p className="text-gray-400">
-                    A device restart can resolve performance issues and free up memory.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

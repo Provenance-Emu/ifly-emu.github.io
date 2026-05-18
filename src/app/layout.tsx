@@ -116,10 +116,14 @@ export default function RootLayout({
       <head>
         <meta httpEquiv="Content-Security-Policy" content={CSP} />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <link rel="preload" as="image" href="/icon-512.png" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://itch.io" />
+        <link rel="dns-prefetch" href="https://html.itch.zone" />
+        <link rel="dns-prefetch" href="https://v6p9d9t4.ssl.hwcdn.net" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

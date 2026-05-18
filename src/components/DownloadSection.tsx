@@ -1,6 +1,11 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import ButtonLink, { ItchIcon } from '@/components/ButtonLink';
-import ItchIoEmbed from '@/components/ItchIoEmbed';
+
+const ItchIoEmbed = dynamic(() => import('@/components/ItchIoEmbed'), {
+  ssr: false,
+  loading: () => <div className="h-[167px] w-[552px] max-w-full" aria-hidden="true" />,
+});
 
 const DownloadIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className ?? 'w-5 h-5'} aria-hidden="true">

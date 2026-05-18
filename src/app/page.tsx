@@ -158,7 +158,6 @@ export default function Home() {
                     alt={alt}
                     className="h-full w-full object-cover"
                     sizes="208px"
-                    priority={idx === 0}
                   />
                 </div>
               </div>

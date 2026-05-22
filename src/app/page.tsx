@@ -28,10 +28,12 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative container mx-auto px-4 pt-20 pb-16 text-center overflow-hidden">
-        {/* Radial glow */}
+        {/* Radial glow — using CSS gradient instead of filter:blur to avoid expensive paint operations */}
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-orange-500/10 blur-3xl" />
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-orange-600/5 blur-2xl" />
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px]"
+            style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.12) 0%, rgba(234,88,12,0.04) 50%, transparent 70%)' }}
+          />
         </div>
         <div className="max-w-3xl mx-auto">
 
@@ -158,7 +160,7 @@ export default function Home() {
                     alt={alt}
                     className="h-full w-full object-cover"
                     sizes="208px"
-                    priority={idx === 0}
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -94,7 +94,7 @@ jobs:
 
       - name: Comment on PR
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const passed = '${{ steps.htmlproofer.outputs.exit_code }}' === '0';
@@ -365,7 +365,7 @@ jobs:
           git push
 
       - name: Open or close issues per audit check
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           PERF:        ${{ needs.lighthouse.outputs.performance }}
           A11Y:        ${{ needs.lighthouse.outputs.accessibility }}

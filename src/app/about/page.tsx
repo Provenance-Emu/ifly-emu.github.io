@@ -23,17 +23,20 @@ export default function About() {
               What is iFly?
             </h2>
             <p className="text-gray-400 mb-6">
-              iFly is a Dreamcast emulator designed specifically for iOS and tvOS platforms.
-              It brings the beloved Sega Dreamcast experience to your iPhone, iPad, and Apple TV,
-              allowing you to play your favorite Dreamcast games anywhere.
+              iFly is a Dreamcast emulator for iOS and tvOS. Fast, JIT-less Dreamcast performance
+              on iPhone, iPad, and Apple TV, built on Flycast and optimized from the ground up
+              for Apple silicon. From the creator of Provenance EMU (388k+ App Store downloads,
+              6,300+ GitHub stars).
             </p>
 
             <h2 className="text-2xl font-semibold text-white mb-4">
-              Focused on Performance
+              Built for Speed Without JIT
             </h2>
             <p className="text-gray-400 mb-6">
-              iFly focuses on fast, accurate Dreamcast emulation with a simple, modern UI on Apple devices.
-              This is an early project and features will evolve over time.
+              iFly runs at full speed on modern iPhones and Apple TV without requiring JIT compilation,
+              jailbreak, or sideload workarounds. The ARM64-optimized interpreter handles Dreamcast
+              workloads natively on Apple silicon. 1,000+ Metal shaders for CRT effects, scanlines,
+              and visual filters, all running at native frame rates.
             </p>
 
             <h2 className="text-2xl font-semibold text-white mb-4">

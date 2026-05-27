@@ -57,7 +57,7 @@ export default function Home() {
 
           <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
             Play classic Sega Dreamcast games on your iPhone, iPad, and Apple TV.
-            Fast, accurate emulation built for Apple silicon.
+            Fast, JIT-less emulation built for Apple silicon. No jailbreak, no sideload hacks.
           </p>
 
           {/* Platform badges */}

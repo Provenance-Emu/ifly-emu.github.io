@@ -10,6 +10,8 @@ import ipad4 from '@/images/screenshots/ipad/ipad4-emu.webp';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
+import DeviceFrame from '@/components/DeviceFrame';
+import VideoShowcase from '@/components/VideoShowcase';
 import tvos1 from '@/images/screenshots/tvos/tvos-library.webp';
 import tvos2 from '@/images/screenshots/tvos/tvos-gameplay.webp';
 import tvos3 from '@/images/screenshots/tvos/tvos-cheats.webp';
@@ -94,10 +96,10 @@ export default function Home() {
       <section className="container mx-auto px-4 pb-12">
         <div className="max-w-2xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3">
           {([
+            ['JIT-Free', 'Full Speed'],
             ['1K+', 'Metal Shaders'],
-            ['Free', 'Always'],
             ['3', 'Platforms'],
-            ['Open', 'Source'],
+            ['Free', 'Open Source'],
           ] as const).map(([value, label]) => (
             <div key={label} className="text-center py-4 px-2 bg-gray-900 border border-gray-800 rounded-xl">
               <div className="text-xl font-black text-orange-400">{value}</div>
@@ -132,6 +134,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Showcase — drop MP4 at public/video/gameplay.mp4 to activate */}
+      <VideoShowcase />
+
       {/* Screenshots */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
@@ -145,23 +150,13 @@ export default function Home() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
             iPhone
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {([
               [iphone1, 'iFly iPhone – game library'],
               [iphone2, 'iFly iPhone – settings'],
               [iphone3, 'iFly iPhone – gameplay'],
             ] as const).map(([img, alt], idx) => (
-              <div key={`iphone-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
-                <div className="rounded-xl overflow-hidden w-52 h-[22rem]">
-                  <Image
-                    src={img}
-                    alt={alt}
-                    className="h-full w-full object-cover"
-                    sizes="208px"
-                    priority={idx === 0}
-                  />
-                </div>
-              </div>
+              <DeviceFrame key={`iphone-${idx}`} type="iphone" src={img} alt={alt} priority={idx === 0} />
             ))}
           </div>
         </div>
@@ -172,23 +167,14 @@ export default function Home() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
             iPad
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {([
               [ipad1, 'iFly iPad – game library'],
               [ipad2, 'iFly iPad – search'],
               [ipad3, 'iFly iPad – Metal shaders'],
               [ipad4, 'iFly iPad – gameplay'],
             ] as const).map(([img, alt], idx) => (
-              <div key={`ipad-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
-                <div className="rounded-xl overflow-hidden w-[340px] h-[260px]">
-                  <Image
-                    src={img}
-                    alt={alt}
-                    className="h-full w-full object-cover"
-                    sizes="340px"
-                  />
-                </div>
-              </div>
+              <DeviceFrame key={`ipad-${idx}`} type="ipad" src={img} alt={alt} />
             ))}
           </div>
         </div>
@@ -199,23 +185,14 @@ export default function Home() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>
             Apple TV
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {([
               [tvos1, 'iFly Apple TV – game library'],
               [tvos2, 'iFly Apple TV – gameplay'],
               [tvos3, 'iFly Apple TV – cheat codes'],
               [tvos4, 'iFly Apple TV – settings and themes'],
             ] as const).map(([img, alt], idx) => (
-              <div key={`appletv-${idx}`} className="bg-gray-800 rounded-2xl p-3 shadow-xl ring-1 ring-white/5">
-                <div className="rounded-xl overflow-hidden w-80 aspect-video">
-                  <Image
-                    src={img}
-                    alt={alt}
-                    className="h-full w-full object-cover"
-                    sizes="320px"
-                  />
-                </div>
-              </div>
+              <DeviceFrame key={`appletv-${idx}`} type="appletv" src={img} alt={alt} />
             ))}
           </div>
         </div>

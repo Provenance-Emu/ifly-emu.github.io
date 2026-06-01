@@ -13,24 +13,27 @@ interface DeviceFrameProps {
   videoSrc?: string;
 }
 
-const frameStyles: Record<DeviceType, { outer: string; inner: string; aspect: string; width: string }> = {
+const frameStyles: Record<DeviceType, { outer: string; inner: string; aspect: string; width: string; sizes: string }> = {
   iphone: {
     outer: 'rounded-[2.5rem] border-[6px] border-gray-700 bg-gray-800 p-1 shadow-2xl shadow-black/40 ring-1 ring-white/5',
     inner: 'rounded-[2rem] overflow-hidden',
     aspect: 'aspect-[9/19.5]',
     width: 'w-56',
+    sizes: '224px',
   },
   ipad: {
     outer: 'rounded-[1.5rem] border-[5px] border-gray-700 bg-gray-800 p-1 shadow-2xl shadow-black/40 ring-1 ring-white/5',
     inner: 'rounded-[1.2rem] overflow-hidden',
     aspect: 'aspect-[4/3]',
     width: 'w-[360px]',
+    sizes: '360px',
   },
   appletv: {
     outer: 'rounded-xl border-[4px] border-gray-700 bg-gray-800 p-1 shadow-2xl shadow-black/40 ring-1 ring-white/5',
     inner: 'rounded-lg overflow-hidden',
     aspect: 'aspect-video',
     width: 'w-80',
+    sizes: '320px',
   },
 };
 
@@ -60,7 +63,7 @@ const DeviceFrame: React.FC<DeviceFrameProps> = ({ type, src, alt, priority = fa
               src={src}
               alt={alt}
               className="h-full w-full object-cover"
-              sizes={s.width.replace('w-', '').replace(/[\[\]]/g, '')}
+              sizes={s.sizes}
               priority={priority}
             />
           )}

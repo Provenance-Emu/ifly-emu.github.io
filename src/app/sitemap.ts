@@ -13,5 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/donate/`,    changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/links/`,     changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/privacy/`,   changeFrequency: 'yearly',  priority: 0.2 },
+    { url: `${base}/licenses/`,  changeFrequency: 'yearly',  priority: 0.2 },
   ]
 }

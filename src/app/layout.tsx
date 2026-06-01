@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Script from "next/script";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-
-const GA_ID = 'G-D2HKD61NJ1';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ifly-emu.com'),
@@ -15,8 +11,8 @@ export const metadata: Metadata = {
   },
   description: "Play classic Sega Dreamcast games on your iPhone, iPad, and Apple TV. Fast, accurate emulation with controller support, Metal shaders, save states, and more.",
   keywords: ["Dreamcast emulator", "iOS emulator", "tvOS emulator", "Sega Dreamcast", "iFly", "Apple TV emulator", "iPhone emulator"],
-  authors: [{ name: "Provenance Emu" }],
-  creator: "Provenance Emu",
+  authors: [{ name: "Joseph Mattiello" }],
+  creator: "Joseph Mattiello",
   openGraph: {
     type: "website",
     siteName: "iFly",
@@ -70,11 +66,11 @@ export const metadata: Metadata = {
 // (e.g. Cloudflare). See: https://observatory.mozilla.org/analyze/ifly-emu.com
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com",
+  "script-src 'self'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https: blob:",
   "frame-src https://itch.io https://html.itch.zone https://v6p9d9t4.ssl.hwcdn.net",
-  "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com",
+  "connect-src 'self'",
   "font-src 'self'",
   "object-src 'none'",
   "worker-src 'none'",
@@ -94,9 +90,9 @@ const jsonLd = {
   url: 'https://ifly-emu.com',
   image: 'https://ifly-emu.com/icon-512.png',
   author: {
-    '@type': 'Organization',
-    name: 'Provenance Emu',
-    url: 'https://provenance-emu.com',
+    '@type': 'Person',
+    name: 'Joseph Mattiello',
+    url: 'https://joemattiello.dev',
   },
   offers: {
     '@type': 'Offer',
@@ -126,11 +122,6 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className="antialiased">
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script src="/gtag-init.js" strategy="afterInteractive" />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-orange-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg focus:outline-none"
@@ -138,7 +129,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Navigation />
-        <GoogleAnalytics />
         <main id="main-content">
           {children}
         </main>

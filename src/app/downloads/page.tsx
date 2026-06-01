@@ -63,21 +63,24 @@ export default function DownloadsPage() {
               <a
                 href={`altstore://source?url=${encodeURIComponent(`${baseURL}/api/altstore`)}`}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                data-proofer-ignore
               >
                 Add to AltStore
               </a>
               <a
                 href={`sidestore://source?url=${encodeURIComponent(`${baseURL}/api/sidestore`)}`}
                 className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                data-proofer-ignore
               >
                 Add to SideStore
               </a>
-              <Link
+              <a
                 href="/api/altstore"
                 className="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-gray-700"
+                data-proofer-ignore
               >
                 View JSON Feed
-              </Link>
+              </a>
             </div>
           </div>
 

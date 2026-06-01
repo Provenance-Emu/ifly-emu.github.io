@@ -29,7 +29,7 @@ export default function FeaturesPage() {
             <h2 className="text-xl font-bold text-white mb-2">Join the Community</h2>
             <p className="text-gray-400 text-sm mb-6">Get help, share tips, and stay updated on new releases.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-              <SocialButton href="https://discord.com/invite/4TK7PU5" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
+              <SocialButton href="https://discord.gg/4TK7PU5" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
               <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
             </div>
             <Link href="/" className="text-sm text-orange-400 hover:text-orange-300 font-medium transition-colors">

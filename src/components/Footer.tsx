@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Community</h3>
             <div className="flex flex-col gap-2">
-              <ExternalFooterLink href="https://discord.com/invite/4TK7PU5">Discord</ExternalFooterLink>
+              <ExternalFooterLink href="https://discord.gg/4TK7PU5">Discord</ExternalFooterLink>
               <ExternalFooterLink href="https://x.com/ProvenanceApp">X / Twitter</ExternalFooterLink>
               <ExternalFooterLink href="https://provenance.itch.io/ifly">itch.io</ExternalFooterLink>
               <ExternalFooterLink href="https://github.com/Provenance-Emu/Provenance">GitHub</ExternalFooterLink>

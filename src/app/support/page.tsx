@@ -48,7 +48,7 @@ export default function Support() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
-              <a href="mailto:support@provenance-emu.com?subject=iFly%20Support"
+              <a href="mailto:provenance.emu+ifly-support@gmail.com?subject=iFly%20Support"
                  className="flex items-start gap-4 p-5 bg-gray-800/40 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-colors group">
                 <div className="w-10 h-10 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
@@ -56,7 +56,7 @@ export default function Support() {
                 <div>
                   <h3 className="font-semibold text-white mb-1">Email Support</h3>
                   <p className="text-sm text-gray-400 mb-2">Send questions or bug reports</p>
-                  <span className="text-sm text-orange-400 group-hover:underline">support@provenance-emu.com</span>
+                  <span className="text-sm text-orange-400 group-hover:underline">provenance.emu+ifly-support@gmail.com</span>
                 </div>
               </a>
 

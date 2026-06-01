@@ -8,11 +8,13 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ifly-emu.com/links/' },
 };
 
-const ExternalCard = ({ href, title, description, iconPath, iconColor = 'text-gray-400', iconBg = 'bg-gray-700/50' }: {
+const ExternalCard = ({ href, title, description, iconPath, iconColor = 'text-gray-400', iconBg = 'bg-gray-700/50', proofIgnore }: {
   href: string; title: string; description: string;
   iconPath: string; iconColor?: string; iconBg?: string;
+  proofIgnore?: boolean;
 }) => (
   <a href={href} target="_blank" rel="noopener noreferrer"
+     {...(proofIgnore ? { 'data-proofer-ignore': '' } : {})}
      className="flex items-start gap-4 p-4 bg-gray-800/40 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-colors group">
     <div className={`w-10 h-10 rounded-lg ${iconBg} flex items-center justify-center ${iconColor} shrink-0`}>
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
@@ -59,6 +61,7 @@ export default function Links() {
                 description="Documentation and guides"
                 iconPath="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm1 14.5h-2v-6h2v6Zm0-8h-2V6.5h2V8.5Z"
                 iconColor="text-emerald-400" iconBg="bg-emerald-500/10"
+                proofIgnore
               />
               <ExternalCard
                 href="https://www.rinnegatamante.eu/newflycast/"
@@ -66,6 +69,7 @@ export default function Links() {
                 description="Game compatibility list and guides"
                 iconPath="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"
                 iconColor="text-emerald-400" iconBg="bg-emerald-500/10"
+                proofIgnore
               />
               <ExternalCard
                 href="https://discord.gg/X8YWP8w"
@@ -82,7 +86,7 @@ export default function Links() {
             <h2 className="text-2xl font-semibold text-white mb-6">Community &amp; Social</h2>
             <div className="grid md:grid-cols-3 gap-3">
               <ExternalCard
-                href="https://discord.com/invite/4TK7PU5"
+                href="https://discord.gg/4TK7PU5"
                 title="Discord"
                 description="Get help and chat with the community"
                 iconPath="M20.317 4.369A19.791 19.791 0 0 0 16.558 3c-.2.355-.432.83-.593 1.205a18.27 18.27 0 0 0-3.93 0A11.09 11.09 0 0 0 11.443 3c-1.3.23-2.54.6-3.759 1.11C3.733 6.37 2.49 9.6 2.75 12.77c1.566 1.17 3.08 1.886 4.59 2.34.37-.51.702-1.055.989-1.627-.55-.21-1.078-.466-1.58-.768.132-.096.262-.196.386-.3 3.045 1.413 6.34 1.413 9.36 0 .127.104.255.204.386.3-.5.302-1.028.558-1.578.768.286.572.62 1.116.989 1.627 1.51-.454 3.023-1.17 4.59-2.34.38-4.513-1.48-7.317-3.615-8.401ZM9.58 12.66c-.623 0-1.132-.6-1.132-1.335 0-.735.505-1.34 1.132-1.34.631 0 1.14.606 1.132 1.34 0 .735-.505 1.334-1.132 1.334Zm4.85 0c-.623 0-1.132-.6-1.132-1.335 0-.735.505-1.34 1.132-1.34.631 0 1.14.606 1.132 1.34 0 .735-.505 1.334-1.132 1.334Z"
@@ -133,6 +137,7 @@ export default function Links() {
                 description="iOS port of Dolphin — GameCube &amp; Wii emulation"
                 iconPath="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
                 iconColor="text-blue-400" iconBg="bg-blue-500/10"
+                proofIgnore
               />
             </div>
           </div>

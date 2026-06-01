@@ -28,7 +28,7 @@ const DefaultDescription = () => (
     </a>
     for installing on iOS/tvOS. For enabling JIT on Apple TV, ask in our{' '}
     <a
-      href="https://discord.com/invite/4TK7PU5"
+      href="https://discord.gg/4TK7PU5"
       target="_blank"
       rel="noopener noreferrer"
       className="text-orange-400 hover:underline"

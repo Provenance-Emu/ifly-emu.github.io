@@ -30,11 +30,16 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative container mx-auto px-4 pt-20 pb-16 text-center overflow-hidden">
-        {/* Radial glow */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-orange-500/10 blur-3xl" />
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-orange-600/5 blur-2xl" />
-        </div>
+        {/* Radial glow — CSS gradient avoids expensive filter:blur compositor layers */}
+        <div
+          className="absolute inset-0 -z-10 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(ellipse 80% 50% at 50% -10%, rgba(249,115,22,0.10) 0%, transparent 65%), ' +
+              'radial-gradient(ellipse 40% 30% at 50% 15%, rgba(234,88,12,0.05) 0%, transparent 60%)',
+          }}
+        />
         <div className="max-w-3xl mx-auto">
 
           {/* App icon — priority ensures it's preloaded as the LCP element */}

@@ -18,8 +18,8 @@ const components: Component[] = [
   {
     name: 'Flycast',
     license: 'GPL-2.0',
-    url: 'https://github.com/JoeMatt/flycast',
-    note: 'Custom modifications by Joseph Mattiello. Corresponding source available at the link above.',
+    url: 'https://github.com/JoeMatt/flycast/tree/xcframework',
+    note: 'Custom modifications by Joseph Mattiello. Corresponding source for the version of Flycast used in iFly is on the xcframework branch at the link above.',
   },
   {
     name: 'MoltenVK',
@@ -37,14 +37,26 @@ const components: Component[] = [
     url: 'https://github.com/marmelroy/Zip',
   },
   {
-    name: 'GCDWebServer',
+    name: 'PVWebServer',
     license: 'BSD-3-Clause',
-    url: 'https://github.com/swisspol/GCDWebServer',
+    url: 'https://github.com/Provenance-Emu/PVWebServer',
+    note: 'Wraps GCDWebServer (BSD-3-Clause, swisspol/GCDWebServer).',
+  },
+  {
+    name: 'PVLookup',
+    license: 'MIT',
+    url: 'https://github.com/Provenance-Emu/Provenance',
+  },
+  {
+    name: 'LinksKit',
+    license: 'MIT',
+    url: 'https://github.com/FlineDev/LinksKit',
   },
   {
     name: 'Bugsnag',
     license: 'MIT',
     url: 'https://github.com/bugsnag/bugsnag-cocoa',
+    note: 'Includes bugsnag-cocoa-performance.',
   },
   {
     name: 'libretro database',
@@ -119,12 +131,12 @@ export default function Licenses() {
                 Per the GPL-2.0 license under which Flycast is distributed, the corresponding
                 source for the version of Flycast used in iFly EMU is available at{" "}
                 <a
-                  href="https://github.com/JoeMatt/flycast"
+                  href="https://github.com/JoeMatt/flycast/tree/xcframework"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 hover:underline transition-colors"
                 >
-                  github.com/JoeMatt/flycast
+                  github.com/JoeMatt/flycast (xcframework branch)
                 </a>.
               </p>
             </section>

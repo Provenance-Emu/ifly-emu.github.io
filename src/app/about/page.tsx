@@ -92,7 +92,7 @@ export default function About() {
               <h2 className="text-xl font-bold text-white mb-2">Community</h2>
               <p className="text-gray-400 text-sm mb-5">Join for updates, tips, and support.</p>
               <div className="flex flex-col gap-3 items-center">
-                <SocialButton href="https://discord.gg/4TK7PU5" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
+                <SocialButton href="https://discord.gg/QF5ZjVT4Sa" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
                 <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
               </div>
             </div>

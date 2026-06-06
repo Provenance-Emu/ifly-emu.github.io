@@ -41,6 +41,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Support</h3>
             <div className="flex flex-col gap-2">
               <FooterLink href="/support/">FAQ &amp; Help</FooterLink>
+              <FooterLink href="/controllers/">Controllers</FooterLink>
               <FooterLink href="/donate/">Donate</FooterLink>
               <FooterLink href="/links/">Links</FooterLink>
               <FooterLink href="/status/">Site Status</FooterLink>

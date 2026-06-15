@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-06-08T08:38:47Z",
-  "run_url": "https://github.com/Provenance-Emu/ifly-emu.github.io/actions/runs/27125581230",
+  "last_updated": "2026-06-15T09:09:34Z",
+  "run_url": "https://github.com/Provenance-Emu/ifly-emu.github.io/actions/runs/27535593470",
   "html_check": {
     "passed": false,
     "error_count": 0
   },
   "lighthouse": {
-    "performance": 73,
+    "performance": 74,
     "accessibility": 91,
     "best_practices": 93,
     "seo": 100,
-    "report_url": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1780907663410-40072.report.html"
+    "report_url": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1781514288704-12523.report.html"
   },
   "observatory": {
     "grade": "C",

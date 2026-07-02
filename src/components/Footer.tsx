@@ -14,7 +14,7 @@ const ExternalFooterLink = ({ href, children }: { href: string; children: React.
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-800 bg-gray-950 mt-16">
+    <footer className="border-t border-white/10 bg-ink mt-16">
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 
@@ -33,6 +33,7 @@ export default function Footer() {
               <FooterLink href="/downloads/">Downloads</FooterLink>
               <FooterLink href="/testflight/">TestFlight Beta</FooterLink>
               <FooterLink href="/features/">Features</FooterLink>
+              <FooterLink href="/guide/">Guide</FooterLink>
               <FooterLink href="/about/">About</FooterLink>
             </div>
           </div>
@@ -41,6 +42,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Support</h3>
             <div className="flex flex-col gap-2">
               <FooterLink href="/support/">FAQ &amp; Help</FooterLink>
+              <FooterLink href="/guide/faq/">Import FAQ</FooterLink>
               <FooterLink href="/controllers/">Controllers</FooterLink>
               <FooterLink href="/donate/">Donate</FooterLink>
               <FooterLink href="/links/">Links</FooterLink>

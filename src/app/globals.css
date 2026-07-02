@@ -3,10 +3,87 @@
 @theme inline {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   --font-mono: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* Layered near-black backgrounds (exposes bg-ink / bg-ink-2 / bg-ink-3 utilities) */
+  --color-ink: #0a0a0f;
+  --color-ink-2: #0d0d14;
+  --color-ink-3: #111119;
+}
+
+:root {
+  --gradient-primary: linear-gradient(135deg, #ffab40 0%, #ff6900 50%, #d64500 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #ffbe5c 0%, #ff7d1f 50%, #f0530f 100%);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-card: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.65);
 }
 
 body {
-  background-color: #030712; /* gray-950 */
+  background-color: var(--color-ink);
   color: #ededed;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+h1, h2 { letter-spacing: -0.02em; }
+
+/* Gradient text (orange). Apply to a span/heading. */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated drifting grid overlay — absolute child of a relative hero. */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 105, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 105, 0, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-drift 22s linear infinite;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 40px 40px, 40px 40px; }
+}
+
+/* Glass card */
+.card-glass {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-card);
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
+}
+.card-glass:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 105, 0, 0.35);
+}
+
+/* Gradient pill button */
+.btn-gradient {
+  position: relative;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: 9999px;
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), filter 0.3s var(--ease-smooth);
+  box-shadow: 0 6px 20px rgba(255, 105, 0, 0.25);
+}
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 10px 28px rgba(255, 105, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-overlay { animation: none; }
+  .card-glass:hover, .btn-gradient:hover { transform: none; }
 }

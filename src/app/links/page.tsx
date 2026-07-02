@@ -132,7 +132,7 @@ export default function Links() {
               <ExternalCard
                 href="https://icube-emu.com"
                 title="iCube"
-                description="iOS port of Dolphin — GameCube &amp; Wii emulation"
+                description="iOS port of Dolphin — GameCube & Wii emulation"
                 iconPath="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
                 iconColor="text-blue-400" iconBg="bg-blue-500/10"
                 proofIgnore

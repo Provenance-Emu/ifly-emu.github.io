@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: "Privacy Policy - iFly",
@@ -9,17 +10,11 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader title="Privacy Policy" subtitle="Effective date: May 31, 2026" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 text-center">
-            Privacy Policy
-          </h1>
-          <p className="text-center text-gray-500 mb-10">
-            Effective date: May 31, 2026
-          </p>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 space-y-8">
+          <div className="card-glass p-8 space-y-8">
             <section>
               <p className="text-gray-300 leading-relaxed">
                 iFly EMU does not collect any personally identifiable information.

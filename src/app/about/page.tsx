@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -11,14 +12,11 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader title="About iFly" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-            About iFly
-          </h1>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-4">
               What is iFly?
             </h2>
@@ -48,7 +46,7 @@ export default function About() {
                 ['iPad', 'Larger screen experience with enhanced controls', 'M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z'],
                 ['Apple TV', 'Big screen gaming with controller support', 'M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z'],
               ] as const).map(([name, desc, path]) => (
-                <div key={name} className="flex flex-col items-center text-center p-5 bg-gray-800/40 border border-gray-700/50 rounded-xl">
+                <div key={name} className="flex flex-col items-center text-center p-5 card-glass">
                   <div className="w-11 h-11 rounded-xl bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 mb-3">
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true"><path d={path} /></svg>
                   </div>
@@ -73,7 +71,7 @@ export default function About() {
             <h2 className="text-2xl font-semibold text-white mb-4 mt-8">
               System Requirements
             </h2>
-            <div className="bg-gray-800/40 border border-gray-700/50 p-4 rounded-xl">
+            <div className="card-glass p-4">
               <ul className="text-gray-400 space-y-1.5">
                 <li><span className="font-medium text-gray-300">iOS:</span> iOS 15.6 or later</li>
                 <li><span className="font-medium text-gray-300">tvOS:</span> tvOS 16.6 or later</li>
@@ -88,7 +86,7 @@ export default function About() {
 
           {/* Community + Donate */}
           <div className="grid sm:grid-cols-2 gap-4 mt-6">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+            <div className="card-glass p-6 text-center">
               <h2 className="text-xl font-bold text-white mb-2">Community</h2>
               <p className="text-gray-400 text-sm mb-5">Join for updates, tips, and support.</p>
               <div className="flex flex-col gap-3 items-center">
@@ -96,7 +94,7 @@ export default function About() {
                 <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
               </div>
             </div>
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+            <div className="card-glass p-6 text-center">
               <h2 className="text-xl font-bold text-white mb-2">Support Development</h2>
               <p className="text-gray-400 text-sm mb-5">Help keep iFly free and improving.</p>
               <div className="flex flex-col gap-3 items-center">

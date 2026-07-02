@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import GridHero from '@/components/ui/GridHero';
+import Section from '@/components/ui/Section';
+import GradientButton from '@/components/ui/GradientButton';
 import iphone1 from '@/images/screenshots/ios/iphone1-library.webp';
 import iphone2 from '@/images/screenshots/ios/iphone2-settings.webp';
 import iphone3 from '@/images/screenshots/ios/iphone3-emu.webp';
@@ -26,15 +29,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
 
       {/* Hero */}
-      <section className="relative container mx-auto px-4 pt-20 pb-16 text-center overflow-hidden">
-        {/* Radial glow */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-orange-500/10 blur-3xl" />
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-orange-600/5 blur-2xl" />
-        </div>
+      <GridHero className="pt-20 pb-16 text-center">
         <div className="max-w-3xl mx-auto">
 
           {/* App icon — priority ensures it's preloaded as the LCP element */}
@@ -50,7 +48,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-6xl md:text-7xl font-black text-white mb-3 tracking-tight">
-            i<span className="text-orange-500">Fly</span>
+            i<span className="text-gradient">Fly</span>
           </h1>
 
           <p className="text-2xl md:text-3xl font-semibold text-orange-400 mb-5">
@@ -76,21 +74,11 @@ export default function Home() {
 
           {/* Primary CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/testflight/"
-              className="bg-orange-700 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors shadow-lg shadow-orange-700/25"
-            >
-              TestFlight Beta
-            </Link>
-            <Link
-              href="/downloads/"
-              className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors border border-gray-700"
-            >
-              Download IPA
-            </Link>
+            <GradientButton href="/testflight/">TestFlight Beta</GradientButton>
+            <GradientButton href="/downloads/" variant="outline">Download IPA</GradientButton>
           </div>
         </div>
-      </section>
+      </GridHero>
 
       {/* Stats row */}
       <section className="container mx-auto px-4 pb-12">
@@ -101,7 +89,7 @@ export default function Home() {
             ['3', 'Platforms'],
             ['Free', 'Open Source'],
           ] as const).map(([value, label]) => (
-            <div key={label} className="text-center py-4 px-2 bg-gray-900 border border-gray-800 rounded-xl">
+            <div key={label} className="text-center py-4 px-2 card-glass">
               <div className="text-xl font-black text-orange-400">{value}</div>
               <div className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{label}</div>
             </div>
@@ -115,7 +103,7 @@ export default function Home() {
       {/* Community + Donate */}
       <section className="container mx-auto px-4 pb-12">
         <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+          <div className="card-glass p-6 text-center">
             <h2 className="text-xl font-bold text-white mb-2">Community</h2>
             <p className="text-gray-400 text-sm mb-5">Join for updates, tips, and support.</p>
             <div className="flex flex-col gap-3 items-center">
@@ -123,7 +111,7 @@ export default function Home() {
               <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
             </div>
           </div>
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+          <div className="card-glass p-6 text-center">
             <h2 className="text-xl font-bold text-white mb-2">Support Development</h2>
             <p className="text-gray-400 text-sm mb-5">Help keep iFly free and actively developed.</p>
             <div className="flex flex-col gap-3 items-center">
@@ -138,7 +126,7 @@ export default function Home() {
       <VideoShowcase />
 
       {/* Screenshots */}
-      <section className="container mx-auto px-4 py-16">
+      <Section tone="ink-2">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-3">See It In Action</h2>
           <p className="text-gray-400 max-w-xl mx-auto">Classic Dreamcast games on your iPhone, iPad, and Apple TV.</p>
@@ -196,10 +184,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Features */}
-      <section className="border-t border-gray-800/60 py-16">
+      <section className="border-t border-white/10 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-white mb-3">Built for Apple silicon</h2>

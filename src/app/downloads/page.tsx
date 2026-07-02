@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import path from 'path';
 import Link from 'next/link';
 import { parseBuilds } from '@/lib/buildParser';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Downloads',
@@ -35,25 +36,22 @@ export default function DownloadsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader
+        title="Downloads"
+        subtitle="Download iFly for iOS or tvOS. For sideloading with AltStore or SideStore, add our source feed."
+      />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
-            Downloads
-          </h1>
-          <p className="text-lg text-gray-400 mb-8 text-center max-w-2xl mx-auto">
-            Download iFly for iOS or tvOS. For sideloading with AltStore or SideStore, add our source feed.
-          </p>
-
           {/* AltStore/SideStore Source */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+          <div className="card-glass p-6 mb-6">
             <h2 className="text-2xl font-bold text-white mb-4">
               AltStore / SideStore Source
             </h2>
             <p className="text-gray-400 mb-4">
               Add our source to AltStore or SideStore for easy installation and automatic updates:
             </p>
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+            <div className="card-glass p-4 mb-4">
               <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">Source URL</p>
               <code className="text-sm text-orange-400 break-all">
                 {baseURL}/api/altstore
@@ -76,7 +74,7 @@ export default function DownloadsPage() {
               </a>
               <a
                 href="/api/altstore"
-                className="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-gray-700"
+                className="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-white/10"
                 data-proofer-ignore
               >
                 View JSON Feed
@@ -85,7 +83,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* External Download Sources */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+          <div className="card-glass p-6 mb-6">
             <h2 className="text-2xl font-bold text-white mb-4">
               Other Download Sources
             </h2>
@@ -96,7 +94,7 @@ export default function DownloadsPage() {
               href="https://provenance.itch.io/ifly"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 bg-gray-800/40 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-colors group"
+              className="flex items-start gap-4 p-4 card-glass group"
             >
               <div className="w-10 h-10 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path d="M3 6.5C3 5.12 4.12 4 5.5 4h13c1.38 0 2.5 1.12 2.5 2.5v8.75A2.75 2.75 0 0 1 18.25 18H5.75A2.75 2.75 0 0 1 3 15.25V6.5Zm4.02-.75a2.75 2.75 0 0 0-2.75 2.75v4.5c0 1.518 1.232 2.75 2.75 2.75h9.96A2.75 2.75 0 0 0 19.73 13V8.5a2.75 2.75 0 0 0-2.75-2.75H7.02Zm5.48 2.25c1.494 0 2.75 1.256 2.75 2.75S14 13.5 12.5 13.5 9.75 12.244 9.75 10.75 11.006 8 12.5 8Z"/></svg>
@@ -110,7 +108,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* iOS Downloads */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+          <div className="card-glass p-6 mb-6">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
               iOS Builds
@@ -122,7 +120,7 @@ export default function DownloadsPage() {
                 {iosVersions.map((version, idx) => (
                   <div
                     key={idx}
-                    className="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 hover:border-gray-600 transition-colors"
+                    className="card-glass p-4"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex-1">
@@ -156,7 +154,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* tvOS Downloads */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+          <div className="card-glass p-6 mb-6">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>
               tvOS Builds
@@ -168,7 +166,7 @@ export default function DownloadsPage() {
                 {tvosVersions.map((version, idx) => (
                   <div
                     key={idx}
-                    className="bg-gray-800/40 border border-gray-700/50 rounded-xl p-4 hover:border-gray-600 transition-colors"
+                    className="card-glass p-4"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex-1">
@@ -202,7 +200,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* Installation Instructions */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+          <div className="card-glass p-6">
             <h2 className="text-2xl font-bold text-white mb-4">
               Installation Instructions
             </h2>

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import plist from 'plist';
+import * as plist from 'plist';
 
 export interface BuildVersion {
   version: string;

@@ -7,6 +7,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${base}/`,           changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${base}/downloads/`, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${base}/guide/`,           changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/guide/importing/`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/guide/formats/`,   changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/guide/bios/`,      changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/guide/arcade/`,    changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/guide/systems/`,   changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/guide/faq/`,       changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/features/`,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/about/`,     changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/support/`,   changeFrequency: 'monthly', priority: 0.6 },

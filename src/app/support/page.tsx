@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import React from 'react';
 import SocialButton, { BmcIcon, PatreonIcon } from '@/components/SocialButton';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Support',
@@ -10,15 +11,12 @@ export const metadata: Metadata = {
 
 export default function Support() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader title="Support" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-            Support
-          </h1>
-
           {/* FAQ Section */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-6">
               Frequently Asked Questions
             </h2>
@@ -43,14 +41,14 @@ export default function Support() {
           </div>
 
           {/* Contact Section */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-6">
               Getting Help
             </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
               <a href="mailto:support@ifly-emu.com?subject=iFly%20Support"
-                 className="flex items-start gap-4 p-5 bg-gray-800/40 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-colors group">
+                 className="flex items-start gap-4 p-5 card-glass group">
                 <div className="w-10 h-10 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
                 </div>
@@ -62,7 +60,7 @@ export default function Support() {
               </a>
 
               <a href="https://discord.gg/QF5ZjVT4Sa" target="_blank" rel="noopener noreferrer"
-                 className="flex items-start gap-4 p-5 bg-gray-800/40 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-colors group">
+                 className="flex items-start gap-4 p-5 card-glass group">
                 <div className="w-10 h-10 rounded-lg bg-indigo-500/10 ring-1 ring-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path d="M20.317 4.369A19.791 19.791 0 0 0 16.558 3c-.2.355-.432.83-.593 1.205a18.27 18.27 0 0 0-3.93 0A11.09 11.09 0 0 0 11.443 3c-1.3.23-2.54.6-3.759 1.11C3.733 6.37 2.49 9.6 2.75 12.77c1.566 1.17 3.08 1.886 4.59 2.34.37-.51.702-1.055.989-1.627-.55-.21-1.078-.466-1.58-.768.132-.096.262-.196.386-.3 3.045 1.413 6.34 1.413 9.36 0 .127.104.255.204.386.3-.5.302-1.028.558-1.578.768.286.572.62 1.116.989 1.627 1.51-.454 3.023-1.17 4.59-2.34.38-4.513-1.48-7.317-3.615-8.401ZM9.58 12.66c-.623 0-1.132-.6-1.132-1.335 0-.735.505-1.34 1.132-1.34.631 0 1.14.606 1.132 1.34 0 .735-.505 1.334-1.132 1.334Zm4.85 0c-.623 0-1.132-.6-1.132-1.335 0-.735.505-1.34 1.132-1.34.631 0 1.14.606 1.132 1.34 0 .735-.505 1.334-1.132 1.334Z"/></svg>
                 </div>
@@ -76,7 +74,7 @@ export default function Support() {
           </div>
 
           {/* Donate Section (compact) */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-4">Support Development</h2>
             <p className="text-gray-400 mb-6">If you find iFly helpful, consider supporting the project.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -86,7 +84,7 @@ export default function Support() {
           </div>
 
           {/* Troubleshooting Section */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+          <div className="card-glass p-8">
             <h2 className="text-2xl font-semibold text-white mb-6">
               Troubleshooting Tips
             </h2>

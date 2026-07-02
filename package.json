@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "next": "16.2.6",
-    "plist": "^4.0.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "plist": "^5.0.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -36,7 +36,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^10",
-    "eslint-config-next": "16.2.4",
+    "eslint-config-next": "16.2.7",
     "tailwindcss": "^4",
     "typescript": "6.0.3"
   }

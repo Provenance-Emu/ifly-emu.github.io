@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
 
       {/* Hero */}
       <GridHero className="pt-20 pb-16 text-center">

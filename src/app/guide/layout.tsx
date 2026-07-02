@@ -36,7 +36,7 @@ export default function GuideLayout({ children }: { children: React.ReactNode })
 
         {/* Content */}
         <div className="min-w-0">
-          <article className="prose-guide max-w-none">{children}</article>
+          <article className="max-w-none">{children}</article>
 
           {(prev || next) && (
             <div className="mt-12 flex items-center justify-between gap-4 border-t border-white/10 pt-6">

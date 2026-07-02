@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Accordion, { type AccordionItemData } from '@/components/ui/Accordion';
 
 const items: AccordionItemData[] = [
@@ -20,7 +21,7 @@ const items: AccordionItemData[] = [
     a: (
       <>
         Arcade rips come in several shapes. See{' '}
-        <a href="/guide/arcade/" className="text-orange-300 hover:underline">Arcade &amp; Naomi Rips</a>{' '}
+        <Link href="/guide/arcade/" className="text-orange-300 hover:underline">Arcade &amp; Naomi Rips</Link>{' '}
         for decrypted single-cart <code>.bin</code> dumps, multi-track GD-ROM dumps, and Naomi
         GD-cartridge <code>zip</code>+<code>.chd</code> layouts.
       </>
@@ -57,7 +58,7 @@ const items: AccordionItemData[] = [
     q: 'How do I set up controllers?',
     a: (
       <>
-        See the <a href="/controllers/" className="text-orange-300 hover:underline">Controllers</a>{' '}
+        See the <Link href="/controllers/" className="text-orange-300 hover:underline">Controllers</Link>{' '}
         page for MFi, DualShock, DualSense, Xbox, and Switch mappings, plus on-screen control
         options.
       </>

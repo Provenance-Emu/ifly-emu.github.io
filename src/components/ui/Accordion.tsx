@@ -10,10 +10,14 @@ export default function Accordion({ items }: { items: AccordionItemData[] }) {
     <div className="divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10">
       {items.map((item, i) => {
         const isOpen = open === i;
+        const buttonId = `accordion-button-${i}`;
+        const panelId = `accordion-panel-${i}`;
         return (
           <div key={i} className="bg-white/[0.02]">
             <button
               type="button"
+              id={buttonId}
+              aria-controls={panelId}
               className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? null : i)}
@@ -30,7 +34,15 @@ export default function Accordion({ items }: { items: AccordionItemData[] }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="m6 9 6 6 6-6" />
               </svg>
             </button>
-            {isOpen && <div className="px-5 pb-5 text-sm leading-relaxed text-gray-300">{item.a}</div>}
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={buttonId}
+              hidden={!isOpen}
+              className="px-5 pb-5 text-sm leading-relaxed text-gray-300"
+            >
+              {item.a}
+            </div>
           </div>
         );
       })}

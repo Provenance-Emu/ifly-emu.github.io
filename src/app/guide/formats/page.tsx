@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Callout from '@/components/ui/Callout';
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default function FormatsPage() {
       <h1 className="text-3xl font-black text-white">Supported Formats</h1>
       <p className="mt-3 text-gray-400">
         iFly reads the same disc and arcade formats as Flycast, plus extra handling for odd
-        arcade rips (see <a href="/guide/arcade/" className="text-orange-300 hover:underline">Arcade &amp; Naomi Rips</a>).
+        arcade rips (see <Link href="/guide/arcade/" className="text-orange-300 hover:underline">Arcade &amp; Naomi Rips</Link>).
       </p>
 
       <Callout variant="tip" title="Prefer CHD or CDI over GDI">

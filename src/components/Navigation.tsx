@@ -47,7 +47,7 @@ const Navigation = () => {
           {/* Desktop nav */}
           <div className="hidden md:flex items-baseline gap-1">
             {navItems.map(item => (
-              <Link key={item.href} href={item.href} className={linkClass(item.href)}>
+              <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={linkClass(item.href)}>
                 {item.label}
               </Link>
             ))}
@@ -80,6 +80,7 @@ const Navigation = () => {
             <Link
               key={item.href}
               href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
               className={`block ${linkClass(item.href)}`}
               onClick={() => setMenuOpen(false)}
             >

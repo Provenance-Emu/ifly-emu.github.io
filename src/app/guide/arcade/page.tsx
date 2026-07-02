@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Callout from '@/components/ui/Callout';
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function ArcadePage() {
       <p className="mt-3 text-gray-400">
         Naomi, Naomi 2, and Atomiswave rips arrive in several shapes. iFly detects each and
         routes it correctly — including formats stock Flycast can&apos;t open. You still need the
-        matching arcade BIOS (see <a href="/guide/bios/" className="text-orange-300 hover:underline">BIOS Setup</a>).
+        matching arcade BIOS (see <Link href="/guide/bios/" className="text-orange-300 hover:underline">BIOS Setup</Link>).
       </p>
 
       <h2 className="mt-10 text-xl font-semibold text-white">Decrypted single-cart ROMs</h2>

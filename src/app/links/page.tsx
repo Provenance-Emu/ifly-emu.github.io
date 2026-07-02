@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Links',
@@ -15,7 +16,7 @@ const ExternalCard = ({ href, title, description, iconPath, iconColor = 'text-gr
 }) => (
   <a href={href} target="_blank" rel="noopener noreferrer"
      {...(proofIgnore ? { 'data-proofer-ignore': '' } : {})}
-     className="flex items-start gap-4 p-4 bg-gray-800/40 border border-gray-700/50 rounded-xl hover:border-gray-600 transition-colors group">
+     className="flex items-start gap-4 p-4 card-glass group">
     <div className={`w-10 h-10 rounded-lg ${iconBg} flex items-center justify-center ${iconColor} shrink-0`}>
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
         <path d={iconPath} />
@@ -30,21 +31,18 @@ const ExternalCard = ({ href, title, description, iconPath, iconColor = 'text-gr
 
 export default function Links() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader title="Links & Resources" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-            Links &amp; Resources
-          </h1>
-
           {/* Download */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-6">Download iFly</h2>
             <DownloadSection showEmbed />
           </div>
 
           {/* Flycast Resources */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-2">Flycast Resources</h2>
             <p className="text-gray-400 text-sm mb-6">iFly is built on Flycast. These resources cover the underlying emulator.</p>
             <div className="grid md:grid-cols-2 gap-3">
@@ -82,7 +80,7 @@ export default function Links() {
           </div>
 
           {/* Community */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-6">Community &amp; Social</h2>
             <div className="grid md:grid-cols-3 gap-3">
               <ExternalCard
@@ -110,7 +108,7 @@ export default function Links() {
           </div>
 
           {/* Support Development */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-6">
+          <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-2">Support Development</h2>
             <p className="text-gray-400 text-sm mb-6">Help keep iFly free and actively developed.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -120,7 +118,7 @@ export default function Links() {
           </div>
 
           {/* Related Projects */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+          <div className="card-glass p-8">
             <h2 className="text-2xl font-semibold text-white mb-2">Related Projects</h2>
             <p className="text-gray-400 text-sm mb-6">Other emulators from the same team.</p>
             <div className="grid md:grid-cols-2 gap-3">
@@ -134,7 +132,7 @@ export default function Links() {
               <ExternalCard
                 href="https://icube-emu.com"
                 title="iCube"
-                description="iOS port of Dolphin — GameCube &amp; Wii emulation"
+                description="iOS port of Dolphin — GameCube & Wii emulation"
                 iconPath="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
                 iconColor="text-blue-400" iconBg="bg-blue-500/10"
                 proofIgnore

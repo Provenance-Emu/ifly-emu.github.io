@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function DonatePage() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
       <section className="container mx-auto px-4 pt-12">
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-gradient-to-br from-orange-700 to-orange-900 text-white rounded-2xl p-10 text-center shadow-xl shadow-orange-900/30 overflow-hidden">

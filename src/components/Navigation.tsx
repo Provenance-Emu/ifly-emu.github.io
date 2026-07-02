@@ -7,10 +7,10 @@ import { useState } from 'react';
 const navItems = [
   { href: '/',            label: 'Home' },
   { href: '/downloads/',  label: 'Downloads' },
-  { href: '/about/',      label: 'About' },
+  { href: '/guide/',      label: 'Guide' },
   { href: '/features/',   label: 'Features' },
+  { href: '/about/',      label: 'About' },
   { href: '/support/',    label: 'Support' },
-  { href: '/links/',      label: 'Links' },
   { href: '/donate/',     label: 'Donate' },
   { href: '/status/',     label: 'Status' },
 ];
@@ -22,15 +22,20 @@ const Navigation = () => {
   // Normalize both to have trailing slash (except root which is already '/')
   const normalizedPath = pathname === '/' ? '/' : (pathname.endsWith('/') ? pathname : `${pathname}/`);
 
+  const isActive = (href: string) => {
+    if (href === '/') return normalizedPath === '/';
+    return normalizedPath === href || normalizedPath.startsWith(href);
+  };
+
   const linkClass = (href: string) =>
     `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-      normalizedPath === href
-        ? 'bg-orange-700 text-white'
-        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+      isActive(href)
+        ? 'btn-gradient text-white'
+        : 'text-gray-300 hover:bg-white/5 hover:text-white'
     }`;
 
   return (
-    <nav aria-label="Main navigation" className="bg-gray-900/95 backdrop-blur-sm text-white border-b border-gray-800 sticky top-0 z-50">
+    <nav aria-label="Main navigation" className="sticky top-0 z-50 border-b border-white/10 bg-ink/80 text-white backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
@@ -42,7 +47,7 @@ const Navigation = () => {
           {/* Desktop nav */}
           <div className="hidden md:flex items-baseline gap-1">
             {navItems.map(item => (
-              <Link key={item.href} href={item.href} className={linkClass(item.href)}>
+              <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={linkClass(item.href)}>
                 {item.label}
               </Link>
             ))}
@@ -70,11 +75,12 @@ const Navigation = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-700 bg-gray-900 px-4 py-3 space-y-1">
+        <div className="md:hidden border-t border-white/10 bg-ink/95 px-4 py-3 space-y-1">
           {navItems.map(item => (
             <Link
               key={item.href}
               href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
               className={`block ${linkClass(item.href)}`}
               onClick={() => setMenuOpen(false)}
             >

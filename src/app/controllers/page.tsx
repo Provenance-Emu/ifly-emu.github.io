@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Recommended Controllers',
@@ -46,17 +47,14 @@ const picks: Pick[] = [
 
 export default function Controllers() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader
+        title="Recommended Controllers"
+        subtitle="Everything below pairs over Bluetooth and works with iFly out of the box."
+      />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 text-center">
-            Recommended Controllers
-          </h1>
-          <p className="text-center text-gray-500 mb-10">
-            Everything below pairs over Bluetooth and works with iFly out of the box.
-          </p>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 space-y-8">
+          <div className="card-glass p-8 space-y-8">
             <section>
               <p className="text-gray-400 leading-relaxed">
                 iFly supports MFi controllers, PlayStation DualSense and DualShock 4, Xbox

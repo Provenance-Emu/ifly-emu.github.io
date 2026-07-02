@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Licenses & Acknowledgements',
@@ -67,17 +68,14 @@ const components: Component[] = [
 
 export default function Licenses() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-ink">
+      <PageHeader
+        title="Licenses & Acknowledgements"
+        subtitle="Open-source components used in iFly EMU."
+      />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 text-center">
-            Licenses &amp; Acknowledgements
-          </h1>
-          <p className="text-center text-gray-500 mb-10">
-            Open-source components used in iFly EMU.
-          </p>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 space-y-8">
+          <div className="card-glass p-8 space-y-8">
             <section>
               <p className="text-gray-400 leading-relaxed">
                 iFly EMU is built on Flycast and a number of open-source libraries. Each project

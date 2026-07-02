@@ -66,7 +66,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
     : null;
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100 px-4 py-12">
+    <div className="min-h-screen bg-ink text-gray-100 px-4 py-12">
       <div className="max-w-2xl mx-auto space-y-8">
         <div>
           <h1 className="text-3xl font-bold text-white">Site Status</h1>
@@ -85,7 +85,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
         {loading && (
           <div className="space-y-4 animate-pulse">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="bg-gray-900 border border-gray-800 rounded-2xl h-32" />
+              <div key={i} className="bg-gray-900 border border-white/10 rounded-2xl h-32" />
             ))}
           </div>
         )}
@@ -103,7 +103,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
 
         {data && <>
         {/* Lighthouse */}
-        <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6 space-y-4">
+        <section className="bg-gray-900 border border-white/10 rounded-2xl p-6 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">Lighthouse</h2>
             {lh?.report_url && (
@@ -128,7 +128,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
         </section>
 
         {/* HTML & Links */}
-        <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+        <section className="bg-gray-900 border border-white/10 rounded-2xl p-6">
           <h2 className="text-lg font-semibold mb-4">HTML &amp; Links</h2>
           <div className="flex items-center gap-3">
             <StatusDot ok={data?.html_check.passed ?? null} />
@@ -143,7 +143,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
         </section>
 
         {/* Security */}
-        <section className="bg-gray-900 border border-gray-800 rounded-2xl p-6 space-y-4">
+        <section className="bg-gray-900 border border-white/10 rounded-2xl p-6 space-y-4">
           <h2 className="text-lg font-semibold">Security</h2>
           <div className="space-y-3">
             <div className="flex items-center justify-between">

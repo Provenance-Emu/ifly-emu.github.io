@@ -38,7 +38,7 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 px-4 py-12">
+    <div className="min-h-screen bg-ink px-4 py-12">
       <div className="mx-auto max-w-2xl space-y-6">
         <header className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-white">Join the iFly TestFlight</h1>
@@ -48,7 +48,7 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
         </header>
 
         {!gatePassed ? (
-          <section className="rounded-2xl border border-gray-800 p-6 bg-gray-900">
+          <section className="card-glass p-6">
             <h2 className="text-xl font-medium mb-2 text-white">Help support the project</h2>
             <p className="text-sm text-gray-400 mb-4">
               Please follow <a href={TWITTER_URL} target="_blank" rel="noreferrer noopener" className="underline underline-offset-4">@provenanceapp</a> on X (Twitter) to stay updated on releases and development. Once followed, click “I followed” below. If you prefer not to follow, you can still proceed.
@@ -79,7 +79,7 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
             </div>
           </section>
         ) : (
-          <section className="rounded-2xl border border-gray-800 p-6 bg-gray-900">
+          <section className="card-glass p-6">
             <h2 className="text-xl font-medium mb-2 text-white">You’re in</h2>
             <p className="text-sm text-gray-400 mb-4">
               Click below to open the TestFlight invite. If the build is full, try again later.
@@ -109,7 +109,7 @@ export default function TestFlightGate({ testflightUrl, skipGate }: TestFlightGa
           </p>
         </section>
 
-        <section className="rounded-2xl border border-gray-800 p-6 bg-gray-900">
+        <section className="card-glass p-6">
           <h2 className="text-xl font-medium mb-2 text-white">Support Development</h2>
           <p className="text-sm text-gray-400 mb-4">
             If you find iFly helpful, consider supporting ongoing development. Thank you!

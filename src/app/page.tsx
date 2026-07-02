@@ -38,7 +38,7 @@ export default function Home() {
           {/* App icon — priority ensures it's preloaded as the LCP element */}
           <div className="flex justify-center mb-8">
             <Image
-              src="/icon-512.png"
+              src="/favicons/favicon-192.png"
               alt="iFly app icon"
               width={96}
               height={96}

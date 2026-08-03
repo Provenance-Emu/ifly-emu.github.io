@@ -25,19 +25,19 @@
   "dependencies": {
     "next": "16.2.7",
     "plist": "^5.0.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^25",
+    "@types/node": "^26",
     "@types/plist": "^3.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^10",
-    "eslint-config-next": "16.2.7",
+    "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   }
 }

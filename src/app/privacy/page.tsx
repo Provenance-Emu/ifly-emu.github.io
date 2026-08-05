@@ -4,14 +4,14 @@ import PageHeader from '@/components/ui/PageHeader';
 export const metadata: Metadata = {
   title: "Privacy Policy - iFly",
   description:
-    "iFly does not collect personally identifiable information. Anonymous crash reports are opt-out. iCloud and local network features are user-controlled.",
+    "iFly does not collect personally identifiable information. Anonymous crash reports and usage analytics are opt-out. iCloud and local network features are user-controlled.",
   alternates: { canonical: 'https://ifly-emu.com/privacy/' },
 };
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-ink">
-      <PageHeader title="Privacy Policy" subtitle="Effective date: May 31, 2026" />
+      <PageHeader title="Privacy Policy" subtitle="Effective date: July 12, 2026" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <div className="card-glass p-8 space-y-8">
@@ -31,6 +31,19 @@ export default function Privacy() {
                 fix bugs. This is not personally identifiable, not linked to you, and never used
                 for tracking or advertising. You can turn it off any time in the app:{" "}
                 <span className="text-gray-300 font-medium">Settings → Upload Crash Reports</span>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">Usage analytics</h2>
+              <p className="text-gray-400 leading-relaxed">
+                iFly uses TelemetryDeck to count anonymous feature usage: app launches, game
+                sessions (which game started, how long it ran), and which features get used.
+                TelemetryDeck is anonymous by design — identifiers are double-hashed and rotate,
+                and there is no device fingerprinting or advertising ID. Nothing is linked to you,
+                and nothing is used for tracking or ads. You can turn it off any time in
+                the app:{" "}
+                <span className="text-gray-300 font-medium">Settings → Share Anonymous Usage Analytics</span>.
               </p>
             </section>
 

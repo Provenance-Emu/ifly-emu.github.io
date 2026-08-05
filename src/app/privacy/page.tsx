@@ -40,8 +40,8 @@ export default function Privacy() {
                 iFly uses TelemetryDeck to count anonymous feature usage: app launches, game
                 sessions (which game started, how long it ran), and which features get used.
                 TelemetryDeck is anonymous by design — identifiers are double-hashed and rotate,
-                there is no device fingerprinting and no advertising ID. Nothing is linked to
-                you and nothing is used for tracking or ads. You can turn it off any time in
+                and there is no device fingerprinting or advertising ID. Nothing is linked to you,
+                and nothing is used for tracking or ads. You can turn it off any time in
                 the app:{" "}
                 <span className="text-gray-300 font-medium">Settings → Share Anonymous Usage Analytics</span>.
               </p>

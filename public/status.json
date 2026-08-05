@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-08-05T22:08:04Z",
-  "run_url": "https://github.com/Provenance-Emu/ifly-emu.github.io/actions/runs/31051519226",
+  "last_updated": "2026-08-05T22:09:57Z",
+  "run_url": "https://github.com/Provenance-Emu/ifly-emu.github.io/actions/runs/31051528597",
   "html_check": {
     "passed": false,
-    "error_count": 0
+    "error_count": 27
   },
   "lighthouse": {
     "performance": null,

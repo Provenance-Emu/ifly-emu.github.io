@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} Joseph Mattiello. Built on{' '}
-            <a href="https://github.com/JoeMatt/flycast" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Flycast</a>.{' '}
+            <a href="https://github.com/Provenance-Emu/flycast" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Flycast</a>.{' '}
             <a href="https://joemattiello.dev" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Developer</a>.
           </p>
           <div className="flex gap-4">

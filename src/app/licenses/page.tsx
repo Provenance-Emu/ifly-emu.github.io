@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 type Component = {
   name: string;
   license: string;
-  url: string;
+  url?: string;
   note?: string;
 };
 
@@ -19,8 +19,8 @@ const components: Component[] = [
   {
     name: 'Flycast',
     license: 'GPL-2.0',
-    url: 'https://github.com/JoeMatt/flycast/tree/xcframework',
-    note: 'Custom modifications by Joseph Mattiello. Corresponding source for the version of Flycast used in iFly is on the xcframework branch at the link above.',
+    url: 'https://github.com/Provenance-Emu/flycast',
+    note: 'Custom modifications by Joseph Mattiello. Corresponding source for the version of Flycast used in iFly is published at the linked repository.',
   },
   {
     name: 'MoltenVK',
@@ -40,7 +40,6 @@ const components: Component[] = [
   {
     name: 'PVWebServer',
     license: 'BSD-3-Clause',
-    url: 'https://github.com/Provenance-Emu/PVWebServer',
     note: 'Wraps GCDWebServer (BSD-3-Clause, swisspol/GCDWebServer).',
   },
   {
@@ -90,14 +89,18 @@ export default function Licenses() {
                 {components.map(c => (
                   <li key={c.name} className="border-l-2 border-orange-500/40 pl-4">
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                      <a
-                        href={c.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-base font-semibold text-white hover:text-orange-300 hover:underline transition-colors"
-                      >
-                        {c.name}
-                      </a>
+                      {c.url ? (
+                        <a
+                          href={c.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base font-semibold text-white hover:text-orange-300 hover:underline transition-colors"
+                        >
+                          {c.name}
+                        </a>
+                      ) : (
+                        <span className="text-base font-semibold text-white">{c.name}</span>
+                      )}
                       <span className="text-xs uppercase tracking-wide text-gray-500">
                         {c.license}
                       </span>
@@ -105,7 +108,9 @@ export default function Licenses() {
                     {c.note && (
                       <p className="text-sm text-gray-400 mt-1">{c.note}</p>
                     )}
-                    <p className="text-xs text-gray-600 mt-1 break-all">{c.url}</p>
+                    {c.url && (
+                      <p className="text-xs text-gray-600 mt-1 break-all">{c.url}</p>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -129,12 +134,12 @@ export default function Licenses() {
                 Per the GPL-2.0 license under which Flycast is distributed, the corresponding
                 source for the version of Flycast used in iFly EMU is available at{" "}
                 <a
-                  href="https://github.com/JoeMatt/flycast/tree/xcframework"
+                  href="https://github.com/Provenance-Emu/flycast"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 hover:underline transition-colors"
                 >
-                  github.com/JoeMatt/flycast (xcframework branch)
+                  github.com/Provenance-Emu/flycast
                 </a>.
               </p>
             </section>

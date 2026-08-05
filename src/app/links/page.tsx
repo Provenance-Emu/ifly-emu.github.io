@@ -103,6 +103,7 @@ export default function Links() {
                 description="r/EmulationOniOS community"
                 iconPath="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.315 3.516 8.488C3.185 19.401 3 18.22 3 17c0-2.21 1.343-4.1 3.27-4.9a2 2 0 1 1 2.73-1.844C10.2 9.883 11.08 9.5 12 9.5s1.8.383 2 .756A2 2 0 1 1 16.73 12.1C18.657 12.9 20 14.79 20 17c0 1.22-.185 2.401-.516 3.488A11.955 11.955 0 0 0 24 12c0-6.627-5.373-12-12-12Z"
                 iconColor="text-orange-400" iconBg="bg-orange-500/10"
+                proofIgnore
               />
             </div>
           </div>

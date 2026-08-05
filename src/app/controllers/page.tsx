@@ -73,6 +73,7 @@ export default function Controllers() {
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
+                      data-proofer-ignore
                       className="text-base font-semibold text-white hover:text-orange-300 hover:underline transition-colors"
                     >
                       {p.name} →

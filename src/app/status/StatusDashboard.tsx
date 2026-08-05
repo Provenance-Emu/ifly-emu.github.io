@@ -73,7 +73,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
           {lastRun ? (
             <p className="mt-1 text-sm text-gray-400">
               Last audit:{' '}
-              <a href={data?.run_url || '#'} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+              <a href={data?.run_url || '#'} target="_blank" rel="noopener noreferrer" data-proofer-ignore className="text-orange-400 hover:underline">
                 {lastRun}
               </a>
             </p>
@@ -107,7 +107,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">Lighthouse</h2>
             {lh?.report_url && (
-              <a href={lh.report_url} target="_blank" rel="noopener noreferrer" className="text-xs text-orange-400 hover:underline">
+              <a href={lh.report_url} target="_blank" rel="noopener noreferrer" data-proofer-ignore className="text-xs text-orange-400 hover:underline">
                 Full report →
               </a>
             )}

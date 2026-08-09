@@ -7,6 +7,9 @@ import type { PlusPlatform } from './plusFeatures';
 const RATIO: Record<PlusPlatform, { w: number; h: number; label: string }> = {
   iphone:  { w: 402,  h: 874,  label: 'iPhone' },
   ipad:    { w: 1024, h: 1366, label: 'iPad' },
+  // The site's existing iPad captures are landscape and already normalized to
+  // 4:3, so a slot holding one must match that and not the portrait ratio.
+  'ipad-landscape': { w: 4, h: 3, label: 'iPad' },
   tvos:    { w: 1920, h: 1080, label: 'Apple TV' },
   watchos: { w: 205,  h: 251,  label: 'Apple Watch' },
 };

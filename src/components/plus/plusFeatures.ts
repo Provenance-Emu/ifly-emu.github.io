@@ -5,7 +5,7 @@
 // Naming: the app calls the tier "Plus" (renamed from "Pro", 2026-08-09) to
 // match Provenance Plus. The StoreKit product IDs are `…iFly.plus.*`.
 
-export type PlusPlatform = 'iphone' | 'ipad' | 'tvos' | 'watchos';
+export type PlusPlatform = 'iphone' | 'ipad' | 'ipad-landscape' | 'tvos' | 'watchos';
 
 export type PlusFeatureSpec = {
   /** Matches the `ProFeature` case name in the app. */
@@ -31,7 +31,8 @@ export const PLUS_FEATURES: PlusFeatureSpec[] = [
       'Deep CRT, NTSC, and film-simulation shader packs, on top of the shader library the app already ships.',
     freeNote:
       'Scanlines, handheld LCD looks, sharpening, and the default Trinitron CRT are free for everyone — the preset iFly turns on by default is never behind the paywall.',
-    platform: 'ipad',
+    platform: 'ipad-landscape',
+    media: '/images/plus/shaders-ipad.webp',
   },
   {
     id: 'texturePacks',
@@ -45,7 +46,8 @@ export const PLUS_FEATURES: PlusFeatureSpec[] = [
     title: 'Per-Game Tuning Profiles',
     body:
       'Save a tuned set of emulation settings per game, so a title that needs a specific configuration keeps it without changing your defaults.',
-    platform: 'iphone',
+    platform: 'ipad-landscape',
+    media: '/images/plus/per-game-ipad.webp',
   },
   {
     id: 'watchVMU',

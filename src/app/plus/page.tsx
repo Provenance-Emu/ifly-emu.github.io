@@ -9,7 +9,7 @@ import { PLUS_FEATURES, FREE_FOREVER } from '@/components/plus/plusFeatures';
 export const metadata: Metadata = {
   title: 'iFly Plus',
   description:
-    'iFly Plus is a one-time unlock for the extras built on top of the emulator: CRT and filter shader packs, HD texture packs, per-game tuning profiles, VMU mini-games on Apple Watch, watermark-free clips, and unlimited Handoff. The emulator core, imports, save states, and RetroAchievements stay free.',
+    'iFly Plus unlocks the extras built on top of the emulator: CRT and filter shader packs, HD texture packs, per-game tuning profiles, VMU mini-games on Apple Watch, watermark-free clips, and unlimited Handoff. The emulator core, imports, save states, and RetroAchievements stay free.',
   alternates: { canonical: 'https://ifly-emu.com/plus/' },
 };
 
@@ -17,7 +17,7 @@ export default function PlusPage() {
   return (
     <div className="min-h-screen bg-ink">
       <PageHeader
-        eyebrow="One-time unlock"
+        eyebrow="Upgrade"
         title="iFly Plus"
         subtitle="Plus unlocks the extras built on top of the emulator. The emulator itself, and everything needed to play your games, stays free."
       />
@@ -91,13 +91,15 @@ export default function PlusPage() {
             </Callout>
           </div>
 
-          {/* Pricing is genuinely undecided — which SKUs ship isn't settled, so
-              the page says the shape and not the number. */}
+          {/* Pricing is genuinely undecided. `ProStore.swift` defines monthly,
+              yearly, AND lifetime product IDs, and which of them actually ship
+              is not settled — so this page must not claim a shape either. An
+              earlier draft said "one-time unlock, not a subscription"; that was
+              unsupported and is why this section states nothing but the fact. */}
           <div>
             <h2 className="text-2xl font-bold text-white">Price</h2>
             <p className="mt-3 max-w-3xl text-base leading-relaxed text-gray-400">
-              Not announced yet. Plus is a one-time unlock, not a subscription, and it will be
-              well under $99.
+              Not announced yet.
             </p>
           </div>
 

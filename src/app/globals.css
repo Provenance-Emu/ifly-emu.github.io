@@ -36,23 +36,33 @@ h1, h2 { letter-spacing: -0.02em; }
   color: transparent;
 }
 
-/* Animated drifting grid overlay — absolute child of a relative hero. */
+/* Animated drifting grid overlay — absolute child of a relative hero.
+   The pattern lives on an oversized inner element animated with `transform`
+   (GPU-composited) instead of `background-position` (forces a full repaint
+   every frame). The outer element clips the overscan and carries the mask. */
 .grid-overlay {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+.grid-overlay-pattern {
+  position: absolute;
+  inset: -40px;
   background-image:
     linear-gradient(rgba(255, 105, 0, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 105, 0, 0.08) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: grid-drift 22s linear infinite;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  will-change: transform;
 }
 
 @keyframes grid-drift {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: 40px 40px, 40px 40px; }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-40px, -40px, 0); }
 }
 
 /* Glass card */
@@ -84,6 +94,6 @@ h1, h2 { letter-spacing: -0.02em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .grid-overlay { animation: none; }
+  .grid-overlay-pattern { animation: none; }
   .card-glass:hover, .btn-gradient:hover { transform: none; }
 }

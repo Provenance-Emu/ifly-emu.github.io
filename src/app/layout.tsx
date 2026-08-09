@@ -64,13 +64,24 @@ export const metadata: Metadata = {
 // CSP — sets the policy via <meta> since GitHub Pages doesn't support custom HTTP headers.
 // HSTS and X-Frame-Options still require HTTP headers and must be set at the CDN layer
 // (e.g. Cloudflare). See: https://observatory.mozilla.org/analyze/ifly-emu.com
+//
+// script-src MUST keep 'unsafe-inline'. Next's App Router bootstraps hydration
+// from inline `self.__next_f.push(...)` tags, and a static export has no server
+// to mint a nonce (hashes are useless — the payload changes every build). This
+// meta tag lands at ~byte 3.6k, well before the first inline script, so it does
+// govern them: without 'unsafe-inline' the RSC payload is blocked, React never
+// hydrates, and EVERY client component dies silently — the mobile menu, the FAQ
+// accordion, the TestFlight gate, the status dashboard. Pages still render, so
+// it looks fine; only interactivity is gone. That shipped once (fixed
+// 2026-08-09) and is invisible to the build, htmlproofer, and Lighthouse.
+// It costs Observatory points — that's why site-audit.yml's threshold is C.
 const CSP = [
   "default-src 'self'",
-  "script-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https: blob:",
   "frame-src https://itch.io https://html.itch.zone https://v6p9d9t4.ssl.hwcdn.net",
-  "connect-src 'self'",
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
   "font-src 'self'",
   "object-src 'none'",
   "worker-src 'none'",

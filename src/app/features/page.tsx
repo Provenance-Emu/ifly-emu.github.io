@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Features from '@/components/Features';
 import SocialButton, { DiscordIcon, XIcon } from '@/components/SocialButton';
 import PageHeader from '@/components/ui/PageHeader';
+import PlusComparison from '@/components/plus/PlusComparison';
 
 export const metadata: Metadata = {
   title: 'Features',
@@ -20,6 +21,19 @@ export default function FeaturesPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-5xl mx-auto">
           <Features />
+
+          {/* The free/paid boundary belongs where people already land, not only
+              on /plus — the full breakdown lives there. */}
+          <div className="mt-14">
+            <h2 className="mb-6 text-2xl font-bold text-white">Free vs Plus</h2>
+            <PlusComparison />
+            <p className="mt-4 text-sm text-gray-400">
+              Everything above is free unless the table says otherwise.{' '}
+              <Link href="/plus/" className="text-orange-400 transition-colors hover:text-orange-300">
+                What iFly Plus unlocks →
+              </Link>
+            </p>
+          </div>
 
           {/* Bottom CTAs */}
           <div className="mt-14 card-glass p-8 text-center">

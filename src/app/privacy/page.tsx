@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-ink">
-      <PageHeader title="Privacy Policy" subtitle="Effective date: July 12, 2026" />
+      <PageHeader title="Privacy Policy" subtitle="Effective date: August 9, 2026" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <div className="card-glass p-8 space-y-8">
@@ -24,13 +24,17 @@ export default function Privacy() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">Crash &amp; performance diagnostics</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">Crash diagnostics</h2>
               <p className="text-gray-400 leading-relaxed">
                 iFly uses a crash-reporting service (Bugsnag) to collect anonymous diagnostics:
-                device model, OS version, crash stack traces, and performance timings, so we can
-                fix bugs. This is not personally identifiable, not linked to you, and never used
-                for tracking or advertising. You can turn it off any time in the app:{" "}
-                <span className="text-gray-300 font-medium">Settings → Upload Crash Reports</span>.
+                device model, OS version, and crash stack traces, so we can fix bugs. The
+                per-install device identifier is stripped before each report is sent. No
+                performance monitoring is collected. iFly measures its own frame timing on your
+                device, and those measurements never leave it. This is not personally
+                identifiable, not linked to you, and never used for tracking or advertising. You
+                can turn it off any time in the app:{" "}
+                <span className="text-gray-300 font-medium">Settings → General → Privacy → Share Crash Reports</span>.
+                Turning it off stops uploads immediately.
               </p>
             </section>
 
@@ -43,7 +47,7 @@ export default function Privacy() {
                 and there is no device fingerprinting or advertising ID. Nothing is linked to you,
                 and nothing is used for tracking or ads. You can turn it off any time in
                 the app:{" "}
-                <span className="text-gray-300 font-medium">Settings → Share Anonymous Usage Analytics</span>.
+                <span className="text-gray-300 font-medium">Settings → General → Privacy → Share Anonymous Analytics</span>.
               </p>
             </section>
 

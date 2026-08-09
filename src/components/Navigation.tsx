@@ -9,6 +9,7 @@ const navItems = [
   { href: '/downloads/',  label: 'Downloads' },
   { href: '/guide/',      label: 'Guide' },
   { href: '/features/',   label: 'Features' },
+  { href: '/plus/',       label: 'Plus' },
   { href: '/about/',      label: 'About' },
   { href: '/support/',    label: 'Support' },
   { href: '/donate/',     label: 'Donate' },

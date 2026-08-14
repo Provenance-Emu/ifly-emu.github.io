@@ -31,14 +31,20 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ifly-emu.com/' },
 };
 
-/* Screenshot galleries. Below `md` these are swipeable snap rails — six phone
+/* Screenshot galleries. Below `lg` these are swipeable snap rails — six phone
    frames stacked vertically is a wall, one row you flick through is a
-   showcase. At `md` and up the rail becomes a centred wrap capped at max-w-3xl,
-   which lands the iPhones as a 3x2 block and the iPad/Apple TV sets as 2x2, so
-   every frame is visible without a gesture on desktop. */
+   showcase. At `lg` and up the rail becomes a centred wrap capped at max-w-3xl
+   (48rem = 768px), which lands the iPhones as a 3x2 block and the iPad/Apple TV
+   sets as 2x2, so every frame is visible without a gesture on desktop.
+   Frame widths come from DeviceFrame: iPhone w-56 (224px), iPad 360px,
+   Apple TV w-80 (320px); with gap-6 (24px) the rows measure 720 / 744 / 664px,
+   all inside the 768px cap.
+   The breakpoint is `lg`, not `md`: Tailwind's `container` is capped at 48rem
+   in the md band, so the usable inner width there is 768 - 32 = 736px and the
+   744px iPad row would wrap to one per line. */
 const galleryRail =
   '-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-4 ' +
-  'md:mx-auto md:max-w-3xl md:flex-wrap md:justify-center md:gap-y-8 md:overflow-visible md:px-0 md:pb-0 ' +
+  'lg:mx-auto lg:max-w-3xl lg:flex-wrap lg:justify-center lg:gap-y-8 lg:overflow-visible lg:px-0 lg:pb-0 ' +
   'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400';
 
 const galleryFrame = 'shrink-0 snap-center';

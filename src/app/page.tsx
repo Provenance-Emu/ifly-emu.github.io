@@ -6,10 +6,15 @@ import GradientButton from '@/components/ui/GradientButton';
 import iphone1 from '@/images/screenshots/ios/iphone1-library.webp';
 import iphone2 from '@/images/screenshots/ios/iphone2-settings.webp';
 import iphone3 from '@/images/screenshots/ios/iphone3-emu.webp';
+import iphone4 from '@/images/screenshots/ios/iphone4-pause.webp';
+import iphone5 from '@/images/screenshots/ios/iphone5-shaders.webp';
+import iphone6 from '@/images/screenshots/ios/iphone6-themes.webp';
+import iphone7 from '@/images/screenshots/ios/iphone7-3d.webp';
 import ipad1 from '@/images/screenshots/ipad/ipad1-library.webp';
 import ipad2 from '@/images/screenshots/ipad/ipad2-search.webp';
 import ipad3 from '@/images/screenshots/ipad/ipad3-shaders.webp';
 import ipad4 from '@/images/screenshots/ipad/ipad4-emu.webp';
+import ipad5 from '@/images/screenshots/ipad/ipad5-arcade.webp';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
@@ -143,6 +148,10 @@ export default function Home() {
               [iphone1, 'iFly iPhone – game library'],
               [iphone2, 'iFly iPhone – settings'],
               [iphone3, 'iFly iPhone – gameplay'],
+              [iphone4, 'iFly iPhone – pause menu with save-state slots, quick save, and controller-skin settings'],
+              [iphone5, 'iFly iPhone – shmup gameplay with a shader filter and on-screen touch controls'],
+              [iphone6, 'iFly iPhone – game library with green accent theming'],
+              [iphone7, 'iFly iPhone – 3D gameplay in a snowy mountain landscape with on-screen touch controls'],
             ] as const).map(([img, alt], idx) => (
               <DeviceFrame key={`iphone-${idx}`} type="iphone" src={img} alt={alt} priority={idx === 0} />
             ))}
@@ -161,6 +170,7 @@ export default function Home() {
               [ipad2, 'iFly iPad – search'],
               [ipad3, 'iFly iPad – Metal shaders'],
               [ipad4, 'iFly iPad – gameplay'],
+              [ipad5, 'iFly iPad – NAOMI arcade board booting with a CRT shader, performance HUD, and arcade-style touch controls'],
             ] as const).map(([img, alt], idx) => (
               <DeviceFrame key={`ipad-${idx}`} type="ipad" src={img} alt={alt} />
             ))}

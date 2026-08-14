@@ -55,11 +55,15 @@ h1, h2 { letter-spacing: -0.02em; }
      heading block  mb-12 md:mb-16
      block inside a section  mb-12 · gap-6
 
-   CONTRAST FLOOR
-     Never use text-gray-500 (3.5–4.1:1 on our surfaces) or text-gray-600
-     (2.2–2.6:1) for text. text-gray-400 is the dimmest passing grey at
-     6.4–7.6:1. Solid orange fills carry white text at orange-700 (5.22:1);
-     orange-600 and lighter do not (≤ 3.6:1).
+   CONTRAST FLOOR — target for new and edited code, NOT a description of
+   the current codebase. Roughly 15 call sites still violate it (Footer,
+   licenses, StatusDashboard, donate, Screenshot, controllers, MediaSlot);
+   they predate this rule and are tracked as follow-ups. Do not assume a
+   grey you find in existing code already passes.
+     Don't reach for text-gray-500 (3.5–4.1:1 on our surfaces) or
+     text-gray-600 (2.2–2.6:1) for text. text-gray-400 is the dimmest
+     passing grey at 6.4–7.6:1. Solid orange fills carry white text at
+     orange-700 (5.22:1); orange-600 and lighter do not (≤ 3.6:1).
    ───────────────────────────────────────────────────────────────────────── */
 
 /* Gradient text (orange). Apply to a span/heading. */

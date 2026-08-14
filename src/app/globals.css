@@ -11,7 +11,12 @@
 }
 
 :root {
-  --gradient-primary: linear-gradient(135deg, #ffab40 0%, #ff6900 50%, #d64500 100%);
+  /* Brightened so surfaces filled with it can carry DARK text at AA. Each stop
+     was pushed to full HSV value and desaturated along its own hue line until it
+     cleared its target against --color-ink — hue drift is < 0.2deg per stop, so
+     this is the same orange family, not a shift toward yellow. Ink on the three
+     stops is 10.49 / 8.41 / 6.86:1. See .btn-gradient. */
+  --gradient-primary: linear-gradient(135deg, #ffab40 0%, #ff8a38 50%, #ff6921 100%);
   --gradient-primary-hover: linear-gradient(135deg, #ffbe5c 0%, #ff7d1f 50%, #f0530f 100%);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --radius-card: 12px;
@@ -119,11 +124,29 @@ h1, h2 { letter-spacing: -0.02em; }
   box-shadow: 0 0 0 1px rgba(255, 105, 0, 0.12), 0 8px 32px rgba(255, 105, 0, 0.07);
 }
 
-/* Gradient pill button */
+/* Gradient pill button.
+
+   The foreground is INK, not white. White on this gradient measured 1.88 / 2.89 /
+   4.46:1 — the worst contrast on the site, on the site's primary CTA and on the
+   active nav pill, so on every page. There is no orange bright enough to be on
+   brand and dark enough to carry white (the ceiling is ~#d34a0c at 5.22:1), so
+   the fill was brightened and the text darkened instead: ink on the three stops
+   is 10.49 / 8.41 / 6.86:1, and the worst point anywhere on the continuous ramp
+   is 6.86:1.
+
+   Anything placed inside this button — icons included — must inherit this colour
+   rather than re-declaring white. Note that .btn-gradient is UNLAYERED, so it
+   beats a Tailwind `text-*` utility on the same element; a `text-white` here
+   would be dead code that reads as if it still applies.
+
+   The fallback is deliberate. If --color-ink is ever renamed the var() is
+   invalid at computed-value time, `color` falls back to `inherit`, and this
+   button would quietly inherit white from <nav> — restoring the exact 1.88:1
+   bug while the stylesheet still looks correct. */
 .btn-gradient {
   position: relative;
   background: var(--gradient-primary);
-  color: #fff;
+  color: var(--color-ink, #0a0a0f);
   border-radius: 9999px;
   transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), filter 0.3s var(--ease-smooth);
   box-shadow: 0 6px 20px rgba(255, 105, 0, 0.25);

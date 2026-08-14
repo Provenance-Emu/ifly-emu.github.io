@@ -31,7 +31,12 @@ const Navigation = () => {
   const linkClass = (href: string) =>
     `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
       isActive(href)
-        ? 'btn-gradient text-white'
+        // No text colour here on purpose. The pill used to be `btn-gradient
+        // text-white`, which was 1.88:1 at the light end of the gradient.
+        // .btn-gradient now supplies the ink foreground itself, and as a plain
+        // rule outside Tailwind's layers it would beat a `text-*` utility here
+        // regardless, so declaring one would only be misleading.
+        ? 'btn-gradient'
         : 'text-gray-300 hover:bg-white/5 hover:text-white'
     }`;
 

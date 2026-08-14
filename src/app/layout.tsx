@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 
 // CSP — sets the policy via <meta> since GitHub Pages doesn't support custom HTTP headers.
 // HSTS and X-Frame-Options still require HTTP headers and must be set at the CDN layer
-// (e.g. Cloudflare). See: https://observatory.mozilla.org/analyze/ifly-emu.com
+// (e.g. Cloudflare). See: https://developer.mozilla.org/en-US/observatory/analyze?host=ifly-emu.com
 //
 // script-src MUST keep 'unsafe-inline'. Next's App Router bootstraps hydration
 // from inline `self.__next_f.push(...)` tags, and a static export has no server

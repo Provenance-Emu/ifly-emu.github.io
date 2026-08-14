@@ -11,7 +11,12 @@
 }
 
 :root {
-  --gradient-primary: linear-gradient(135deg, #ffab40 0%, #ff6900 50%, #d64500 100%);
+  /* Brightened so surfaces filled with it can carry DARK text at AA. Each stop
+     was pushed to full HSV value and desaturated along its own hue line until it
+     cleared its target against --color-ink — hue drift is < 0.2deg per stop, so
+     this is the same orange family, not a shift toward yellow. Ink on the three
+     stops is 10.49 / 8.41 / 6.86:1. See .btn-gradient. */
+  --gradient-primary: linear-gradient(135deg, #ffab40 0%, #ff8a38 50%, #ff6921 100%);
   --gradient-primary-hover: linear-gradient(135deg, #ffbe5c 0%, #ff7d1f 50%, #f0530f 100%);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --radius-card: 12px;
@@ -27,6 +32,39 @@ body {
 }
 
 h1, h2 { letter-spacing: -0.02em; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TYPE SCALE — single source of truth for the marketing pages.
+
+   These are applied as Tailwind utility strings in JSX rather than as CSS
+   classes: plain rules in this file are unlayered and would beat Tailwind's
+   `@layer utilities`, making per-page overrides impossible.
+
+     display  hero <h1>          text-6xl md:text-7xl font-black tracking-tight
+     page     page <h1>          text-4xl md:text-5xl font-black tracking-tight
+     section  section <h2>       text-3xl font-bold tracking-tight
+     card     heading in a card  text-xl font-semibold
+     sub      heading in a card  text-base font-semibold
+     eyebrow  group label        text-sm font-semibold uppercase tracking-[0.18em]
+     lede     section intro      text-lg leading-relaxed text-gray-400
+     body     prose              text-sm leading-relaxed text-gray-400
+     meta     captions / stats   text-xs text-gray-400
+
+   VERTICAL RHYTHM
+     major section  py-16 md:py-24   (see components/ui/Section.tsx)
+     heading block  mb-12 md:mb-16
+     block inside a section  mb-12 · gap-6
+
+   CONTRAST FLOOR — target for new and edited code, NOT a description of
+   the current codebase. Roughly 15 call sites still violate it (Footer,
+   licenses, StatusDashboard, donate, Screenshot, controllers, MediaSlot);
+   they predate this rule and are tracked as follow-ups. Do not assume a
+   grey you find in existing code already passes.
+     Don't reach for text-gray-500 (3.5–4.1:1 on our surfaces) or
+     text-gray-600 (2.2–2.6:1) for text. text-gray-400 is the dimmest
+     passing grey at 6.4–7.6:1. Solid orange fills carry white text at
+     orange-700 (5.22:1); orange-600 and lighter do not (≤ 3.6:1).
+   ───────────────────────────────────────────────────────────────────────── */
 
 /* Gradient text (orange). Apply to a span/heading. */
 .text-gradient {
@@ -55,24 +93,64 @@ h1, h2 { letter-spacing: -0.02em; }
   to   { background-position: 40px 40px, 40px 40px; }
 }
 
-/* Glass card */
+/* Glass card. The top highlight fakes a light source above the card so the
+   surfaces read as glass rather than flat grey. */
 .card-glass {
   background-color: rgba(255, 255, 255, 0.04);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), transparent 40%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-card);
   transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
 }
 .card-glass:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(255, 105, 0, 0.35);
 }
 
-/* Gradient pill button */
+/* Non-interactive surface: keeps the glass look, drops the hover lift. Use on
+   cards that are read rather than clicked, so only real targets react. */
+.card-glass.card-static:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Marks the recommended path on a page of otherwise equal-weight cards. */
+.card-glass.card-accent {
+  border-color: rgba(255, 105, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 105, 0, 0.08), 0 8px 32px rgba(255, 105, 0, 0.05);
+}
+/* Declared after .card-static so an accent card that is also static keeps its
+   glow on hover instead of having box-shadow zeroed out from under it. */
+.card-glass.card-accent:hover {
+  border-color: rgba(255, 105, 0, 0.45);
+  box-shadow: 0 0 0 1px rgba(255, 105, 0, 0.12), 0 8px 32px rgba(255, 105, 0, 0.07);
+}
+
+/* Gradient pill button.
+
+   The foreground is INK, not white. White on this gradient measured 1.88 / 2.89 /
+   4.46:1 — the worst contrast on the site, on the site's primary CTA and on the
+   active nav pill, so on every page. There is no orange bright enough to be on
+   brand and dark enough to carry white (the ceiling is ~#d34a0c at 5.22:1), so
+   the fill was brightened and the text darkened instead: ink on the three stops
+   is 10.49 / 8.41 / 6.86:1, and the worst point anywhere on the continuous ramp
+   is 6.86:1.
+
+   Anything placed inside this button — icons included — must inherit this colour
+   rather than re-declaring white. Note that .btn-gradient is UNLAYERED, so it
+   beats a Tailwind `text-*` utility on the same element; a `text-white` here
+   would be dead code that reads as if it still applies.
+
+   The fallback is deliberate. If --color-ink is ever renamed the var() is
+   invalid at computed-value time, `color` falls back to `inherit`, and this
+   button would quietly inherit white from <nav> — restoring the exact 1.88:1
+   bug while the stylesheet still looks correct. */
 .btn-gradient {
   position: relative;
   background: var(--gradient-primary);
-  color: #fff;
+  color: var(--color-ink, #0a0a0f);
   border-radius: 9999px;
   transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), filter 0.3s var(--ease-smooth);
   box-shadow: 0 6px 20px rgba(255, 105, 0, 0.25);

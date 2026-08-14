@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Callout from '@/components/ui/Callout';
+import ipad5 from '@/images/screenshots/ipad/ipad5-arcade.webp';
 
 export const metadata: Metadata = {
   title: 'Arcade & Naomi Rips',
@@ -17,6 +19,18 @@ export default function ArcadePage() {
         routes it correctly — including formats stock Flycast can&apos;t open. You still need the
         matching arcade BIOS (see <Link href="/guide/bios/" className="text-orange-300 hover:underline">BIOS Setup</Link>).
       </p>
+
+      <figure className="card-glass mt-8 overflow-hidden p-3">
+        <Image
+          src={ipad5}
+          alt="NAOMI arcade board booting under iFly on iPad, showing the NAOMI logo through a CRT-curvature shader with a performance HUD overlay and arcade-style touch controls"
+          sizes="(min-width: 1024px) 700px, 100vw"
+          className="w-full h-auto rounded-xl ring-1 ring-white/10"
+        />
+        <figcaption className="mt-3 text-center text-sm text-gray-400">
+          NAOMI arcade hardware running under iFly.
+        </figcaption>
+      </figure>
 
       <h2 className="mt-10 text-xl font-semibold text-white">Decrypted single-cart ROMs</h2>
       <p className="mt-2 text-gray-400">

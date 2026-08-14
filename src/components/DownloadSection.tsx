@@ -16,7 +16,7 @@ export type DownloadSectionProps = {
 };
 
 const DefaultDescription = () => (
-  <p className="text-gray-400 mb-6">
+  <p className="text-lg leading-relaxed text-gray-400 mb-8">
     iFly isn’t on the App Store. You can sideload it from the sources below. We recommend
     <a
       href="https://sideloadly.io"
@@ -48,9 +48,9 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
   return (
     <section className={`container mx-auto px-4 ${className ?? ''}`}>
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-white mb-4">{title}</h2>
         {description ?? <DefaultDescription />}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <ButtonLink href="/downloads/" external={false} leftIcon={<DownloadIcon className="w-5 h-5" />}>All Downloads</ButtonLink>
           <ButtonLink href="https://provenance.itch.io/ifly" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
         </div>

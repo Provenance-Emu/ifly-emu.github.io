@@ -32,8 +32,15 @@ individual task says.
   `src/lib/buildParser.ts:203-210`. Replace image *content* only.
 - **Do not edit `src/lib/buildParser.ts`** in any task in this plan.
 - **Verification for every task** (this repo has no test suite):
-  `npm run lint`, `npm run type-check`, `npm run build` must all pass.
-  Paste the actual command output into the report — not a summary of it.
+  `npm run type-check` and `npm run build` must both pass. Paste the actual
+  command output into the report — not a summary of it.
+
+  **`npm run lint` is broken on this repo and is NOT a gate.** It fails
+  identically on `main` with `typescript-eslint does not support TS 7.0`
+  (`package.json` pins `typescript: 7.0.2` against
+  `eslint-config-next: 16.2.12`). Verified against a clean `main` checkout
+  on 2026-08-13. Do not attempt to fix it, do not change the TypeScript or
+  ESLint versions, and do not treat its failure as a task failure.
 - **Voice:** any public-facing prose follows `~/Workspace/personal-os/VOICE.md`
   if that file is readable. Do not invent marketing claims; if a change
   would require a new factual claim about the app, keep the existing wording.

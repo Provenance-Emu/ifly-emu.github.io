@@ -174,9 +174,20 @@ higher-resolution recapture exists; `IMG_2433` has pixelated box art.
 
 ### Constraints
 
-- Every committed image must be under **250 KB**. If any output exceeds
-  that, lower quality in steps of 5 (floor: 60) until it fits, and report
-  the final quality used per file.
+- **Site assets (`src/images/screenshots/`) must be under 250 KB each.**
+  These are rendered by pages and count against the Lighthouse perf gate.
+  If an output exceeds it, lower WebP quality in steps of 5 (floor: 60)
+  until it fits, and report the final quality used per file.
+
+- **Feed assets (`public/screenshots/`) have no size ceiling and must NOT
+  be palette-quantized.** Corrected 2026-08-13 after the ceiling was found
+  to be wrong for these files: they are referenced *only* from the
+  AltStore/SideStore JSON feed (`buildParser.ts:203-210`) and never appear
+  in any HTML page, so they carry no Lighthouse cost. The pre-existing
+  baseline on `main` already shipped these at 195 KB, 299 KB, 314 KB and
+  354 KB. Encode them at full colour depth — visible banding on gameplay
+  gradients is a worse outcome than a 300 KB file. Keep them roughly at or
+  below the ~350 KB the repo already shipped.
 - Report the total byte size of `public/screenshots/` and
   `src/images/screenshots/` before and after.
 

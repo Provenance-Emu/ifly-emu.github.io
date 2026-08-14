@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import SocialButton, { BmcIcon, PatreonIcon, VenmoIcon, ZelleIcon, OpenCollectiveIcon } from "@/components/SocialButton";
 
-const DEFAULT_TESTFLIGHT_URL = "https://testflight.apple.com/join/9ZEfnyMP";
+// Main iFly TestFlight link. A previous code pointed to iCube Emu instead—a
+// critical bug fixed 2026-08-13. The other two codes in this repo are
+// intentionally not interchangeable: dpDcf8Ua bypasses the gate
+// (/testflight-patrons/), and 9mbKzrZH is unlisted (/secret/).
+const DEFAULT_TESTFLIGHT_URL = "https://testflight.apple.com/join/KTUTErgU";
 const TWITTER_URL = "https://x.com/provenanceapp";
 const STORAGE_KEY = "ifly_testflight_gate_passed";
 

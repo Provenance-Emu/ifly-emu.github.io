@@ -14,9 +14,10 @@ export function Badge({ children, tone = 'default' }: { children: React.ReactNod
   );
 }
 
+/* Glass-tinted spec chip. gray-300 on the composited surface is 12.25:1. */
 export function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block rounded-full border border-gray-700 bg-gray-800 px-3 py-1 text-sm text-gray-300">
+    <span className="inline-block rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-sm text-gray-300">
       {children}
     </span>
   );

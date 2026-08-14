@@ -10,10 +10,10 @@ const VideoShowcase: React.FC<VideoShowcaseProps> = ({ videoSrc, posterSrc, clas
   const hasVideo = !!videoSrc;
 
   return (
-    <section className={`container mx-auto px-4 py-16 ${className}`}>
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-white mb-3">Full Speed, No JIT</h2>
-        <p className="text-gray-400 max-w-xl mx-auto">
+    <section className={`container mx-auto px-4 py-16 md:py-24 ${className}`}>
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Full Speed, No JIT</h2>
+        <p className="text-lg leading-relaxed text-gray-400 max-w-xl mx-auto">
           Dreamcast games running at native frame rates on iPhone. No jailbreak, no sideload hacks, no JIT workarounds.
         </p>
       </div>
@@ -42,8 +42,8 @@ const VideoShowcase: React.FC<VideoShowcaseProps> = ({ videoSrc, posterSrc, clas
                   </svg>
                 </div>
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium">Gameplay video coming soon</p>
-                  <p className="text-gray-600 text-xs mt-1">iPhone landscape capture</p>
+                  <p className="text-gray-300 text-sm font-medium">Gameplay video coming soon</p>
+                  <p className="text-gray-400 text-xs mt-1">iPhone landscape capture</p>
                 </div>
               </div>
             )}
@@ -51,7 +51,7 @@ const VideoShowcase: React.FC<VideoShowcaseProps> = ({ videoSrc, posterSrc, clas
         </div>
 
         {/* Video caption */}
-        <p className="text-center text-gray-500 text-sm mt-4">
+        <p className="text-center text-gray-400 text-sm mt-4">
           {hasVideo
             ? 'Captured on iPhone — actual gameplay, no post-processing'
             : 'Video placeholder — drop an MP4 at public/video/gameplay.mp4 to replace'

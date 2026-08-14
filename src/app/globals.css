@@ -28,6 +28,35 @@ body {
 
 h1, h2 { letter-spacing: -0.02em; }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   TYPE SCALE — single source of truth for the marketing pages.
+
+   These are applied as Tailwind utility strings in JSX rather than as CSS
+   classes: plain rules in this file are unlayered and would beat Tailwind's
+   `@layer utilities`, making per-page overrides impossible.
+
+     display  hero <h1>          text-6xl md:text-7xl font-black tracking-tight
+     page     page <h1>          text-4xl md:text-5xl font-black tracking-tight
+     section  section <h2>       text-3xl font-bold tracking-tight
+     card     heading in a card  text-xl font-semibold
+     sub      heading in a card  text-base font-semibold
+     eyebrow  group label        text-sm font-semibold uppercase tracking-[0.18em]
+     lede     section intro      text-lg leading-relaxed text-gray-400
+     body     prose              text-sm leading-relaxed text-gray-400
+     meta     captions / stats   text-xs text-gray-400
+
+   VERTICAL RHYTHM
+     major section  py-16 md:py-24   (see components/ui/Section.tsx)
+     heading block  mb-12 md:mb-16
+     block inside a section  mb-12 · gap-6
+
+   CONTRAST FLOOR
+     Never use text-gray-500 (3.5–4.1:1 on our surfaces) or text-gray-600
+     (2.2–2.6:1) for text. text-gray-400 is the dimmest passing grey at
+     6.4–7.6:1. Solid orange fills carry white text at orange-700 (5.22:1);
+     orange-600 and lighter do not (≤ 3.6:1).
+   ───────────────────────────────────────────────────────────────────────── */
+
 /* Gradient text (orange). Apply to a span/heading. */
 .text-gradient {
   background: var(--gradient-primary);
@@ -55,17 +84,36 @@ h1, h2 { letter-spacing: -0.02em; }
   to   { background-position: 40px 40px, 40px 40px; }
 }
 
-/* Glass card */
+/* Glass card. The top highlight fakes a light source above the card so the
+   surfaces read as glass rather than flat grey. */
 .card-glass {
   background-color: rgba(255, 255, 255, 0.04);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), transparent 40%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-card);
   transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
 }
 .card-glass:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(255, 105, 0, 0.35);
+}
+
+/* Non-interactive surface: keeps the glass look, drops the hover lift. Use on
+   cards that are read rather than clicked, so only real targets react. */
+.card-glass.card-static:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Marks the recommended path on a page of otherwise equal-weight cards. */
+.card-glass.card-accent {
+  border-color: rgba(255, 105, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 105, 0, 0.08), 0 8px 32px rgba(255, 105, 0, 0.05);
+}
+.card-glass.card-accent:hover {
+  border-color: rgba(255, 105, 0, 0.45);
 }
 
 /* Gradient pill button */

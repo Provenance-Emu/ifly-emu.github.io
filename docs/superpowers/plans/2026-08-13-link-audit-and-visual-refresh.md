@@ -27,10 +27,17 @@ individual task says.
   `script-src`'s `'unsafe-inline'` is load-bearing for hydration and
   `worker-src 'none'` must stay. If a task appears to need a CSP change,
   stop and report rather than editing the policy.
-- **Do not change any filename or extension under `public/screenshots/`.**
-  Those names are hardcoded into the AltStore/SideStore feed at
-  `src/lib/buildParser.ts:203-210`. Replace image *content* only.
-- **Do not edit `src/lib/buildParser.ts`** in any task in this plan.
+- **`public/screenshots/` filenames are hardcoded into the AltStore/SideStore
+  feed at `src/lib/buildParser.ts:203-210`.** Default to replacing image
+  *content* only, so the two never drift.
+
+  **Exception, owner-approved 2026-08-14 (Task 2b only):** the three
+  gameplay PNGs move to `.jpg`, with `buildParser.ts` updated in the *same
+  commit*. Rationale: the new captures hold 100–132K unique colours, so
+  truecolor PNG costs 847/782/820 KB against 144/163/154 KB for JPEG q88 —
+  a 5.7× saving on assets every AltStore client downloads. The drift risk
+  the default guards against does not apply when both sides change together
+  in one deliberate commit. No other task may edit `buildParser.ts`.
 - **Verification for every task** (this repo has no test suite):
   `npm run type-check` and `npm run build` must both pass. Paste the actual
   command output into the report — not a summary of it.

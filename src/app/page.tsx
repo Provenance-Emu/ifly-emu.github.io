@@ -8,11 +8,13 @@ import iphone1 from '@/images/screenshots/ios/iphone1-library.webp';
 import iphone2 from '@/images/screenshots/ios/iphone2-settings.webp';
 import iphone3 from '@/images/screenshots/ios/iphone3-emu.webp';
 import iphone4 from '@/images/screenshots/ios/iphone4-pause.webp';
+import iphone5 from '@/images/screenshots/ios/iphone5-shaders.webp';
 import iphone6 from '@/images/screenshots/ios/iphone6-themes.webp';
 import iphone7 from '@/images/screenshots/ios/iphone7-3d.webp';
 import ipad1 from '@/images/screenshots/ipad/ipad1-library.webp';
 import ipad2 from '@/images/screenshots/ipad/ipad2-search.webp';
 import ipad3 from '@/images/screenshots/ipad/ipad3-shaders.webp';
+import ipad4 from '@/images/screenshots/ipad/ipad4-emu.webp';
 import ipad5 from '@/images/screenshots/ipad/ipad5-arcade.webp';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
@@ -124,7 +126,7 @@ export default function Home() {
           ] as const).map(([value, label]) => (
             <div key={label} className="text-center py-5 px-2 card-glass card-static">
               <div className="text-2xl font-black tracking-tight text-orange-400">{value}</div>
-              <div className="text-[11px] font-semibold text-gray-400 mt-1.5 uppercase tracking-[0.14em]">{label}</div>
+              <div className="text-xs font-semibold text-gray-400 mt-1.5 uppercase tracking-[0.14em]">{label}</div>
             </div>
           ))}
         </div>
@@ -165,8 +167,12 @@ export default function Home() {
           <p className="text-lg leading-relaxed text-gray-400 max-w-xl mx-auto">Classic Dreamcast games on your iPhone, iPad, and Apple TV.</p>
         </div>
 
-        {/* iPhone — library, gameplay, settings, 3D, pause, themes. Ordered so
-            no two consecutive frames show the same kind of screen. */}
+        {/* iPhone — all seven frames. iphone3-emu and iphone5-shaders are the
+            same game at similar framing, so they sit at positions 2 and 6:
+            four apart in the rail, and diagonal (r1c2 vs r2c3) in the lg grid,
+            never side by side or stacked. Order also alternates UI and
+            gameplay so no two consecutive frames show the same kind of
+            screen. */}
         <div className="mb-16 md:mb-20">
           <PlatformLabel
             icon={<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>}
@@ -178,16 +184,19 @@ export default function Home() {
               [iphone1, 'iFly iPhone – game library'],
               [iphone3, 'iFly iPhone – gameplay'],
               [iphone2, 'iFly iPhone – settings'],
-              [iphone7, 'iFly iPhone – 3D gameplay in a snowy mountain landscape with on-screen touch controls'],
               [iphone4, 'iFly iPhone – pause menu with save-state slots, quick save, and controller-skin settings'],
               [iphone6, 'iFly iPhone – game library with green accent theming'],
+              [iphone5, 'iFly iPhone – shmup gameplay with a shader filter and on-screen touch controls'],
+              [iphone7, 'iFly iPhone – 3D gameplay in a snowy mountain landscape with on-screen touch controls'],
             ] as const).map(([img, alt], idx) => (
               <DeviceFrame key={`iphone-${idx}`} type="iphone" src={img} alt={alt} priority={idx === 0} className={galleryFrame} />
             ))}
           </div>
         </div>
 
-        {/* iPad */}
+        {/* iPad — all five frames. ipad3-shaders and ipad4-emu are the same
+            platformer, so they sit at positions 2 and 5: three apart in the
+            rail, and r1c2 vs r3c1 in the lg grid. */}
         <div className="mb-16 md:mb-20">
           <PlatformLabel
             icon={<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-orange-400" aria-hidden="true"><path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>}
@@ -200,6 +209,7 @@ export default function Home() {
               [ipad3, 'iFly iPad – Metal shaders'],
               [ipad2, 'iFly iPad – search'],
               [ipad5, 'iFly iPad – NAOMI arcade board booting with a CRT shader, performance HUD, and arcade-style touch controls'],
+              [ipad4, 'iFly iPad – gameplay'],
             ] as const).map(([img, alt], idx) => (
               <DeviceFrame key={`ipad-${idx}`} type="ipad" src={img} alt={alt} className={galleryFrame} />
             ))}

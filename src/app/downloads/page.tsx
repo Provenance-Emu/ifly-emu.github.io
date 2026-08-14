@@ -53,7 +53,7 @@ export default function DownloadsPage() {
               Add our source to AltStore or SideStore for easy installation and automatic updates:
             </p>
             <div className="card-glass card-static p-4 mb-6">
-              <p className="text-[11px] font-semibold text-gray-400 mb-1.5 uppercase tracking-[0.14em]">Source URL</p>
+              <p className="text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-[0.14em]">Source URL</p>
               <code className="text-sm text-orange-300 break-all">
                 {baseURL}/api/altstore
               </code>

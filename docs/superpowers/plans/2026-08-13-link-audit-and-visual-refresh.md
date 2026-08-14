@@ -306,7 +306,34 @@ but it must be a *coherent* pass, not scattered tweaks. Concretely:
 - Report the contrast ratio for each text/background colour pair that was
   changed or introduced, with the computed number.
 
-## Task 5: Canvas UI hero accent
+## Task 5: Canvas UI hero accent — CANCELLED BY OWNER 2026-08-14
+
+**Not implemented. Do not extract a brief for this task.**
+
+Cancelled after research, on these findings:
+
+- Canvas UI's effects are built on the experimental **html-in-canvas** API,
+  which requires `chrome://flags/#canvas-draw-element` or a
+  domain-registered Chrome origin trial token. Without one, the components
+  degrade to plain WebGL overlays — i.e. the site would ship the fallback,
+  not the effect that makes the library distinctive.
+- Install is `npx shadcn@latest add @canvas-ui/<name>-react`, but this repo
+  has no `components.json` and is not a shadcn project, so it would need
+  `shadcn init` plus dependencies into a repo that currently has four.
+- **The cost could not be measured.** There is no Chrome on the build
+  machine, so Lighthouse cannot run locally, and the CI Lighthouse
+  assertion step is currently crashing
+  (`TypeError: normalizeAssertion is not a function`), so CI would not
+  catch a regression either.
+- Performance is the site's weakest metric, measured between 67 and 95
+  against a gate of 70. Spending that budget on an unmeasurable, degraded
+  effect was judged a bad trade.
+
+The visual improvement the owner asked for was delivered by Task 4.
+
+Original task text retained below for the record.
+
+### (original, not implemented)
 
 **Files:** a new component under `src/components/`, plus `src/app/page.tsx`
 
@@ -374,3 +401,61 @@ edited by this task.
 - Report the three measured Lighthouse scores as numbers.
 - Report how `prefers-reduced-motion` was handled and how it was checked.
 - State plainly whether the effect shipped or was reverted.
+
+## Task 6: Fix the .btn-gradient contrast failure
+
+**Files:** `src/app/globals.css`, `src/components/Navigation.tsx`,
+`src/components/ui/Card.tsx`
+
+### Background
+
+Added 2026-08-14 after Task 4's review surfaced this and the owner chose
+the fix. It is a pre-existing defect, not one this branch introduced.
+
+`.btn-gradient` renders **white text** on an orange gradient. Measured
+contrast against its three gradient stops is **1.88 / 2.89 / 4.46:1**,
+against a WCAG AA requirement of 4.5:1 for body text. Both the Task 4
+implementer and its reviewer computed these independently and agreed.
+
+This class is the site's primary call to action *and* the active-state
+nav pill, so it appears on effectively every page.
+
+### Requirements
+
+The owner chose: **dark text on a brighter gradient.**
+
+1. In `src/app/globals.css`, change `.btn-gradient` to use a dark
+   foreground on a brightened orange gradient. The target measured in
+   review was **10.49 / 8.48 / 6.84:1** across the three stops — the
+   brightened-gradient-with-dark-text direction. Reproduce that
+   direction; you do not have to hit those exact numbers, but every stop
+   must clear **4.5:1** and you must report the computed ratio for each.
+2. `#ff6900` remains the brand accent. Brighten *within* the orange
+   family — do not shift hue toward yellow or red.
+3. Update the two other call sites so they stay visually coherent with the
+   new treatment: `src/components/Navigation.tsx` (the active nav pill,
+   around line 34) and `src/components/ui/Card.tsx` (around line 23).
+   All three must change together — a partial change leaves mismatched
+   buttons across the site.
+4. Any icon or arrow glyph inside these buttons must take the same dark
+   foreground as the text, not stay white.
+5. Check for a `:hover` / `:focus-visible` variant of `.btn-gradient` and
+   verify it clears 4.5:1 too. Task 4 found the hover state at 3.60:1 —
+   a state that only fails on hover still fails.
+
+### Constraints
+
+- Visual only. Do not change routes, copy, metadata, or any `href`.
+- No new npm dependency.
+- Do not modify the CSP in `src/app/layout.tsx`.
+- Compute every ratio with a script from the actual resolved colour
+  values and paste the script output into the report. There is no Chrome
+  on this machine, so contrast cannot be verified by a rendering tool and
+  the arithmetic is the only evidence.
+
+### Verification
+
+- `npm run type-check` and `npm run build` pass.
+- Every gradient stop, in both the default and hover/focus states, has a
+  reported contrast ratio ≥ 4.5:1.
+- `grep -rn "btn-gradient" src/` — confirm every call site was considered.

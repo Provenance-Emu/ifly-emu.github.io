@@ -84,6 +84,20 @@ export default function About() {
 
           <DownloadSection className="mt-8" />
 
+          {/* Provenance family */}
+          <div className="card-glass p-8 mt-6">
+            <h2 className="text-2xl font-semibold text-white mb-4">Part of the Provenance family</h2>
+            <p className="text-gray-400">
+              iFly is one of several sideload-friendly emulators from the Provenance team. For
+              GameCube and Wii games, check out{' '}
+              <a href="https://icube-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">iCube</a>;
+              for a single frontend covering 38+ classic consoles, see{' '}
+              <a href="https://provenance-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Provenance</a>;
+              and for guides, ROM ripping, and BIOS help across every app, visit the{' '}
+              <a href="https://wiki.provenance-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Provenance Wiki</a>.
+            </p>
+          </div>
+
           {/* Community + Donate */}
           <div className="grid sm:grid-cols-2 gap-4 mt-6">
             <div className="card-glass p-6 text-center">

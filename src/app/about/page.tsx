@@ -82,7 +82,7 @@ export default function About() {
             </div>
           </div>
 
-          <DownloadSection className="mt-8" showEmbed />
+          <DownloadSection className="mt-8" />
 
           {/* Community + Donate */}
           <div className="grid sm:grid-cols-2 gap-4 mt-6">

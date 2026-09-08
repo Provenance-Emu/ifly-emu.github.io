@@ -1,5 +1,6 @@
 import React from 'react';
-import ButtonLink from '@/components/ButtonLink';
+import ButtonLink, { GitHubIcon } from '@/components/ButtonLink';
+import StoreBadge, { AltStoreIcon, SideStoreIcon } from '@/components/StoreBadge';
 
 const DownloadIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className ?? 'w-5 h-5'} aria-hidden="true">
@@ -47,6 +48,35 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold tracking-tight text-white mb-4">{title}</h2>
         {description ?? <DefaultDescription />}
+        <div className="flex flex-wrap gap-3 justify-center items-center mb-6">
+          <StoreBadge
+            href={`altstore://source?url=${encodeURIComponent('https://ifly-emu.com/api/altstore')}`}
+            eyebrow="Add to"
+            label="AltStore"
+            icon={<AltStoreIcon className="w-8 h-8" />}
+            external
+            data-proofer-ignore
+          />
+          <StoreBadge
+            href={`sidestore://source?url=${encodeURIComponent('https://ifly-emu.com/api/sidestore')}`}
+            eyebrow="Add to"
+            label="SideStore"
+            icon={<SideStoreIcon className="w-8 h-8" />}
+            external
+            data-proofer-ignore
+          />
+          <StoreBadge
+            href="https://github.com/Provenance-Emu/Provenance"
+            eyebrow="Download from"
+            label="GitHub"
+            icon={<GitHubIcon className="w-6 h-6" />}
+            external
+          />
+        </div>
+        <p className="text-sm text-gray-400 mb-8">
+          Sideloaded and self-built copies include every Plus feature at no cost. Plus purchases
+          apply to the App Store build.
+        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <ButtonLink href="/downloads/" external={false} leftIcon={<DownloadIcon className="w-5 h-5" />}>All Downloads</ButtonLink>
         </div>

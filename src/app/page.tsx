@@ -133,7 +133,7 @@ export default function Home() {
       </Section>
 
       {/* Download Section */}
-      <DownloadSection className="py-16 md:py-24" showEmbed />
+      <DownloadSection className="py-16 md:py-24" />
 
       {/* Community + Donate */}
       <Section>

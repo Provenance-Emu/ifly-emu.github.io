@@ -80,7 +80,7 @@ const CSP = [
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https: blob:",
-  "frame-src https://itch.io https://html.itch.zone https://v6p9d9t4.ssl.hwcdn.net",
+  "frame-src 'none'",
   "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
   "font-src 'self'",
   "object-src 'none'",

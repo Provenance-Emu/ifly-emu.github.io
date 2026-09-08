@@ -11,6 +11,9 @@ interface DeviceFrameProps {
   className?: string;
   video?: boolean;
   videoSrc?: string;
+  /** Required when `src` is a plain URL string (e.g. from the screenshots manifest) rather than a static import. */
+  width?: number;
+  height?: number;
 }
 
 const frameStyles: Record<DeviceType, { outer: string; inner: string; aspect: string; width: string; sizes: string }> = {
@@ -37,7 +40,7 @@ const frameStyles: Record<DeviceType, { outer: string; inner: string; aspect: st
   },
 };
 
-const DeviceFrame: React.FC<DeviceFrameProps> = ({ type, src, alt, priority = false, className = '', video = false, videoSrc }) => {
+const DeviceFrame: React.FC<DeviceFrameProps> = ({ type, src, alt, priority = false, className = '', video = false, videoSrc, width, height }) => {
   const s = frameStyles[type];
 
   return (
@@ -65,6 +68,7 @@ const DeviceFrame: React.FC<DeviceFrameProps> = ({ type, src, alt, priority = fa
               className="h-full w-full object-cover"
               sizes={s.sizes}
               priority={priority}
+              {...(typeof src === 'string' ? { width: width ?? 0, height: height ?? 0 } : {})}
             />
           )}
         </div>

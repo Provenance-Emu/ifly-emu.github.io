@@ -5,6 +5,8 @@ import Section from '@/components/ui/Section';
 import GradientButton from '@/components/ui/GradientButton';
 import { Pill } from '@/components/ui/Badge';
 import DownloadSection from '@/components/DownloadSection';
+import StoreBadge, { AltStoreIcon, SideStoreIcon } from '@/components/StoreBadge';
+import { GitHubIcon } from '@/components/ButtonLink';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
 import DeviceFrame from '@/components/DeviceFrame';
@@ -96,6 +98,33 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <GradientButton href="/testflight/">TestFlight Beta</GradientButton>
             <GradientButton href="/downloads/" variant="outline">Download IPA</GradientButton>
+          </div>
+
+          {/* Sideload sources — secondary row under the primary CTAs */}
+          <div className="flex flex-wrap gap-3 justify-center mt-4">
+            <StoreBadge
+              href={`altstore://source?url=${encodeURIComponent('https://ifly-emu.com/api/altstore')}`}
+              eyebrow="Add to"
+              label="AltStore"
+              icon={<AltStoreIcon className="w-8 h-8" />}
+              external
+              data-proofer-ignore
+            />
+            <StoreBadge
+              href={`sidestore://source?url=${encodeURIComponent('https://ifly-emu.com/api/sidestore')}`}
+              eyebrow="Add to"
+              label="SideStore"
+              icon={<SideStoreIcon className="w-8 h-8" />}
+              external
+              data-proofer-ignore
+            />
+            <StoreBadge
+              href="https://github.com/Provenance-Emu/Provenance"
+              eyebrow="Download from"
+              label="GitHub"
+              icon={<GitHubIcon className="w-6 h-6" />}
+              external
+            />
           </div>
         </div>
       </GridHero>

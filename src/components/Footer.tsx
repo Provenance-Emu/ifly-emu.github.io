@@ -55,7 +55,6 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <ExternalFooterLink href="https://discord.gg/QF5ZjVT4Sa">Discord</ExternalFooterLink>
               <ExternalFooterLink href="https://x.com/ProvenanceApp">X / Twitter</ExternalFooterLink>
-              <ExternalFooterLink href="https://provenance.itch.io/ifly">itch.io</ExternalFooterLink>
               <ExternalFooterLink href="https://github.com/Provenance-Emu/Provenance">GitHub</ExternalFooterLink>
             </div>
           </div>

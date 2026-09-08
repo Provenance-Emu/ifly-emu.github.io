@@ -1,6 +1,5 @@
 import React from 'react';
-import ButtonLink, { ItchIcon } from '@/components/ButtonLink';
-import ItchIoEmbed from '@/components/ItchIoEmbed';
+import ButtonLink from '@/components/ButtonLink';
 
 const DownloadIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className ?? 'w-5 h-5'} aria-hidden="true">
@@ -11,7 +10,6 @@ const DownloadIcon: React.FC<{ className?: string }> = ({ className }) => (
 export type DownloadSectionProps = {
   title?: string;
   description?: React.ReactNode;
-  showEmbed?: boolean;
   className?: string;
 };
 
@@ -42,7 +40,6 @@ const DefaultDescription = () => (
 const DownloadSection: React.FC<DownloadSectionProps> = ({
   title = 'Download',
   description,
-  showEmbed = false,
   className,
 }) => {
   return (
@@ -52,13 +49,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
         {description ?? <DefaultDescription />}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <ButtonLink href="/downloads/" external={false} leftIcon={<DownloadIcon className="w-5 h-5" />}>All Downloads</ButtonLink>
-          <ButtonLink href="https://provenance.itch.io/ifly" leftIcon={<ItchIcon className="w-5 h-5" />}>Sideload via itch.io</ButtonLink>
         </div>
-        {showEmbed && (
-          <div className="flex justify-center">
-            <ItchIoEmbed itchId="3923686" linkColor="#5b96fa" title="iFly - Dreamcast Emulator for iOS and tvOS by Provenance EMU" />
-          </div>
-        )}
       </div>
     </section>
   );

@@ -83,31 +83,6 @@ export default function DownloadsPage() {
             </div>
           </div>
 
-          {/* External Download Sources */}
-          <div className="card-glass card-static p-6 md:p-8">
-            <h2 className="text-xl font-semibold text-white mb-2">
-              Other Download Sources
-            </h2>
-            <p className="text-sm leading-relaxed text-gray-400 mb-6">
-              You can also download iFly from these platforms. These may have different versions or additional release notes:
-            </p>
-            <a
-              href="https://provenance.itch.io/ifly"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 card-glass group focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
-            >
-              <div className="w-10 h-10 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path d="M3 6.5C3 5.12 4.12 4 5.5 4h13c1.38 0 2.5 1.12 2.5 2.5v8.75A2.75 2.75 0 0 1 18.25 18H5.75A2.75 2.75 0 0 1 3 15.25V6.5Zm4.02-.75a2.75 2.75 0 0 0-2.75 2.75v4.5c0 1.518 1.232 2.75 2.75 2.75h9.96A2.75 2.75 0 0 0 19.73 13V8.5a2.75 2.75 0 0 0-2.75-2.75H7.02Zm5.48 2.25c1.494 0 2.75 1.256 2.75 2.75S14 13.5 12.5 13.5 9.75 12.244 9.75 10.75 11.006 8 12.5 8Z"/></svg>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-base font-semibold text-white mb-1 group-hover:text-orange-300 transition-colors">itch.io</h3>
-                <p className="text-sm leading-relaxed text-gray-400 mb-2">Download with optional pay-what-you-want support.</p>
-                <span className="text-sm font-medium text-orange-300">Visit itch.io →</span>
-              </div>
-            </a>
-          </div>
-
           {/* iOS Downloads */}
           <div className="card-glass card-static p-6 md:p-8">
             <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2.5">
@@ -227,6 +202,17 @@ export default function DownloadsPage() {
                   <li>Sign and install the IPA on your device</li>
                   <li>Trust the certificate in Settings → General → VPN & Device Management</li>
                 </ol>
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-white mb-3">
+                  Legacy source: itch.io
+                </h3>
+                <p>
+                  Older iFly builds remain on{' '}
+                  <a href="https://provenance.itch.io/ifly" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">itch.io</a>.
+                  It is no longer updated. Use the sources above for current builds, or visit the{' '}
+                  <a href="/donate/" className="text-orange-400 hover:underline">donate page</a> if you want to chip in.
+                </p>
               </div>
               <div className="bg-amber-500/10 border-l-2 border-amber-500/50 rounded-r-xl px-5 py-4">
                 <p className="text-sm leading-relaxed text-amber-300">

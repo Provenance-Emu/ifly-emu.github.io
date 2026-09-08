@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw screenshot captures (import via scripts/import-screenshots.mjs; see README.md "Screenshots")
+public/screenshots/2026-08/

@@ -36,6 +36,7 @@ export default function Footer() {
               <FooterLink href="/testflight/">TestFlight Beta</FooterLink>
               <FooterLink href="/features/">Features</FooterLink>
               <FooterLink href="/guide/">Guide</FooterLink>
+              <FooterLink href="/compare/">Compare</FooterLink>
               <FooterLink href="/about/">About</FooterLink>
             </div>
           </div>

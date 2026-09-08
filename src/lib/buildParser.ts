@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import * as plist from 'plist';
+import { screenshots } from '@/data/screenshots';
 
 export interface BuildVersion {
   version: string;
@@ -199,16 +200,7 @@ This is an early build of iFly optimized for iOS and tvOS devices.`,
     iconURL: `${baseURL}/icon-1024.png`,
     tintColor: '#ff6900',
     category: 'games',
-    screenshots: [
-      `${baseURL}/screenshots/iphone1-library.jpg`,
-      `${baseURL}/screenshots/iphone2-search.jpg`,
-      `${baseURL}/screenshots/iphone3-emu.jpg`,
-      `${baseURL}/screenshots/iphone4-shaders.jpg`,
-      `${baseURL}/screenshots/iphone5-emu_shader.jpg`,
-      `${baseURL}/screenshots/iphone7-touchcontrols.jpg`,
-      `${baseURL}/screenshots/iphone8-pause.jpg`,
-      `${baseURL}/screenshots/iphone9-cheats.png`,
-    ],
+    screenshots: screenshots('iphone').slice(0, 8).map((item) => `${baseURL}${item.jpg}`),
     versions: versions.map(v => ({
       // Make beta versions unique by appending beta number to version string
       // This prevents duplicate version errors when multiple betas share the same bundle version

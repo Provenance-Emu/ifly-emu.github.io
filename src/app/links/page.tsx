@@ -120,21 +120,38 @@ export default function Links() {
           {/* Related Projects */}
           <div className="card-glass p-8">
             <h2 className="text-2xl font-semibold text-white mb-2">Related Projects</h2>
-            <p className="text-gray-400 text-sm mb-6">Other emulators from the same team.</p>
+            <p className="text-gray-400 text-sm mb-6">Other emulators and resources from the same team.</p>
             <div className="grid md:grid-cols-2 gap-3">
               <ExternalCard
-                href="https://github.com/Provenance-Emu/Provenance"
+                href="https://provenance-emu.com/"
                 title="Provenance"
-                description="Multi-system emulator frontend for iOS — 38+ consoles"
+                description="Multi-system retro emulator for iOS, tvOS and macOS"
                 iconPath="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm0 4a6 6 0 1 1 0 12A6 6 0 0 1 12 6Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
                 iconColor="text-orange-400" iconBg="bg-orange-500/10"
+                proofIgnore
               />
               <ExternalCard
-                href="https://icube-emu.com"
+                href="https://icube-emu.com/"
                 title="iCube"
-                description="iOS port of Dolphin — GameCube & Wii emulation"
+                description="GameCube & Wii emulator for iOS and tvOS"
                 iconPath="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
                 iconColor="text-blue-400" iconBg="bg-blue-500/10"
+                proofIgnore
+              />
+              <ExternalCard
+                href="https://jaguar.provenance-emu.com/"
+                title="Virtual Jaguar libretro"
+                description="Atari Jaguar core for RetroArch and Provenance"
+                iconPath="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.24L19.5 8 12 11.76 4.5 8 12 4.24ZM4 9.62l7 3.5v6.66l-7-3.5V9.62Zm9 10.16v-6.66l7-3.5v6.66l-7 3.5Z"
+                iconColor="text-yellow-400" iconBg="bg-yellow-500/10"
+                proofIgnore
+              />
+              <ExternalCard
+                href="https://wiki.provenance-emu.com/"
+                title="Provenance Wiki"
+                description="Guides, ROM ripping, BIOS help"
+                iconPath="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4Zm2 2v11a1 1 0 0 0 1 1h9V7a1 1 0 0 0-1-1H6Zm2 3h6v1.5H8V9Zm0 3h6v1.5H8V12Z"
+                iconColor="text-emerald-400" iconBg="bg-emerald-500/10"
                 proofIgnore
               />
             </div>

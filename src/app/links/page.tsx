@@ -5,7 +5,7 @@ import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Links',
-  description: 'All official iFly links: Discord community, X/Twitter, GitHub, itch.io, Patreon, and more.',
+  description: 'All official iFly links: Discord community, X/Twitter, GitHub, Patreon, and more.',
   alternates: { canonical: 'https://ifly-emu.com/links/' },
 };
 
@@ -38,7 +38,7 @@ export default function Links() {
           {/* Download */}
           <div className="card-glass p-8 mb-6">
             <h2 className="text-2xl font-semibold text-white mb-6">Download iFly</h2>
-            <DownloadSection showEmbed />
+            <DownloadSection />
           </div>
 
           {/* Flycast Resources */}

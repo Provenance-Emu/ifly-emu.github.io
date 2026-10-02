@@ -10,7 +10,11 @@ concurrency:
 
 jobs:
   claude-review:
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # Dependabot PRs read the separate Dependabot secrets store, which has no
+    # CLAUDE_CODE_OAUTH_TOKEN, so the review job always failed there. Skip them.
+    if: |
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: read

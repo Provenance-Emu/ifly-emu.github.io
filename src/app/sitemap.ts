@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guide/`,           changeFrequency: 'monthly', priority: 0.8, lastModified: lastModifiedFor('src/app/guide/page.tsx') },
     { url: `${base}/guide/importing/`, changeFrequency: 'monthly', priority: 0.7, lastModified: lastModifiedFor('src/app/guide/importing/page.tsx') },
     { url: `${base}/guide/formats/`,   changeFrequency: 'monthly', priority: 0.7, lastModified: lastModifiedFor('src/app/guide/formats/page.tsx') },
+    { url: `${base}/guide/dumping-dreamcast/`, changeFrequency: 'monthly', priority: 0.7, lastModified: lastModifiedFor('src/app/guide/dumping-dreamcast/page.tsx') },
     { url: `${base}/guide/bios/`,      changeFrequency: 'monthly', priority: 0.7, lastModified: lastModifiedFor('src/app/guide/bios/page.tsx') },
     { url: `${base}/guide/arcade/`,    changeFrequency: 'monthly', priority: 0.7, lastModified: lastModifiedFor('src/app/guide/arcade/page.tsx') },
     { url: `${base}/guide/systems/`,   changeFrequency: 'monthly', priority: 0.6, lastModified: lastModifiedFor('src/app/guide/systems/page.tsx') },

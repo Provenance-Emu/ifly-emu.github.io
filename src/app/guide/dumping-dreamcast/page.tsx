@@ -46,8 +46,8 @@ export default function DumpingDreamcastPage() {
         <li>A Dreamcast SD card adapter (it plugs into the serial port, the one the link cable uses) and an SD card.</li>
         <li>
           Room on that card for the whole disc. A full dump runs about 900 to 1000 MB, so a card
-          with 2 GB free leaves headroom. The SD Rip page doesn&apos;t say which file system the card
-          needs, so check its notes before you format it.
+          with 2 GB free leaves headroom. The SD Rip page doesn&apos;t specify a required file system,
+          so verify compatibility with your adapter and SD Rip setup before formatting the card.
         </li>
         <li>
           <strong className="text-gray-300">Dreamcast SD Rip</strong> v1.1, burned to a CD-R. The{' '}

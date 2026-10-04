@@ -489,7 +489,7 @@ jobs:
                 // CSP (about 55, grade C) or Cloudflare headers (B/A), so a grade-based alert
                 // fires on every run. Alert on a drop below the baseline instead: it means
                 // something that used to pass (meta CSP, Referrer-Policy, HTTPS redirect) broke.
-                failing: str('OBS_GRADE') !== 'N/A' && num('OBS_SCORE') > 0 && num('OBS_SCORE') < 35,
+                failing: str('OBS_GRADE') !== 'N/A' && num('OBS_SCORE') < 35,
                 body: [
                   '## Mozilla Observatory Score Dropped Below Baseline',
                   `Current grade: **${str('OBS_GRADE')}** (${num('OBS_SCORE')}/100). Baseline: 35 (grade D).`,

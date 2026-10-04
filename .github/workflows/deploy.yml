@@ -3,6 +3,14 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
+  # The iFly app's Beta Release workflow dispatches `ifly-release` after it
+  # publishes an IPA to the releases repo, so the Downloads page and the
+  # /api/altstore + /api/sidestore feeds pick up the new build immediately.
+  repository_dispatch:
+    types: [ifly-release]
+  # Self-heal if a dispatch is missed or the releases repo changes by hand.
+  schedule:
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -34,6 +42,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      # Writes data/releases.json (download links to the IPAs published in the
+      # releases repo). In CI a failed fetch fails this job, so a transient API
+      # error leaves the previous deployment live instead of publishing an empty
+      # feed over a good one.
+      - name: Fetch published builds
+        run: node scripts/fetch-releases.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASES_REPO: ${{ vars.RELEASES_REPO || 'JoeMatt/iFly-releases' }}
+
       - name: Build with Next.js
         run: npx next build
 
@@ -55,3 +73,27 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  # Provenance's combined sideload source (provenance-emu.com/apps.json) merges
+  # this site's /api/altstore verbatim, so it has to be regenerated AFTER this
+  # deploy for a new build to appear there. Needs a PAT with `repo` scope stored
+  # as FEED_DISPATCH_TOKEN in this repo; without it the combined feed picks the
+  # build up on the next Provenance build instead.
+  refresh-combined-feed:
+    runs-on: ubuntu-latest
+    needs: deploy
+    continue-on-error: true
+    steps:
+      - name: Refresh combined sideload feed
+        env:
+          GH_TOKEN: ${{ secrets.FEED_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning::FEED_DISPATCH_TOKEN not set; the combined feed will pick up this deploy on the next Provenance build."
+            exit 0
+          fi
+          gh api repos/Provenance-Emu/Provenance/dispatches \
+            -f event_type=companion-release \
+            -F client_payload[app]=ifly \
+            && echo "Requested combined-feed refresh" \
+            || echo "::warning::Combined-feed dispatch failed; it will self-heal on the next Provenance build."

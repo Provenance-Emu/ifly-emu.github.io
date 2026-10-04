@@ -45,6 +45,11 @@ export default function DumpingDreamcastPage() {
         <li>A working Dreamcast that can boot a burned CD-R.</li>
         <li>A Dreamcast SD card adapter (it plugs into the serial port, the one the link cable uses) and an SD card.</li>
         <li>
+          Room on that card for the whole disc. A full dump runs about 900 to 1000 MB, so a card
+          with 2 GB free leaves headroom. The SD Rip page doesn&apos;t specify a required file system,
+          so verify compatibility with your adapter and SD Rip setup before formatting the card.
+        </li>
+        <li>
           <strong className="text-gray-300">Dreamcast SD Rip</strong> v1.1, burned to a CD-R. The{' '}
           <a href="https://hiddenpalace.org/Dreamcast_SD_Rip" className={link} target="_blank" rel="noopener noreferrer">
             Hidden Palace page
@@ -105,8 +110,9 @@ export default function DumpingDreamcastPage() {
       <p className="mt-2 text-gray-400">
         A <code>.gdi</code> won&apos;t boot if a single track goes missing, and the track files add up
         to a lot of loose data. <code>.chd</code> is one compressed file, and the{' '}
-        <Link href="/guide/formats/" className={link}>formats table</Link> puts it at roughly
-        700 MB down to 300 MB. It comes from <code>chdman</code>, part of the MAME tools. On a Mac:
+        <Link href="/guide/formats/" className={link}>formats table</Link> notes it roughly
+        halves disk use, though how much you save depends on the game. It comes from{' '}
+        <code>chdman</code>, part of the MAME tools. On a Mac:
       </p>
       <pre className={pre}>{'brew install rom-tools'}</pre>
       <p className="mt-3 text-gray-400">

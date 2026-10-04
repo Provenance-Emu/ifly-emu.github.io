@@ -31,17 +31,23 @@ function fail(message) {
   process.exit(0);
 }
 
-const res = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=50`, {
-  headers: {
-    accept: 'application/vnd.github+json',
-    'user-agent': 'ifly-site-build',
-    ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}),
-  },
-}).catch((e) => fail(`request failed: ${e.message}`));
+const releases = [];
+for (let page = 1; ; page += 1) {
+  const res = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=100&page=${page}`, {
+    headers: {
+      accept: 'application/vnd.github+json',
+      'user-agent': 'ifly-site-build',
+      ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}),
+    },
+  }).catch((e) => fail(`request failed: ${e.message}`));
 
-if (!res.ok) fail(`GET releases for ${REPO} returned HTTP ${res.status}`);
+  if (!res.ok) fail(`GET releases for ${REPO} returned HTTP ${res.status}`);
 
-const releases = await res.json();
+  const pageReleases = await res.json();
+  if (!Array.isArray(pageReleases)) fail(`GET releases for ${REPO} returned an invalid response`);
+  releases.push(...pageReleases);
+  if (pageReleases.length < 100) break;
+}
 const builds = [];
 for (const r of releases) {
   if (r.draft) continue;

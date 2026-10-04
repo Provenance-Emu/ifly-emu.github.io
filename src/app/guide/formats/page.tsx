@@ -30,6 +30,8 @@ export default function FormatsPage() {
       <p className="mt-3 text-gray-400">
         iFly reads the same disc and arcade formats as Flycast, plus extra handling for odd
         arcade rips (see <Link href="/guide/arcade/" className="text-orange-300 hover:underline">Arcade &amp; Naomi Rips</Link>).
+        To make your own Dreamcast dumps, see{' '}
+        <Link href="/guide/dumping-dreamcast/" className="text-orange-300 hover:underline">Dumping Dreamcast Discs</Link>.
       </p>
 
       <Callout variant="tip" title="Prefer CHD or CDI over GDI">

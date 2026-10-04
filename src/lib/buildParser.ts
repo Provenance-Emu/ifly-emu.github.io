@@ -14,6 +14,8 @@ export interface BuildVersion {
   platform: 'iOS' | 'tvOS';
   isBeta: boolean;
   betaNumber?: number;
+  /** Unique feed version for builds that share a marketing version (release builds). */
+  feedVersion?: string;
 }
 
 export interface AppMetadata {
@@ -37,9 +39,9 @@ interface DistributionSummary {
 }
 
 /**
- * Parse the builds directory and extract all available versions
+ * Parse the local builds directory (public/builds/<version>/<platform>/*.ipa)
  */
-export function parseBuilds(buildsDir: string, baseURL: string): BuildVersion[] {
+function parseLocalBuilds(buildsDir: string, baseURL: string): BuildVersion[] {
   const versions: BuildVersion[] = [];
 
   if (!fs.existsSync(buildsDir)) {
@@ -129,7 +131,13 @@ export function parseBuilds(buildsDir: string, baseURL: string): BuildVersion[] 
     }
   }
 
-  // Sort versions: latest first, stable before beta
+  sortVersions(versions);
+
+  return versions;
+}
+
+/** Latest first, stable before beta, then higher beta, then newest date. */
+function sortVersions(versions: BuildVersion[]): void {
   versions.sort((a, b) => {
     // First compare by version number
     const versionCompare = compareVersions(b.version, a.version);
@@ -149,6 +157,54 @@ export function parseBuilds(buildsDir: string, baseURL: string): BuildVersion[] 
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
+}
+
+/** Written by scripts/fetch-releases.mjs from the public releases repo. */
+const RELEASES_MANIFEST = path.join(process.cwd(), 'data', 'releases.json');
+
+interface ReleaseBuild {
+  tag: string;
+  version: string;
+  build: string;
+  prerelease: boolean;
+  date: string;
+  name: string;
+  url: string;
+  size: number;
+  platform: 'iOS' | 'tvOS';
+}
+
+/** Builds published as GitHub release assets; download links point at the assets. */
+function parseReleaseBuilds(): BuildVersion[] {
+  if (!fs.existsSync(RELEASES_MANIFEST)) return [];
+  try {
+    const manifest = JSON.parse(fs.readFileSync(RELEASES_MANIFEST, 'utf8')) as { builds?: ReleaseBuild[] };
+    return (manifest.builds ?? []).map((b) => ({
+      version: b.version,
+      buildVersion: b.build,
+      date: b.date,
+      localizedDescription: `iFly ${b.version} (build ${b.build}) for ${b.platform}`,
+      downloadURL: b.url,
+      size: b.size,
+      minOSVersion: '17.0',
+      platform: b.platform,
+      isBeta: b.prerelease,
+      // Several builds share a marketing version, and stores need unique versions.
+      feedVersion: `${b.version}+${b.build}`,
+    }));
+  } catch (error) {
+    console.error('Error reading releases manifest:', error);
+    return [];
+  }
+}
+
+/**
+ * All available builds: the local public/builds directory plus the GitHub
+ * releases listed in data/releases.json.
+ */
+export function parseBuilds(buildsDir: string, baseURL: string): BuildVersion[] {
+  const versions = [...parseLocalBuilds(buildsDir, baseURL), ...parseReleaseBuilds()];
+  sortVersions(versions);
   return versions;
 }
 
@@ -204,7 +260,7 @@ This is an early build of iFly optimized for iOS and tvOS devices.`,
     versions: versions.map(v => ({
       // Make beta versions unique by appending beta number to version string
       // This prevents duplicate version errors when multiple betas share the same bundle version
-      version: v.isBeta && v.betaNumber ? `${v.version}-beta${v.betaNumber}` : v.version,
+      version: v.feedVersion ?? (v.isBeta && v.betaNumber ? `${v.version}-beta${v.betaNumber}` : v.version),
       buildVersion: v.buildVersion,
       date: v.date,
       localizedDescription: v.localizedDescription,

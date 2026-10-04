@@ -112,7 +112,7 @@ export default function DownloadsPage() {
                           {version.version}
                           {version.isBeta && (
                             <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-wide bg-amber-500/10 text-amber-300 border border-amber-500/25 px-2 py-0.5 rounded">
-                              Beta {version.betaNumber}
+                              Beta{version.betaNumber ? ` ${version.betaNumber}` : ''}
                             </span>
                           )}
                         </h3>
@@ -158,7 +158,7 @@ export default function DownloadsPage() {
                           {version.version}
                           {version.isBeta && (
                             <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-wide bg-amber-500/10 text-amber-300 border border-amber-500/25 px-2 py-0.5 rounded">
-                              Beta {version.betaNumber}
+                              Beta{version.betaNumber ? ` ${version.betaNumber}` : ''}
                             </span>
                           )}
                         </h3>

@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "founder": {
+    "cutoff": null
+  },
+  "provenanceCrossover": {
+    "enabled": true,
+    "minimumVersion": "3.4.0"
+  }
+}

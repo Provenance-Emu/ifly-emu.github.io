@@ -173,6 +173,7 @@ h1, h2 { letter-spacing: -0.02em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .grid-overlay { animation: none; }
+  /* The drift runs on ::before, not on the masked wrapper. */
+  .grid-overlay::before { animation: none; }
   .card-glass:hover, .btn-gradient:hover { transform: none; }
 }

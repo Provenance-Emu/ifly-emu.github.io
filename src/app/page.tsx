@@ -88,7 +88,7 @@ export default function Home() {
 
           {/* Platform badges */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {['iPhone', 'iPad', 'Apple TV', 'iOS 15.6+', 'tvOS 16.6+', 'Free'].map(badge => (
+            {['iPhone', 'iPad', 'Apple TV', 'iOS 17+', 'tvOS 17+', 'Free'].map(badge => (
               <Pill key={badge}>{badge}</Pill>
             ))}
           </div>

@@ -73,8 +73,8 @@ export default function About() {
             </h2>
             <div className="card-glass p-4">
               <ul className="text-gray-400 space-y-1.5">
-                <li><span className="font-medium text-gray-300">iOS:</span> iOS 15.6 or later</li>
-                <li><span className="font-medium text-gray-300">tvOS:</span> tvOS 16.6 or later</li>
+                <li><span className="font-medium text-gray-300">iOS:</span> iOS 17.0 or later</li>
+                <li><span className="font-medium text-gray-300">tvOS:</span> tvOS 17.0 or later</li>
                 <li><span className="font-medium text-gray-300">Device:</span> iPhone 12 or newer, iPad (6th generation) or newer, Apple TV 4K with JIT support</li>
                 <li><span className="font-medium text-gray-300">Recommendation:</span> Newer devices recommended for best performance</li>
                 <li><span className="font-medium text-gray-300">Storage:</span> Varies by game size</li>

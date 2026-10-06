@@ -96,7 +96,7 @@ const jsonLd = {
   name: 'iFly',
   applicationCategory: 'GameApplication',
   applicationSubCategory: 'Emulator',
-  operatingSystem: 'iOS 15.6+, tvOS 16.6+',
+  operatingSystem: 'iOS 17.0+, tvOS 17.0+',
   description: 'A Dreamcast emulator for iOS and tvOS. Play classic Sega Dreamcast games on your iPhone, iPad, and Apple TV.',
   url: 'https://ifly-emu.com',
   image: 'https://ifly-emu.com/icon-512.png',

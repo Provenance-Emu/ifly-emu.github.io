@@ -26,7 +26,7 @@ export default function ImportingPage() {
 
       <h2 className="mt-8 text-xl font-semibold text-white">Drag-and-drop (iPad)</h2>
       <p className="mt-2 text-gray-400">
-        On iPad (iOS 15+), drag files from Files, Safari downloads, or another app straight onto
+        On iPad, drag files from Files, Safari downloads, or another app straight onto
         the iFly library grid.
       </p>
 

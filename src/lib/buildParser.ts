@@ -123,7 +123,7 @@ function parseLocalBuilds(buildsDir: string, baseURL: string): BuildVersion[] {
         localizedDescription: description,
         downloadURL,
         size: ipaStats.size,
-        minOSVersion: platform === 'tvOS' ? '16.6' : '15.6',
+        minOSVersion: '17.0',
         platform,
         isBeta,
         betaNumber,

@@ -17,6 +17,7 @@ const ROWS: Row[] = [
   { label: 'VMU on Apple Watch',           free: 'Live viewer',      plus: 'Mini-games & card trading' },
   { label: 'Gameplay clips',               free: 'Watermarked',      plus: 'No watermark' },
   { label: 'Handoff between devices',      free: '3 a day',          plus: 'Unlimited' },
+  { label: 'Library sync',                 free: '—',                plus: 'Yes' },
 ];
 
 const cell = 'px-4 py-3 text-sm';

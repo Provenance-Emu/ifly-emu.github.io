@@ -34,7 +34,7 @@ const rows: [string, string, string][] = [
   ['Artwork', 'Automatic artwork downloads', 'Manual via playlists/thumbnails'],
   ['Texture packs', 'Custom texture-pack support with a management UI', 'Not documented'],
   ['Distribution', 'Sideload (AltStore/SideStore) today; App Store planned', 'App Store, or sideload via AltStore'],
-  ['Extras', 'iFly Plus: CRT/filter packs, HD texture packs, per-game tuning profiles, watermark-free clips, unlimited Handoff', 'Not documented'],
+  ['Extras', 'iFly Plus: CRT/filter packs, HD texture packs, per-game tuning profiles, watermark-free clips, unlimited Handoff, library sync', 'Not documented'],
 ];
 
 export default function IflyVsFlycastPage() {

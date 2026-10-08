@@ -9,7 +9,7 @@ import { PLUS_FEATURES, FREE_FOREVER } from '@/components/plus/plusFeatures';
 export const metadata: Metadata = {
   title: 'iFly Plus',
   description:
-    'iFly Plus unlocks the extras built on top of the emulator: CRT and filter shader packs, HD texture packs, per-game tuning profiles, VMU mini-games on Apple Watch, watermark-free clips, and unlimited Handoff. The emulator core, imports, save states, and RetroAchievements stay free.',
+    'iFly Plus unlocks the extras built on top of the emulator: CRT and filter shader packs, HD texture packs, per-game tuning profiles, VMU mini-games on Apple Watch, watermark-free clips, unlimited Handoff, and library sync. The emulator core, imports, save states, and RetroAchievements stay free.',
   alternates: { canonical: 'https://ifly-emu.com/plus/' },
 };
 
@@ -49,7 +49,7 @@ export default function PlusPage() {
             <div>
               <h2 className="text-2xl font-bold text-white">What Plus unlocks</h2>
               <p className="mt-3 max-w-3xl text-base leading-relaxed text-gray-400">
-                Six features, all of them iFly&apos;s own work rather than the emulator core.
+                Seven features, all of them iFly&apos;s own work rather than the emulator core.
               </p>
             </div>
             {PLUS_FEATURES.map((feature, i) => (

@@ -1,9 +1,10 @@
-// The six gated features, mirroring `ProFeature.swift` in the iFly app repo.
+// The seven gated features, mirroring `ProFeature.swift` in the iFly app repo.
 // Keep `id` in sync with the Swift enum case names — when a gate is added or
 // removed there, this file is the other half of the change.
 //
-// Naming: the app calls the tier "Plus" (renamed from "Pro", 2026-08-09) to
-// match Provenance Plus. The StoreKit product IDs are `…iFly.plus.*`.
+// Naming: the tier is "iFly Plus" to match Provenance Plus. The app's types
+// still say Pro (`ProFeature`, `ProStore`) and the StoreKit product IDs are
+// `…iFly.pro.*` — product IDs can't be renamed, only display names.
 
 export type PlusPlatform = 'iphone' | 'ipad' | 'ipad-landscape' | 'tvos' | 'watchos';
 
@@ -71,6 +72,13 @@ export const PLUS_FEATURES: PlusFeatureSpec[] = [
       'Pick a game up on another device as often as you like.',
     freeNote: 'The free tier allows 3 pulls a day.',
     platform: 'tvos',
+  },
+  {
+    id: 'librarySync',
+    title: 'Library Sync',
+    body:
+      "Keep your devices' game libraries in step automatically over your network.",
+    platform: 'ipad',
   },
 ];
 

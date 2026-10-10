@@ -1,5 +1,7 @@
 import React from 'react';
+import path from 'path';
 import ButtonLink, { GitHubIcon } from '@/components/ButtonLink';
+import { parseBuilds, type BuildVersion } from '@/lib/buildParser';
 import StoreBadge, { AltStoreIcon, SideStoreIcon } from '@/components/StoreBadge';
 
 const DownloadIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -38,11 +40,24 @@ const DefaultDescription = () => (
   </p>
 );
 
+// Newest build per platform, from the same release data /downloads/ renders
+// (parseBuilds reads the iFly-releases feed fetched at build time). The home
+// section used to show only source buttons, so it looked like there were no
+// downloads at all.
+function latestBuilds(): BuildVersion[] {
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 'https://ifly-emu.com';
+  const versions = parseBuilds(path.join(process.cwd(), 'public', 'builds'), baseURL);
+  return (['iOS', 'tvOS'] as const)
+    .map((platform) => versions.find((v) => v.platform === platform))
+    .filter((v): v is BuildVersion => v !== undefined);
+}
+
 const DownloadSection: React.FC<DownloadSectionProps> = ({
   title = 'Download',
   description,
   className,
 }) => {
+  const latest = latestBuilds();
   return (
     <section className={`container mx-auto px-4 ${className ?? ''}`}>
       <div className="max-w-3xl mx-auto text-center">
@@ -66,7 +81,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
             data-proofer-ignore
           />
           <StoreBadge
-            href="https://github.com/Provenance-Emu/Provenance"
+            href="https://github.com/JoeMatt/iFly-releases/releases"
             eyebrow="Download from"
             label="GitHub"
             icon={<GitHubIcon className="w-6 h-6" />}
@@ -77,6 +92,22 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({
           Sideloaded and self-built copies include every Plus feature at no cost. Plus purchases
           apply to the App Store build.
         </p>
+        {latest.length > 0 && (
+          <div className="mb-6">
+            <p className="text-sm uppercase tracking-wide text-gray-500 mb-3">Latest builds</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {latest.map((build) => (
+                <ButtonLink
+                  key={build.platform}
+                  href={build.downloadURL}
+                  leftIcon={<DownloadIcon className="w-5 h-5" />}
+                >
+                  {build.platform} {build.version} ({build.buildVersion})
+                </ButtonLink>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <ButtonLink href="/downloads/" external={false} leftIcon={<DownloadIcon className="w-5 h-5" />}>All Downloads</ButtonLink>
         </div>

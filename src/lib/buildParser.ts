@@ -16,6 +16,10 @@ export interface BuildVersion {
   betaNumber?: number;
   /** Unique feed version for builds that share a marketing version (release builds). */
   feedVersion?: string;
+  /** GitHub release page for this build, when it was published as a release. */
+  releaseURL?: string;
+  /** Release notes as HTML, already sanitised by GitHub (see scripts/fetch-releases.mjs). */
+  changelogHtml?: string;
 }
 
 export interface AppMetadata {
@@ -167,6 +171,8 @@ interface ReleaseBuild {
   version: string;
   build: string;
   prerelease: boolean;
+  releaseURL?: string;
+  changelogHtml?: string;
   date: string;
   name: string;
   url: string;
@@ -191,6 +197,8 @@ function parseReleaseBuilds(): BuildVersion[] {
       isBeta: b.prerelease,
       // Several builds share a marketing version, and stores need unique versions.
       feedVersion: `${b.version}+${b.build}`,
+      releaseURL: b.releaseURL,
+      changelogHtml: b.changelogHtml || undefined,
     }));
   } catch (error) {
     console.error('Error reading releases manifest:', error);

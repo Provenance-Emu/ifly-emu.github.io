@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import { parseBuilds } from '@/lib/buildParser';
 import PageHeader from '@/components/ui/PageHeader';
+import BuildList from '@/components/BuildList';
 
 export const metadata: Metadata = {
   title: 'Downloads',
@@ -21,19 +22,6 @@ export default function DownloadsPage() {
   // Group versions by platform
   const iosVersions = versions.filter(v => v.platform === 'iOS');
   const tvosVersions = versions.filter(v => v.platform === 'tvOS');
-
-  const formatFileSize = (bytes: number) => {
-    const mb = bytes / (1024 * 1024);
-    return `${mb.toFixed(2)} MB`;
-  };
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
 
   return (
     <div className="min-h-screen bg-ink">
@@ -97,44 +85,7 @@ export default function DownloadsPage() {
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
               iOS Builds
             </h2>
-            {iosVersions.length === 0 ? (
-              <p className="text-sm text-gray-400">No iOS builds available yet.</p>
-            ) : (
-              <div className="space-y-4">
-                {iosVersions.map((version, idx) => (
-                  <div
-                    key={idx}
-                    className="card-glass card-static p-4"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="text-base font-semibold text-white">
-                          {version.version}
-                          {version.isBeta && (
-                            <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-wide bg-amber-500/10 text-amber-300 border border-amber-500/25 px-2 py-0.5 rounded">
-                              Beta{version.betaNumber ? ` ${version.betaNumber}` : ''}
-                            </span>
-                          )}
-                        </h3>
-                        <p className="text-sm text-gray-400 mt-1.5">
-                          Build {version.buildVersion} • {formatDate(version.date)}
-                        </p>
-                        <p className="text-xs text-gray-400 mt-1">
-                          Size: {formatFileSize(version.size)} • Min iOS: {version.minOSVersion}
-                        </p>
-                      </div>
-                      <a
-                        href={version.downloadURL}
-                        download
-                        className="bg-orange-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold text-center whitespace-nowrap transition hover:ring-2 hover:ring-orange-400/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
-                      >
-                        Download IPA
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+            <BuildList versions={iosVersions} platform="iOS" />
           </div>
 
           {/* tvOS Downloads */}
@@ -143,44 +94,7 @@ export default function DownloadsPage() {
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>
               tvOS Builds
             </h2>
-            {tvosVersions.length === 0 ? (
-              <p className="text-sm text-gray-400">No tvOS builds available yet.</p>
-            ) : (
-              <div className="space-y-4">
-                {tvosVersions.map((version, idx) => (
-                  <div
-                    key={idx}
-                    className="card-glass card-static p-4"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="text-base font-semibold text-white">
-                          {version.version}
-                          {version.isBeta && (
-                            <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-wide bg-amber-500/10 text-amber-300 border border-amber-500/25 px-2 py-0.5 rounded">
-                              Beta{version.betaNumber ? ` ${version.betaNumber}` : ''}
-                            </span>
-                          )}
-                        </h3>
-                        <p className="text-sm text-gray-400 mt-1.5">
-                          Build {version.buildVersion} • {formatDate(version.date)}
-                        </p>
-                        <p className="text-xs text-gray-400 mt-1">
-                          Size: {formatFileSize(version.size)} • Min tvOS: {version.minOSVersion}
-                        </p>
-                      </div>
-                      <a
-                        href={version.downloadURL}
-                        download
-                        className="bg-orange-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold text-center whitespace-nowrap transition hover:ring-2 hover:ring-orange-400/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
-                      >
-                        Download IPA
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+            <BuildList versions={tvosVersions} platform="tvOS" />
           </div>
 
           {/* Installation Instructions */}

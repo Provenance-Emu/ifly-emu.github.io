@@ -35,7 +35,8 @@ const releases = [];
 for (let page = 1; ; page += 1) {
   const res = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=100&page=${page}`, {
     headers: {
-      accept: 'application/vnd.github+json',
+      // `full` adds body_html: the release notes already rendered and sanitised by GitHub.
+      accept: 'application/vnd.github.full+json',
       'user-agent': 'ifly-site-build',
       ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}),
     },
@@ -48,6 +49,26 @@ for (let page = 1; ; page += 1) {
   releases.push(...pageReleases);
   if (pageReleases.length < 100) break;
 }
+/**
+ * One release can carry several platforms' notes, each under its own <h2>
+ * ("iFly EMU 1.0.0 (build N)" and "... for Apple TV"). Keep this platform's
+ * section, drop its title (the card already shows it) and the boilerplate
+ * "Install" block, and leave just the change list.
+ */
+function changelogHtml(bodyHtml, platform) {
+  if (!bodyHtml) return '';
+  const sections = bodyHtml.split(/(?=<h2[\s>])/).filter((x) => x.trim());
+  const titleOf = (x) => x.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1] ?? '';
+  const isTv = (x) => /apple tv|tvos/i.test(titleOf(x));
+  let picked = sections.filter((x) => /^<h2/.test(x) && isTv(x) === (platform === 'tvOS'));
+  if (!picked.length) picked = sections;
+  return picked
+    .map((x) => x.replace(/^<h2[^>]*>[\s\S]*?<\/h2>\s*/, ''))
+    .join('')
+    .replace(/<h3[^>]*>\s*Install\s*<\/h3>[\s\S]*?(?=<h[23][\s>]|$)/gi, '')
+    .trim();
+}
+
 const builds = [];
 for (const r of releases) {
   if (r.draft) continue;
@@ -61,8 +82,11 @@ for (const r of releases) {
       console.warn(`fetch-releases: skipping ${r.tag_name} / ${asset.name}: no version+build in either`);
       continue;
     }
+    const platform = /tvos/i.test(asset.name) ? 'tvOS' : 'iOS';
     builds.push({
       tag: r.tag_name,
+      releaseURL: r.html_url,
+      changelogHtml: changelogHtml(r.body_html, platform),
       version: m[1],
       build: m[2],
       prerelease: !!r.prerelease,
@@ -70,7 +94,7 @@ for (const r of releases) {
       name: asset.name,
       url: asset.browser_download_url,
       size: asset.size,
-      platform: /tvos/i.test(asset.name) ? 'tvOS' : 'iOS',
+      platform,
     });
   }
 }

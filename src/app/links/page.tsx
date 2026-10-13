@@ -141,7 +141,7 @@ export default function Links() {
               <ExternalCard
                 href="https://jaguar.provenance-emu.com/"
                 title="Virtual Jaguar libretro"
-                description="Atari Jaguar core for RetroArch and Provenance"
+                description="Atari Jaguar core for RetroArch and Provenance, plus a desktop app for macOS, Windows and Linux"
                 iconPath="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.24L19.5 8 12 11.76 4.5 8 12 4.24ZM4 9.62l7 3.5v6.66l-7-3.5V9.62Zm9 10.16v-6.66l7-3.5v6.66l-7 3.5Z"
                 iconColor="text-yellow-400" iconBg="bg-yellow-500/10"
                 proofIgnore

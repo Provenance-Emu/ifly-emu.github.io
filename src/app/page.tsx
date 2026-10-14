@@ -119,7 +119,7 @@ export default function Home() {
               data-proofer-ignore
             />
             <StoreBadge
-              href="https://github.com/Provenance-Emu/Provenance"
+              href="https://github.com/JoeMatt/iFly-releases/releases"
               eyebrow="Download from"
               label="GitHub"
               icon={<GitHubIcon className="w-6 h-6" />}

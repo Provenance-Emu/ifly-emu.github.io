@@ -25,8 +25,11 @@ export default function GradientButton({ href, children, external = false, class
       </a>
     );
   }
+  // prefetch={false}: these are the hero CTAs, in the viewport on load, so the
+  // default viewport prefetch fetched and parsed their route payloads + route JS
+  // during hydration (Lighthouse TBT). See the note in Navigation.tsx.
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} prefetch={false} className={classes}>
       {children}
     </Link>
   );

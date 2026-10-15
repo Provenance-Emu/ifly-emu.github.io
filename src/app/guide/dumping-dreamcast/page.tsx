@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ifly-emu.com/guide/dumping-dreamcast/' },
 };
 
-const link = 'text-orange-300 hover:underline';
+const link = 'text-orange-300 link-inline';
 const pre =
   'mt-3 overflow-x-auto rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-gray-300';
 

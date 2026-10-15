@@ -11,16 +11,19 @@ export type SocialButtonProps = {
 const baseClasses =
   'inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors transition-shadow shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500';
 
+// White label on every fill: each rest AND hover shade must stay >= 4.5:1 with
+// white, so hovers go one step DARKER, not lighter (orange-600 3.57, blue-500
+// 3.71, rose-500 3.73, sky-600 4.06 all failed as hover states).
 const variantClasses = {
   default: 'bg-gray-900 text-white hover:bg-gray-800',
   discord: 'bg-indigo-600 text-white hover:bg-indigo-500',
   x: 'bg-black text-white hover:bg-neutral-800',
   bmc: 'bg-yellow-400 text-black hover:bg-yellow-300',
-  patreon: 'bg-orange-700 text-white hover:bg-orange-600',
-  venmo: 'bg-sky-700 text-white hover:bg-sky-600',
+  patreon: 'bg-orange-700 text-white hover:bg-orange-800',
+  venmo: 'bg-sky-700 text-white hover:bg-sky-800',
   zelle: 'bg-purple-700 text-white hover:bg-purple-600',
-  opencollective: 'bg-blue-600 text-white hover:bg-blue-500',
-  itch: 'bg-rose-600 text-white hover:bg-rose-500',
+  opencollective: 'bg-blue-600 text-white hover:bg-blue-700',
+  itch: 'bg-rose-600 text-white hover:bg-rose-700',
 } as const;
 
 export const DiscordIcon: React.FC<{ className?: string }> = ({ className }) => (

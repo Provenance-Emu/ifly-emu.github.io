@@ -71,7 +71,7 @@ export default function DownloadsPage() {
             </div>
             <p className="text-sm text-gray-400 mt-6">
               Prefer one feed for every Provenance app?{' '}
-              <Link href="/sources/" className="text-orange-400 hover:underline">See all sideload sources.</Link>
+              <Link href="/sources/" className="text-orange-400 link-inline">See all sideload sources.</Link>
             </p>
             <p className="text-sm text-gray-400 mt-2">
               Sideloaded and self-built copies include every Plus feature at no cost. Plus purchases
@@ -108,7 +108,7 @@ export default function DownloadsPage() {
                   Using AltStore / SideStore (Recommended)
                 </h3>
                 <ol className="list-decimal list-inside space-y-2 ml-4">
-                  <li>Install <a href="https://altstore.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">AltStore</a> or <a href="https://sidestore.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">SideStore</a> on your device</li>
+                  <li>Install <a href="https://altstore.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">AltStore</a> or <a href="https://sidestore.io" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">SideStore</a> on your device</li>
                   <li>Tap the &quot;Add to AltStore&quot; or &quot;Add to SideStore&quot; button above</li>
                   <li>Browse to iFly in the app and tap &quot;Install&quot;</li>
                   <li>Enjoy automatic updates!</li>
@@ -131,9 +131,9 @@ export default function DownloadsPage() {
                 </h3>
                 <p>
                   Older iFly builds remain on{' '}
-                  <a href="https://provenance.itch.io/ifly" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">itch.io</a>.
+                  <a href="https://provenance.itch.io/ifly" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">itch.io</a>.
                   It is no longer updated. Use the sources above for current builds, or visit the{' '}
-                  <a href="/donate/" className="text-orange-400 hover:underline">donate page</a> if you want to chip in.
+                  <a href="/donate/" className="text-orange-400 link-inline">donate page</a> if you want to chip in.
                 </p>
               </div>
               <div className="bg-amber-500/10 border-l-2 border-amber-500/50 rounded-r-xl px-5 py-4">

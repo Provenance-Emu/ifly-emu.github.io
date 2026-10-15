@@ -109,7 +109,7 @@ export default function Licenses() {
                       <p className="text-sm text-gray-400 mt-1">{c.note}</p>
                     )}
                     {c.url && (
-                      <p className="text-xs text-gray-600 mt-1 break-all">{c.url}</p>
+                      <p className="text-xs text-gray-500 mt-1 break-all">{c.url}</p>
                     )}
                   </li>
                 ))}
@@ -137,7 +137,7 @@ export default function Licenses() {
                   href="https://github.com/Provenance-Emu/flycast"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-400 hover:text-orange-300 hover:underline transition-colors"
+                  className="text-orange-400 hover:text-orange-300 link-inline transition-colors"
                 >
                   github.com/Provenance-Emu/flycast
                 </a>.

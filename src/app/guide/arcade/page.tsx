@@ -19,7 +19,7 @@ export default function ArcadePage() {
       <p className="mt-3 text-gray-400">
         Naomi, Naomi 2, and Atomiswave rips arrive in several shapes. iFly detects each and
         routes it correctly — including formats stock Flycast can&apos;t open. You still need the
-        matching arcade BIOS (see <Link href="/guide/bios/" className="text-orange-300 hover:underline">BIOS Setup</Link>).
+        matching arcade BIOS (see <Link href="/guide/bios/" className="text-orange-300 link-inline">BIOS Setup</Link>).
       </p>
 
       {arcadeShot && (

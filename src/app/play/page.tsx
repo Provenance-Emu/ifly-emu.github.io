@@ -31,7 +31,7 @@ export default function PlayPage() {
           {/* App Store link goes here at launch; until then, the Downloads page. */}
           <Link
             href="/downloads/"
-            className="inline-block rounded-lg bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600"
+            className="inline-block rounded-lg bg-orange-700 px-6 py-3 font-semibold text-white hover:bg-orange-800"
           >
             Get iFly
           </Link>

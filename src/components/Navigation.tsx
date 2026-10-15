@@ -17,6 +17,14 @@ const navItems = [
   { href: '/status/',     label: 'Status' },
 ];
 
+// prefetch={false} on every Link below, on purpose. These links are in the
+// viewport on every page load (logo + CTAs on mobile, all ten items on desktop),
+// so Next's default viewport prefetch fired ~3-13 route-payload fetches right
+// after hydration, plus the route JS chunks they pull in, and parsed them on the
+// main thread inside Lighthouse's TBT window. The logo even prefetched the page
+// it sits on (~50 KB for /). This is a static export, so the trade is one small
+// CDN fetch at click time instead of eager work on every page view.
+// Don't turn it back on without re-running Lighthouse (mobile) on /.
 const Navigation = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,14 +55,14 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" prefetch={false} className="flex items-center shrink-0">
             <span className="text-2xl font-bold text-orange-500">iFly</span>
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-baseline gap-1">
             {navItems.map(item => (
-              <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} className={linkClass(item.href)}>
+              <Link key={item.href} href={item.href} prefetch={false} aria-current={isActive(item.href) ? 'page' : undefined} className={linkClass(item.href)}>
                 {item.label}
               </Link>
             ))}
@@ -87,6 +95,7 @@ const Navigation = () => {
             <Link
               key={item.href}
               href={item.href}
+              prefetch={false}
               aria-current={isActive(item.href) ? 'page' : undefined}
               className={`block ${linkClass(item.href)}`}
               onClick={() => setMenuOpen(false)}

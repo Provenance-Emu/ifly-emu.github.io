@@ -54,7 +54,7 @@ export default function IflyVsFlycastPage() {
         <div className="mx-auto max-w-4xl space-y-10">
           <p className="text-sm leading-relaxed text-gray-400">
             Both apps ultimately run{' '}
-            <a href="https://github.com/flyinghead/flycast" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+            <a href="https://github.com/flyinghead/flycast" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">
               Flycast
             </a>
             , the upstream Dreamcast, NAOMI, and Atomiswave emulator. The difference is what wraps around

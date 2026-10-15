@@ -78,7 +78,7 @@ export default function Privacy() {
               <h2 className="text-xl font-semibold text-white mb-3">Contact</h2>
               <p className="text-gray-400 leading-relaxed">
                 Questions about privacy:{" "}
-                <a href="mailto:provenance.emu+ifly-privacy@gmail.com" className="text-orange-400 hover:text-orange-300 hover:underline transition-colors">
+                <a href="mailto:provenance.emu+ifly-privacy@gmail.com" className="text-orange-400 hover:text-orange-300 link-inline transition-colors">
                   provenance.emu+ifly-privacy@gmail.com
                 </a>.
               </p>

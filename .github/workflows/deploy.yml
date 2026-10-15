@@ -62,6 +62,9 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./out
+          # v5 drops dotfiles by default; .well-known/apple-app-site-association
+          # (universal links for the iFly app) has to ship.
+          include-hidden-files: true
 
   deploy:
     environment:

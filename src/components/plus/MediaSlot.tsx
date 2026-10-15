@@ -36,7 +36,7 @@ export default function MediaSlot({
       <div className={`${frame} flex items-center justify-center`} style={{ aspectRatio: `${w} / ${h}` }}>
         <div className="px-4 text-center">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{label}</p>
-          <p className="mt-1 text-xs text-gray-600">Screenshot pending</p>
+          <p className="mt-1 text-xs text-gray-500">Screenshot pending</p>
         </div>
       </div>
     );

@@ -51,7 +51,7 @@ export default function IflyVsProvenancePage() {
         <div className="mx-auto max-w-4xl space-y-10">
           <p className="text-sm leading-relaxed text-gray-400">
             iFly and{' '}
-            <a href="https://provenance-emu.com" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+            <a href="https://provenance-emu.com" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">
               Provenance
             </a>{' '}
             are built by the same person, and both use Flycast for Dreamcast emulation. Provenance
@@ -62,7 +62,7 @@ export default function IflyVsProvenancePage() {
               href="https://provenance-emu.com/systems/dreamcast/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-400 hover:underline"
+              className="text-orange-400 link-inline"
             >
               Provenance&apos;s own Dreamcast system page
             </a>

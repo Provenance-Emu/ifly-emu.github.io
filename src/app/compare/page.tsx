@@ -60,11 +60,11 @@ export default function ComparePage() {
         </div>
         <p className="mx-auto mt-10 max-w-4xl text-sm text-gray-500">
           Also see the{' '}
-          <a href="https://provenance-emu.com/compare/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+          <a href="https://provenance-emu.com/compare/" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">
             Provenance family comparison pages
           </a>{' '}
           and{' '}
-          <Link href="/plus/" className="text-orange-400 hover:underline">
+          <Link href="/plus/" className="text-orange-400 link-inline">
             iFly Plus
           </Link>
           .

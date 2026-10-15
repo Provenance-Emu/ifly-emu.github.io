@@ -21,7 +21,7 @@ const items: AccordionItemData[] = [
     a: (
       <>
         Arcade rips come in several shapes. See{' '}
-        <Link href="/guide/arcade/" className="text-orange-300 hover:underline">Arcade &amp; Naomi Rips</Link>{' '}
+        <Link href="/guide/arcade/" className="text-orange-300 link-inline">Arcade &amp; Naomi Rips</Link>{' '}
         for decrypted single-cart <code>.bin</code> dumps, multi-track GD-ROM dumps, and Naomi
         GD-cartridge <code>zip</code>+<code>.chd</code> layouts.
       </>
@@ -58,7 +58,7 @@ const items: AccordionItemData[] = [
     q: 'How do I set up controllers?',
     a: (
       <>
-        See the <Link href="/controllers/" className="text-orange-300 hover:underline">Controllers</Link>{' '}
+        See the <Link href="/controllers/" className="text-orange-300 link-inline">Controllers</Link>{' '}
         page for MFi, DualShock, DualSense, Xbox, and Switch mappings, plus on-screen control
         options.
       </>

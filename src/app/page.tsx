@@ -61,7 +61,11 @@ export default function Home() {
       <GridHero className="pt-20 pb-12 text-center">
         <div className="max-w-3xl mx-auto">
 
-          {/* App icon — priority ensures it's preloaded as the LCP element */}
+          {/* App icon — priority preloads it since it's above the fold. It is NOT
+              the LCP element: on mobile Lighthouse (Oct 2026) LCP is the hero
+              <p> below, and its time is ~75% render delay (main thread busy with
+              framework JS), with zero image load time. Image tweaks here won't
+              move LCP. */}
           <div className="flex justify-center mb-8">
             <Image
               src="/icon-512.png"

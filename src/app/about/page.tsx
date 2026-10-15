@@ -90,11 +90,11 @@ export default function About() {
             <p className="text-gray-400">
               iFly is one of several sideload-friendly emulators from the Provenance team. For
               GameCube and Wii games, check out{' '}
-              <a href="https://icube-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">iCube</a>;
+              <a href="https://icube-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">iCube</a>;
               for a single frontend covering 38+ classic consoles, see{' '}
-              <a href="https://provenance-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Provenance</a>;
+              <a href="https://provenance-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">Provenance</a>;
               and for guides, ROM ripping, and BIOS help across every app, visit the{' '}
-              <a href="https://wiki.provenance-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">Provenance Wiki</a>.
+              <a href="https://wiki.provenance-emu.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">Provenance Wiki</a>.
             </p>
           </div>
 

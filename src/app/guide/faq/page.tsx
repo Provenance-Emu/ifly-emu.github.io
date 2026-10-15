@@ -13,7 +13,7 @@ export default function FaqPage() {
       <h1 className="text-3xl font-black text-white">FAQ &amp; Troubleshooting</h1>
       <p className="mt-3 mb-8 text-gray-400">
         The common failures and how to fix them. Still stuck? Ask in the{' '}
-        <a href="https://discord.gg/QF5ZjVT4Sa" target="_blank" rel="noopener noreferrer" className="text-orange-300 hover:underline">Discord</a>.
+        <a href="https://discord.gg/QF5ZjVT4Sa" target="_blank" rel="noopener noreferrer" className="text-orange-300 link-inline">Discord</a>.
       </p>
       <FaqAccordion />
     </>

@@ -8,6 +8,33 @@
   --color-ink: #0a0a0f;
   --color-ink-2: #0d0d14;
   --color-ink-3: #111119;
+
+  /* gray-500, lifted from Tailwind's oklch(55.1% …) (#6a7282) to 62% L, same
+     hue and chroma (#7e8697). The stock value was 4.08:1 on ink and 3.55:1 on
+     the card-glass surface, under the 4.5:1 AA floor for body text, and it
+     carries the footer, captions and meta lines on every page. Now 5.40:1 on
+     ink, 4.69:1 on card-glass (the lightest surface it sits on), 4.85:1 on
+     gray-900, and still clearly dimmer than gray-400 (#99a1af) so the
+     hierarchy holds. Don't revert to the Tailwind default. */
+  --color-gray-500: oklch(62% 0.027 264.364);
+}
+
+/* Links inside running text. Underlined at rest so they don't rely on colour
+   alone (WCAG 1.4.1; Lighthouse "link-in-text-block" failed on the home page
+   with orange-400 vs gray-400 body text at 1.09:1). Hover/focus thickens the
+   line and takes it to full colour, so the state change stays visible even
+   though the underline is already there. Use this on prose links only, not on
+   nav items, buttons, cards or standalone "→" links. */
+@utility link-inline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, currentColor 60%, transparent);
+  &:hover,
+  &:focus-visible {
+    text-decoration-thickness: 2px;
+    text-decoration-color: currentColor;
+  }
 }
 
 :root {
@@ -55,15 +82,13 @@ h1, h2 { letter-spacing: -0.02em; }
      heading block  mb-12 md:mb-16
      block inside a section  mb-12 · gap-6
 
-   CONTRAST FLOOR — target for new and edited code, NOT a description of
-   the current codebase. Roughly 15 call sites still violate it (Footer,
-   licenses, StatusDashboard, donate, Screenshot, controllers, MediaSlot);
-   they predate this rule and are tracked as follow-ups. Do not assume a
-   grey you find in existing code already passes.
-     Don't reach for text-gray-500 (3.5–4.1:1 on our surfaces) or
-     text-gray-600 (2.2–2.6:1) for text. text-gray-400 is the dimmest
-     passing grey at 6.4–7.6:1. Solid orange fills carry white text at
-     orange-700 (5.22:1); orange-600 and lighter do not (≤ 3.6:1).
+   CONTRAST FLOOR (single dark theme; checked Oct 2026 with a computed-style
+   scan of every route, mobile + desktop, plus axe color-contrast).
+     text-gray-500 is the dimmest grey allowed for text. It is re-tokened
+     in @theme above to 4.7–5.4:1 on our surfaces. Don't use text-gray-600
+     or darker for text (2.3–2.7:1). text-gray-400 is 6.4–7.6:1. Solid
+     orange fills carry white text at orange-700 (5.22:1); orange-600 and
+     lighter do not (≤ 3.6:1). Prose links take the link-inline utility.
    ───────────────────────────────────────────────────────────────────────── */
 
 /* Gradient text (orange). Apply to a span/heading. */

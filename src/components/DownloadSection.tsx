@@ -23,7 +23,7 @@ const DefaultDescription = () => (
       href="https://sideloadly.io"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-orange-400 hover:underline ml-1"
+      className="text-orange-400 link-inline ml-1"
     >
       Sideloadly
     </a>
@@ -32,7 +32,7 @@ const DefaultDescription = () => (
       href="https://discord.gg/QF5ZjVT4Sa"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-orange-400 hover:underline"
+      className="text-orange-400 link-inline"
     >
       Discord
     </a>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import GridHero from '@/components/ui/GridHero';
 import Section from '@/components/ui/Section';
 import GradientButton from '@/components/ui/GradientButton';
@@ -67,11 +67,12 @@ export default function Home() {
               framework JS), with zero image load time. Image tweaks here won't
               move LCP. */}
           <div className="flex justify-center mb-8">
-            <Image
+            <ResponsiveImage
               src="/icon-512.png"
               alt="iFly app icon"
               width={96}
               height={96}
+              sizes="96px"
               priority
               className="rounded-[22px] shadow-2xl shadow-orange-500/20 ring-1 ring-white/10"
             />

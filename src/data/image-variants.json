@@ -1,0 +1,342 @@
+{
+  "/screenshots/appletv/cheats.webp": {
+    "width": 1920,
+    "height": 1080,
+    "hash": "d66144ea918f",
+    "variants": [
+      {
+        "w": 320,
+        "src": "/screenshots/appletv/cheats-320w.webp"
+      },
+      {
+        "w": 560,
+        "src": "/screenshots/appletv/cheats-560w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/appletv/cheats-640w.webp"
+      },
+      {
+        "w": 960,
+        "src": "/screenshots/appletv/cheats-960w.webp"
+      }
+    ]
+  },
+  "/screenshots/appletv/gameplay.webp": {
+    "width": 1920,
+    "height": 1080,
+    "hash": "4fe7719d779c",
+    "variants": [
+      {
+        "w": 320,
+        "src": "/screenshots/appletv/gameplay-320w.webp"
+      },
+      {
+        "w": 560,
+        "src": "/screenshots/appletv/gameplay-560w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/appletv/gameplay-640w.webp"
+      },
+      {
+        "w": 960,
+        "src": "/screenshots/appletv/gameplay-960w.webp"
+      }
+    ]
+  },
+  "/screenshots/appletv/library.webp": {
+    "width": 1920,
+    "height": 1080,
+    "hash": "fafdda3c212c",
+    "variants": [
+      {
+        "w": 320,
+        "src": "/screenshots/appletv/library-320w.webp"
+      },
+      {
+        "w": 560,
+        "src": "/screenshots/appletv/library-560w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/appletv/library-640w.webp"
+      },
+      {
+        "w": 960,
+        "src": "/screenshots/appletv/library-960w.webp"
+      }
+    ]
+  },
+  "/screenshots/appletv/settings-themes.webp": {
+    "width": 1920,
+    "height": 1080,
+    "hash": "da656f4a5fbc",
+    "variants": [
+      {
+        "w": 320,
+        "src": "/screenshots/appletv/settings-themes-320w.webp"
+      },
+      {
+        "w": 560,
+        "src": "/screenshots/appletv/settings-themes-560w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/appletv/settings-themes-640w.webp"
+      },
+      {
+        "w": 960,
+        "src": "/screenshots/appletv/settings-themes-960w.webp"
+      }
+    ]
+  },
+  "/screenshots/appletv/settings-video.webp": {
+    "width": 1920,
+    "height": 1080,
+    "hash": "2b00ef43c655",
+    "variants": [
+      {
+        "w": 320,
+        "src": "/screenshots/appletv/settings-video-320w.webp"
+      },
+      {
+        "w": 560,
+        "src": "/screenshots/appletv/settings-video-560w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/appletv/settings-video-640w.webp"
+      },
+      {
+        "w": 960,
+        "src": "/screenshots/appletv/settings-video-960w.webp"
+      }
+    ]
+  },
+  "/screenshots/ipad/arcade.webp": {
+    "width": 1400,
+    "height": 1049,
+    "hash": "4d5ffbd08dd7",
+    "variants": [
+      {
+        "w": 360,
+        "src": "/screenshots/ipad/arcade-360w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/ipad/arcade-640w.webp"
+      },
+      {
+        "w": 800,
+        "src": "/screenshots/ipad/arcade-800w.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/screenshots/ipad/arcade-1080w.webp"
+      }
+    ]
+  },
+  "/screenshots/ipad/library.webp": {
+    "width": 1600,
+    "height": 1200,
+    "hash": "cfe991168edb",
+    "variants": [
+      {
+        "w": 360,
+        "src": "/screenshots/ipad/library-360w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/ipad/library-640w.webp"
+      },
+      {
+        "w": 800,
+        "src": "/screenshots/ipad/library-800w.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/screenshots/ipad/library-1080w.webp"
+      }
+    ]
+  },
+  "/screenshots/ipad/search.webp": {
+    "width": 1600,
+    "height": 1200,
+    "hash": "807cf064d664",
+    "variants": [
+      {
+        "w": 360,
+        "src": "/screenshots/ipad/search-360w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/ipad/search-640w.webp"
+      },
+      {
+        "w": 800,
+        "src": "/screenshots/ipad/search-800w.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/screenshots/ipad/search-1080w.webp"
+      }
+    ]
+  },
+  "/screenshots/ipad/settings.webp": {
+    "width": 1600,
+    "height": 1200,
+    "hash": "8f76d43d790a",
+    "variants": [
+      {
+        "w": 360,
+        "src": "/screenshots/ipad/settings-360w.webp"
+      },
+      {
+        "w": 640,
+        "src": "/screenshots/ipad/settings-640w.webp"
+      },
+      {
+        "w": 800,
+        "src": "/screenshots/ipad/settings-800w.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/screenshots/ipad/settings-1080w.webp"
+      }
+    ]
+  },
+  "/screenshots/iphone/cheats.webp": {
+    "width": 736,
+    "height": 1600,
+    "hash": "11031a18e356",
+    "variants": [
+      {
+        "w": 240,
+        "src": "/screenshots/iphone/cheats-240w.webp"
+      },
+      {
+        "w": 360,
+        "src": "/screenshots/iphone/cheats-360w.webp"
+      },
+      {
+        "w": 480,
+        "src": "/screenshots/iphone/cheats-480w.webp"
+      }
+    ]
+  },
+  "/screenshots/iphone/import.webp": {
+    "width": 736,
+    "height": 1600,
+    "hash": "ec0f47b93b57",
+    "variants": [
+      {
+        "w": 240,
+        "src": "/screenshots/iphone/import-240w.webp"
+      },
+      {
+        "w": 360,
+        "src": "/screenshots/iphone/import-360w.webp"
+      },
+      {
+        "w": 480,
+        "src": "/screenshots/iphone/import-480w.webp"
+      }
+    ]
+  },
+  "/screenshots/iphone/library-theme.webp": {
+    "width": 736,
+    "height": 1600,
+    "hash": "0cb992e73485",
+    "variants": [
+      {
+        "w": 240,
+        "src": "/screenshots/iphone/library-theme-240w.webp"
+      },
+      {
+        "w": 360,
+        "src": "/screenshots/iphone/library-theme-360w.webp"
+      },
+      {
+        "w": 480,
+        "src": "/screenshots/iphone/library-theme-480w.webp"
+      }
+    ]
+  },
+  "/screenshots/iphone/library.webp": {
+    "width": 736,
+    "height": 1600,
+    "hash": "651a612a05e8",
+    "variants": [
+      {
+        "w": 240,
+        "src": "/screenshots/iphone/library-240w.webp"
+      },
+      {
+        "w": 360,
+        "src": "/screenshots/iphone/library-360w.webp"
+      },
+      {
+        "w": 480,
+        "src": "/screenshots/iphone/library-480w.webp"
+      }
+    ]
+  },
+  "/screenshots/iphone/search.webp": {
+    "width": 736,
+    "height": 1600,
+    "hash": "bc89902faf13",
+    "variants": [
+      {
+        "w": 240,
+        "src": "/screenshots/iphone/search-240w.webp"
+      },
+      {
+        "w": 360,
+        "src": "/screenshots/iphone/search-360w.webp"
+      },
+      {
+        "w": 480,
+        "src": "/screenshots/iphone/search-480w.webp"
+      }
+    ]
+  },
+  "/screenshots/iphone/settings-themes.webp": {
+    "width": 736,
+    "height": 1600,
+    "hash": "420cacc98c13",
+    "variants": [
+      {
+        "w": 240,
+        "src": "/screenshots/iphone/settings-themes-240w.webp"
+      },
+      {
+        "w": 360,
+        "src": "/screenshots/iphone/settings-themes-360w.webp"
+      },
+      {
+        "w": 480,
+        "src": "/screenshots/iphone/settings-themes-480w.webp"
+      }
+    ]
+  },
+  "/icon-512.png": {
+    "width": 512,
+    "height": 512,
+    "hash": "097ab5cf6367",
+    "variants": [
+      {
+        "w": 96,
+        "src": "/icon-96.webp"
+      },
+      {
+        "w": 192,
+        "src": "/icon-192.webp"
+      },
+      {
+        "w": 288,
+        "src": "/icon-288.webp"
+      }
+    ]
+  }
+}

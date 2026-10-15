@@ -1,5 +1,6 @@
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 
 type DeviceType = 'iphone' | 'ipad' | 'appletv';
 
@@ -22,21 +23,21 @@ const frameStyles: Record<DeviceType, { outer: string; inner: string; aspect: st
     inner: 'rounded-[2rem] overflow-hidden',
     aspect: 'aspect-[9/19.5]',
     width: 'w-56',
-    sizes: '224px',
+    sizes: '204px', // w-56 (224) - 2*6 border - 2*4 padding
   },
   ipad: {
     outer: 'rounded-[1.5rem] border-[5px] border-gray-700 bg-gray-800 p-1 shadow-2xl shadow-black/40 ring-1 ring-white/5',
     inner: 'rounded-[1.2rem] overflow-hidden',
     aspect: 'aspect-[4/3]',
     width: 'w-[360px]',
-    sizes: '360px',
+    sizes: '342px', // w-[360px] - 2*5 border - 2*4 padding
   },
   appletv: {
     outer: 'rounded-xl border-[4px] border-gray-700 bg-gray-800 p-1 shadow-2xl shadow-black/40 ring-1 ring-white/5',
     inner: 'rounded-lg overflow-hidden',
     aspect: 'aspect-video',
     width: 'w-80',
-    sizes: '320px',
+    sizes: '304px', // w-80 (320) - 2*4 border - 2*4 padding
   },
 };
 
@@ -62,13 +63,14 @@ const DeviceFrame: React.FC<DeviceFrameProps> = ({ type, src, alt, priority = fa
               className="h-full w-full object-cover"
             />
           ) : (
-            <Image
-              src={src}
+            <ResponsiveImage
+              src={typeof src === 'string' ? src : src.src}
               alt={alt}
               className="h-full w-full object-cover"
               sizes={s.sizes}
               priority={priority}
-              {...(typeof src === 'string' ? { width: width ?? 0, height: height ?? 0 } : {})}
+              width={typeof src === 'string' ? (width ?? 0) : src.width}
+              height={typeof src === 'string' ? (height ?? 0) : src.height}
             />
           )}
         </div>

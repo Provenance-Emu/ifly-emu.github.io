@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ResponsiveImage from './ResponsiveImage';
 import React from 'react';
 
 type ScreenshotProps = {
@@ -14,7 +14,7 @@ export default function Screenshot({ src, alt, caption, width, height, className
   return (
     <figure className={className}>
       {src ? (
-        <Image
+        <ResponsiveImage
           src={src}
           alt={alt}
           width={width}

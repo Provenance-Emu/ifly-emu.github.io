@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import Link from 'next/link';
 import Callout from '@/components/ui/Callout';
 import { screenshotById } from '@/data/screenshots';
@@ -24,7 +24,7 @@ export default function ArcadePage() {
 
       {arcadeShot && (
         <figure className="card-glass mt-8 overflow-hidden p-3">
-          <Image
+          <ResponsiveImage
             src={arcadeShot.webp}
             alt={arcadeShot.alt}
             width={arcadeShot.width}

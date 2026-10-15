@@ -34,3 +34,21 @@ feed) assets to `public/screenshots/<device>/<slug>.{webp,jpg}` and
 merges/updates `src/data/screenshots.json`. Raw capture folders (e.g.
 `public/screenshots/2026-08/`) are gitignored — only the generated manifest
 and optimised images are committed.
+
+### Responsive image variants
+
+`next/image` can't emit `srcset` under the static export (`images.unoptimized`),
+so smaller WebP variants are generated and committed instead:
+`public/screenshots/<device>/<slug>-<w>w.webp` plus `public/icon-{96,192,288}.webp`,
+indexed by `src/data/image-variants.json`. `<ResponsiveImage>`
+(`src/components/ui/ResponsiveImage.tsx`, used by `DeviceFrame`, `Screenshot` and
+the home-page icon) reads that index and renders `srcset`/`sizes`.
+
+`import-screenshots.mjs` runs this step itself, so a screenshot refresh needs
+nothing extra. To (re)generate on its own: `npm run images` (or
+`node scripts/make-image-variants.mjs --force` to rebuild everything). `npm run build` runs it first
+via `prebuild`; `npm run images:check` exits non-zero if anything is stale.
+Widths per device live at the top of `scripts/make-image-variants.mjs` and are
+derived from each frame's rendered width in `DeviceFrame.tsx`. Commit the
+generated files with the screenshots (CI runs `npx next build`, which skips
+`prebuild`, so the committed variants are what ships).

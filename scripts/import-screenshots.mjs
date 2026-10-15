@@ -46,6 +46,11 @@
  * 1600px (1920px for appletv): a .webp at quality 82 for the site, and a
  * .jpg at quality 85 for the AltStore/SideStore feed, which wants plain
  * image URLs rather than next/image-only formats.
+ *
+ * After writing, it runs scripts/make-image-variants.mjs so the new/changed
+ * screenshots get their smaller responsive variants (<slug>-<w>w.webp) and
+ * src/data/image-variants.json is updated in the same command. Commit those
+ * alongside the screenshots.
  */
 
 import { readdirSync, statSync, mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -53,6 +58,7 @@ import { join, resolve, extname, basename, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import os from 'node:os';
 import sharp from 'sharp';
+import { generateVariants } from './make-image-variants.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, '..');
@@ -318,6 +324,9 @@ async function main() {
     newItems.map((i) => ({ id: i.id, order: i.order, size: `${i.width}x${i.height}`, webp: i.webp }))
   );
   console.log(`Wrote ${newItems.length} item(s) to ${relative(REPO_ROOT, DATA_FILE)} (${items.length} total in manifest).`);
+
+  // Responsive variants (srcset) for whatever was just written. Idempotent.
+  await generateVariants();
 
   if (failed > 0) process.exit(1);
 }

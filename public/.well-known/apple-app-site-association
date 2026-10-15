@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["S32Z3HMYVQ.com.joemattiello.iFly"],
+        "components": [
+          {
+            "/": "/play*",
+            "comment": "Game links (NFC game tags, shared links): /play?md5=<md5>. Every other page stays in Safari."
+          }
+        ]
+      }
+    ]
+  }
+}

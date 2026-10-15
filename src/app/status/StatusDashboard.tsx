@@ -33,9 +33,9 @@ function ScoreBar({ score }: { score: number | null }) {
 function GradeBadge({ grade }: { grade: string | null }) {
   if (!grade) return <span className="text-gray-500">–</span>;
   const color =
-    grade === 'A+' || grade === 'A' ? 'bg-green-600' :
-    grade === 'B' ? 'bg-yellow-600' :
-    grade === 'C' ? 'bg-orange-600' :
+    grade === 'A+' || grade === 'A' ? 'bg-green-700' :
+    grade === 'B' ? 'bg-yellow-700' :
+    grade === 'C' ? 'bg-orange-700' :
     grade === 'N/A' ? 'bg-gray-600' : 'bg-red-600';
   return (
     <span className={`${color} text-white text-sm font-bold px-2 py-0.5 rounded`}>{grade}</span>
@@ -73,7 +73,7 @@ export default function StatusDashboard({ initialData }: { initialData?: StatusD
           {lastRun ? (
             <p className="mt-1 text-sm text-gray-400">
               Last audit:{' '}
-              <a href={data?.run_url || '#'} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">
+              <a href={data?.run_url || '#'} target="_blank" rel="noopener noreferrer" className="text-orange-400 link-inline">
                 {lastRun}
               </a>
             </p>

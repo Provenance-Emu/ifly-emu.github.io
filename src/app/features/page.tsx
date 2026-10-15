@@ -29,7 +29,7 @@ export default function FeaturesPage() {
             <PlusComparison />
             <p className="mt-4 text-sm text-gray-400">
               Everything above is free unless the table says otherwise.{' '}
-              <Link href="/plus/" className="text-orange-400 transition-colors hover:text-orange-300">
+              <Link href="/plus/" className="link-inline text-orange-400 transition-colors hover:text-orange-300">
                 What iFly Plus unlocks →
               </Link>
             </p>

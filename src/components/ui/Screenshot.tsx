@@ -30,7 +30,7 @@ export default function Screenshot({ src, alt, caption, width, height, className
         >
           <span className="text-xs font-medium uppercase tracking-wide text-gray-500">Screenshot</span>
           <span className="text-sm text-gray-400">{alt}</span>
-          <span className="text-[11px] text-gray-600">{width}×{height}</span>
+          <span className="text-[11px] text-gray-500">{width}×{height}</span>
         </div>
       )}
       {caption && <figcaption className="mt-2 text-center text-xs text-gray-500">{caption}</figcaption>}

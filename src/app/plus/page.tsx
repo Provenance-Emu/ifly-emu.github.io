@@ -80,7 +80,7 @@ export default function PlusPage() {
             <h2 className="text-2xl font-bold text-white">Provenance Plus</h2>
             <p className="mt-3 max-w-3xl text-base leading-relaxed text-gray-400">
               iFly and{' '}
-              <a href="https://provenance-emu.com" className="text-orange-400 transition-colors hover:text-orange-300">
+              <a href="https://provenance-emu.com" className="link-inline text-orange-400 transition-colors hover:text-orange-300">
                 Provenance
               </a>{' '}
               are built by the same person, and Plus is meant to carry across both.

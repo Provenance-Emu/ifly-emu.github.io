@@ -190,7 +190,7 @@ export default function Home() {
             iPhone
           </PlatformLabel>
           <div className={galleryRail} role="group" aria-label="iPhone screenshots" tabIndex={0}>
-            {screenshots('iphone').slice(0, 6).map((item, idx) => (
+            {screenshots('iphone').slice(0, 6).map((item) => (
               <DeviceFrame
                 key={item.id}
                 type="iphone"
@@ -198,7 +198,6 @@ export default function Home() {
                 alt={item.alt}
                 width={item.width}
                 height={item.height}
-                priority={idx === 0}
                 className={galleryFrame}
               />
             ))}

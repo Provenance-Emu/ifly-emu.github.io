@@ -13,8 +13,7 @@ export default function ImportingPage() {
     <>
       <h1 className="text-3xl font-black text-white">Importing Games</h1>
       <p className="mt-3 text-gray-400">
-        iFly imports games four ways. All of them route through the same importer, so the file
-        ends up in the right place no matter which you use.
+        Choose an import method below to add games to your iFly library.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold text-white">Files app / document picker</h2>
@@ -42,6 +41,13 @@ export default function ImportingPage() {
       <p className="mt-2 text-gray-400">
         Links using the <code>ifly://</code> scheme open a file and import it through the same
         policy.
+      </p>
+
+      <h2 className="mt-8 text-xl font-semibold text-white">Emulation Server and RomM</h2>
+      <p className="mt-2 text-gray-400">
+        In development builds with server imports, open <strong>Add Games</strong> and choose
+        {' '}<strong>Emulation Server</strong> (ECS) or <strong>RomM</strong>. Connect to your
+        server, then select a game to download and add it to your iFly library.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold text-white">Where files go</h2>

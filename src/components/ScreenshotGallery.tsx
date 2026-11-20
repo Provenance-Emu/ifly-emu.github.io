@@ -2,7 +2,9 @@ import Image from 'next/image';
 import { screenshots, type Device } from '@/data/screenshots';
 
 export default function ScreenshotGallery({device,title}:{device:Device;title:string}) {
-  const items=screenshots(device,{featured:true});
+  // Full captures are 1200px wide; cards are <=320px. Use the 576px thumb
+  // (scripts/make-thumbs.mjs) when the full image is bigger than that.
+  const items=screenshots(device,{featured:true}).map(i=>i.width>576?{...i,webp:i.webp.replace(/\.webp$/,'-thumb.webp'),width:576,height:Math.round(i.height*576/i.width)}:i);
   if (!items.length) return null;
   return <div className="mb-16">
     <h3 className="mb-7 text-center text-xl font-semibold text-white">{title}</h3>

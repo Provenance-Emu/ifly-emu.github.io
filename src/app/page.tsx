@@ -9,49 +9,15 @@ import StoreBadge, { AltStoreIcon, SideStoreIcon } from '@/components/StoreBadge
 import { GitHubIcon } from '@/components/ButtonLink';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
-import DeviceFrame from '@/components/DeviceFrame';
 import VideoShowcase from '@/components/VideoShowcase';
 import Link from 'next/link';
-import { screenshots } from '@/data/screenshots';
+import ScreenshotGallery from '@/components/ScreenshotGallery';
 
 export const metadata: Metadata = {
   title: 'iFly – Dreamcast Emulator for iOS & tvOS',
   description: 'Play classic Sega Dreamcast games on your iPhone, iPad, and Apple TV. Free, open-source emulation with Metal shaders, MFi controller support, save states, and automatic cheat downloads.',
   alternates: { canonical: 'https://ifly-emu.com/' },
 };
-
-/* Screenshot galleries. Below `lg` these are swipeable snap rails — six phone
-   frames stacked vertically is a wall, one row you flick through is a
-   showcase. At `lg` and up the rail becomes a centred wrap capped at max-w-3xl
-   (48rem = 768px), which lands the iPhones as a 3x2 block and the iPad/Apple TV
-   sets as 2x2, so every frame is visible without a gesture on desktop.
-   Frame widths come from DeviceFrame: iPhone w-56 (224px), iPad 360px,
-   Apple TV w-80 (320px); with gap-6 (24px) the rows measure 720 / 744 / 664px,
-   all inside the 768px cap.
-   The breakpoint is `lg`, not `md`: Tailwind's `container` is capped at 48rem
-   in the md band, so the usable inner width there is 768 - 32 = 736px and the
-   744px iPad row would wrap to one per line. */
-const galleryRail =
-  '-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-4 ' +
-  'lg:mx-auto lg:max-w-3xl lg:flex-wrap lg:justify-center lg:gap-y-8 lg:overflow-visible lg:px-0 lg:pb-0 ' +
-  'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400';
-
-const galleryFrame = 'shrink-0 snap-center';
-
-/* Centred group label with hairlines, so each platform block announces itself
-   without competing with the section heading. */
-function PlatformLabel({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
-  return (
-    <h3 className="mb-8 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-gray-300">
-      <span aria-hidden="true" className="hidden h-px w-10 bg-gradient-to-r from-transparent to-white/20 sm:block" />
-      <span className="flex items-center gap-2">
-        {icon}
-        {children}
-      </span>
-      <span aria-hidden="true" className="hidden h-px w-10 bg-gradient-to-l from-transparent to-white/20 sm:block" />
-    </h3>
-  );
-}
 
 export default function Home() {
   return (
@@ -150,6 +116,8 @@ export default function Home() {
         </div>
       </Section>
 
+      <VideoShowcase />
+
       {/* Download Section */}
       <DownloadSection className="py-16 md:py-24" />
 
@@ -175,83 +143,14 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Video Showcase — drop MP4 at public/video/gameplay.mp4 to activate */}
-      <VideoShowcase />
-
-      {/* Screenshots */}
-      <Section tone="ink-2">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-white mb-4">See It In Action</h2>
-          <p className="text-lg leading-relaxed text-gray-400 max-w-xl mx-auto">Classic Dreamcast games on your iPhone, iPad, and Apple TV.</p>
-        </div>
-
-        {/* iPhone — from the screenshots manifest (src/data/screenshots.json),
-            up to 6 items in manifest order. */}
-        <div className="mb-16 md:mb-20">
-          <PlatformLabel
-            icon={<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>}
-          >
-            iPhone
-          </PlatformLabel>
-          <div className={galleryRail} role="group" aria-label="iPhone screenshots" tabIndex={0}>
-            {screenshots('iphone').slice(0, 6).map((item) => (
-              <DeviceFrame
-                key={item.id}
-                type="iphone"
-                src={item.webp}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                className={galleryFrame}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* iPad — from the manifest, up to 4 items in manifest order. */}
-        <div className="mb-16 md:mb-20">
-          <PlatformLabel
-            icon={<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-orange-400" aria-hidden="true"><path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>}
-          >
-            iPad
-          </PlatformLabel>
-          <div className={galleryRail} role="group" aria-label="iPad screenshots" tabIndex={0}>
-            {screenshots('ipad').slice(0, 4).map((item) => (
-              <DeviceFrame
-                key={item.id}
-                type="ipad"
-                src={item.webp}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                className={galleryFrame}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Apple TV — from the manifest, up to 4 items in manifest order. */}
-        <div>
-          <PlatformLabel
-            icon={<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>}
-          >
-            Apple TV
-          </PlatformLabel>
-          <div className={galleryRail} role="group" aria-label="Apple TV screenshots" tabIndex={0}>
-            {screenshots('appletv').slice(0, 4).map((item) => (
-              <DeviceFrame
-                key={item.id}
-                type="appletv"
-                src={item.webp}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                className={galleryFrame}
-              />
-            ))}
-          </div>
-        </div>
-      </Section>
+      <section id="screenshots" className="container mx-auto px-4 py-16">
+        <h2 className="mb-5 text-center text-3xl font-bold text-white">See it in action</h2>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-gray-400">Actual app captures with homebrew games. Game files are imported separately.</p>
+        <ScreenshotGallery device="iphone" title="iPhone" />
+        <ScreenshotGallery device="ipad" title="iPad" />
+        <ScreenshotGallery device="watch" title="Apple Watch Series 12" />
+        <p className="text-center text-xs text-gray-400">Serpent XL is a derivative of <a href="https://github.com/jahan-addison/serpent" className="underline">Serpent</a>. <a href="/media/credits/serpent-xl-license.txt" className="underline">BSD license</a>.</p>
+      </section>
 
       {/* Features */}
       <Section className="border-t border-white/10">

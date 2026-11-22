@@ -53,10 +53,9 @@ const components: Component[] = [
     url: 'https://github.com/FlineDev/LinksKit',
   },
   {
-    name: 'Bugsnag',
+    name: 'Sentry',
     license: 'MIT',
-    url: 'https://github.com/bugsnag/bugsnag-cocoa',
-    note: 'Includes bugsnag-cocoa-performance.',
+    url: 'https://github.com/getsentry/sentry-cocoa',
   },
   {
     name: 'libretro database',

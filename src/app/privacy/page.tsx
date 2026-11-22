@@ -26,8 +26,9 @@ export default function Privacy() {
             <section>
               <h2 className="text-xl font-semibold text-white mb-3">Crash diagnostics</h2>
               <p className="text-gray-400 leading-relaxed">
-                iFly uses a crash-reporting service (Bugsnag) to collect anonymous diagnostics:
-                device model, OS version, and crash stack traces, so we can fix bugs. The
+                iFly uses a crash-reporting service (Sentry) to collect anonymous diagnostics:
+                device model, OS version, and crash stack traces, so we can fix bugs. Beta
+                builds from before November 22, 2026 used Bugsnag for the same purpose. The
                 per-install device identifier is stripped before each report is sent. No
                 performance monitoring is collected. iFly measures its own frame timing on your
                 device, and those measurements never leave it. This is not personally

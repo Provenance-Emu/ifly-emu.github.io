@@ -28,7 +28,9 @@ export default function Privacy() {
               <p className="text-gray-400 leading-relaxed">
                 iFly uses a crash-reporting service (Sentry) to collect anonymous diagnostics:
                 device model, OS version, and crash stack traces, so we can fix bugs. Beta
-                builds from before November 22, 2026 used Bugsnag for the same purpose. The
+                builds from before November 22, 2026 used Bugsnag for the same purpose. Sentry
+                also notes an approximate region (country and city) estimated from the network
+                address the report arrives from; the address itself is not kept with the report. The
                 per-install device identifier is stripped before each report is sent. No
                 performance monitoring is collected. iFly measures its own frame timing on your
                 device, and those measurements never leave it. This is not personally

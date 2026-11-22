@@ -1,0 +1,38 @@
+[
+  {
+    "src": "/video/2026-11-commercial/ifly-taxi-website-review-v1.mp4",
+    "poster": "/video/2026-11-commercial/ifly-taxi-website-review-v1.jpg",
+    "width": 1280,
+    "height": 720,
+    "game": "Crazy Taxi 2",
+    "system": "DREAMCAST",
+    "mode": "Native captured game action"
+  },
+  {
+    "src": "/video/2026-11-commercial/ifly-mvsc2-website-review-v1.mp4",
+    "poster": "/video/2026-11-commercial/ifly-mvsc2-website-review-v1.jpg",
+    "width": 1280,
+    "height": 720,
+    "game": "Marvel vs. Capcom 2",
+    "system": "NAOMI",
+    "mode": "Native captured game action"
+  },
+  {
+    "src": "/video/2026-11-commercial/ifly-dolphin-website-review-v1.mp4",
+    "poster": "/video/2026-11-commercial/ifly-dolphin-website-review-v1.jpg",
+    "width": 1280,
+    "height": 720,
+    "game": "Dolphin Blue",
+    "system": "ATOMISWAVE",
+    "mode": "Native captured game action"
+  },
+  {
+    "src": "/video/2026-11-commercial/ifly-beachspi-website-review-v1.mp4",
+    "poster": "/video/2026-11-commercial/ifly-beachspi-website-review-v1.jpg",
+    "width": 1280,
+    "height": 720,
+    "game": "Beach Spikers",
+    "system": "NAOMI 2",
+    "mode": "Attract-mode match; both teams COM"
+  }
+]

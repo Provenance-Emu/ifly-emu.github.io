@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-ink">
-      <PageHeader title="Privacy Policy" subtitle="Effective date: August 9, 2026" />
+      <PageHeader title="Privacy Policy" subtitle="Effective date: November 22, 2026" />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <div className="card-glass p-8 space-y-8">
@@ -30,10 +30,12 @@ export default function Privacy() {
                 device model, OS version, and crash stack traces, so we can fix bugs. Beta
                 builds from before November 22, 2026 used Bugsnag for the same purpose. Sentry
                 also notes an approximate region (country and city) estimated from the network
-                address the report arrives from; the address itself is not kept with the report. The
-                per-install device identifier is stripped before each report is sent. No
-                performance monitoring is collected. iFly measures its own frame timing on your
-                device, and those measurements never leave it. This is not personally
+                address the report arrives from; the address itself is not kept with the report. If a
+                game was running, the report also names it by the product code printed in the game
+                itself (for example a Dreamcast disc number like T-8101N, or an arcade board
+                title) and lists the emulator settings in use. Your file names, folders, and
+                library are never sent. The per-install device identifier is stripped before
+                each report is sent. This is not personally
                 identifiable, not linked to you, and never used for tracking or advertising. You
                 can turn it off any time in the app:{" "}
                 <span className="text-gray-300 font-medium">Settings → General → Privacy → Share Crash Reports</span>.
@@ -45,7 +47,11 @@ export default function Privacy() {
               <h2 className="text-xl font-semibold text-white mb-3">Usage analytics</h2>
               <p className="text-gray-400 leading-relaxed">
                 iFly uses TelemetryDeck to count anonymous feature usage: app launches, game
-                sessions (which game started, how long it ran), and which features get used.
+                sessions (which game started, by its product code, never its file name, and how long
+                it ran), and which features get used. At the end of a play session longer than a
+                minute, iFly also sends one performance summary: how close to full speed the game
+                ran, its frame rate, audio dropouts, the emulator settings in use, and your device
+                model. Numbers are rounded and play time is grouped into ranges.
                 TelemetryDeck is anonymous by design — identifiers are double-hashed and rotate,
                 and there is no device fingerprinting or advertising ID. Nothing is linked to you,
                 and nothing is used for tracking or ads. You can turn it off any time in

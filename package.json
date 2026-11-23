@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "next": "16.4.6",
-    "plist": "^5.1.1",
+    "plist": "^5.1.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },

@@ -23,6 +23,7 @@
     "warp:clean-dev": "npm run clean && echo '🧹 Cache cleared!' && npm run dev"
   },
   "dependencies": {
+    "@provenance-emu/web-media": "file:vendor/provenance-emu-web-media-0.1.0.tgz",
     "next": "16.4.6",
     "plist": "^5.1.1",
     "react": "^19.3.1",

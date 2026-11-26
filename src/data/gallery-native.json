@@ -1,0 +1,38 @@
+{
+  "iphone/play": {
+    "id": "iphone-play",
+    "src": "/screenshots/web-gallery/iphone-play-thumb.webp",
+    "href": "/screenshots/web-gallery/iphone-play.webp",
+    "alt": "Gravity Wave in iFly with the Dreamcast touch controls and live VMU",
+    "width": 640,
+    "height": 1138,
+    "caption": "Gravity Wave · Dreamcast touch controls and live VMU"
+  },
+  "iphone/library": {
+    "id": "iphone-library",
+    "src": "/screenshots/web-gallery/iphone-library-thumb.webp",
+    "href": "/screenshots/web-gallery/iphone-library.webp",
+    "alt": "iFly library in the Naomi dark theme with clear game covers",
+    "width": 640,
+    "height": 1390,
+    "caption": "Your collection and recent games · Naomi theme"
+  },
+  "ipad/play": {
+    "id": "ipad-play",
+    "src": "/screenshots/web-gallery/ipad-play-thumb.webp",
+    "href": "/screenshots/web-gallery/ipad-play.webp",
+    "alt": "Ridgeline running in landscape with touch controls and VMU on iPad",
+    "width": 960,
+    "height": 720,
+    "caption": "Ridgeline · Landscape controls and VMU"
+  },
+  "ipad/library": {
+    "id": "ipad-library",
+    "src": "/screenshots/web-gallery/ipad-library-thumb.webp",
+    "href": "/screenshots/web-gallery/ipad-library.webp",
+    "alt": "iFly landscape library in the Chromcore theme with clear game covers",
+    "width": 960,
+    "height": 720,
+    "caption": "Your collection, recent games, and save states · Chromcore theme"
+  }
+}

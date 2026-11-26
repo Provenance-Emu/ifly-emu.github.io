@@ -60,7 +60,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-baseline gap-1">
+          <div className="hidden lg:flex items-baseline gap-1">
             {navItems.map(item => (
               <Link key={item.href} href={item.href} prefetch={false} aria-current={isActive(item.href) ? 'page' : undefined} className={linkClass(item.href)}>
                 {item.label}
@@ -70,7 +70,7 @@ const Navigation = () => {
 
           {/* Hamburger button */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+            className="lg:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(prev => !prev)}
@@ -90,7 +90,7 @@ const Navigation = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-white/10 bg-ink/95 px-4 py-3 space-y-1">
+        <div className="lg:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-ink/95 px-4 py-3 space-y-1">
           {navItems.map(item => (
             <Link
               key={item.href}

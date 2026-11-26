@@ -1,12 +1,8 @@
+import SharedMediaHero from '@/components/SharedMediaHero';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import GridHero from '@/components/ui/GridHero';
 import Section from '@/components/ui/Section';
 import GradientButton from '@/components/ui/GradientButton';
-import { Pill } from '@/components/ui/Badge';
 import DownloadSection from '@/components/DownloadSection';
-import StoreBadge, { AltStoreIcon, SideStoreIcon } from '@/components/StoreBadge';
-import { GitHubIcon } from '@/components/ButtonLink';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
 import Features from '@/components/Features';
 import VideoShowcase from '@/components/VideoShowcase';
@@ -23,81 +19,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-ink">
 
-      {/* Hero */}
-      <GridHero className="pt-20 pb-12 text-center">
-        <div className="max-w-3xl mx-auto">
-
-          {/* App icon — priority preloads it since it's above the fold. It is NOT
-              the LCP element: on mobile Lighthouse (Oct 2026) LCP is the hero
-              <p> below, and its time is ~75% render delay (main thread busy with
-              framework JS), with zero image load time. Image tweaks here won't
-              move LCP. */}
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/icon-512.png"
-              alt="iFly app icon"
-              width={96}
-              height={96}
-              priority
-              className="rounded-[22px] shadow-2xl shadow-orange-500/20 ring-1 ring-white/10"
-            />
-          </div>
-
-          <h1 className="text-6xl md:text-7xl font-black text-white mb-4 tracking-tight">
-            i<span className="text-gradient">Fly</span>
-          </h1>
-
-          <p className="text-xl sm:text-2xl font-semibold tracking-tight text-orange-400 mb-6">
-            Dreamcast Emulator
-          </p>
-
-          <p className="text-lg text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">
-            Play classic Sega Dreamcast games on your iPhone, iPad, and Apple TV.
-            Fast, JIT-less emulation built for Apple silicon. No jailbreak, no sideload hacks.
-          </p>
-
-          {/* Platform badges */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {['iPhone', 'iPad', 'Apple TV', 'iOS 17+', 'tvOS 17+', 'Free'].map(badge => (
-              <Pill key={badge}>{badge}</Pill>
-            ))}
-          </div>
-
-          {/* Primary CTAs — one filled, one neutral outline, so the beta is
-              unambiguously the action being asked for. */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <GradientButton href="/testflight/">TestFlight Beta</GradientButton>
-            <GradientButton href="/downloads/" variant="outline">Download IPA</GradientButton>
-          </div>
-
-          {/* Sideload sources — secondary row under the primary CTAs */}
-          <div className="flex flex-wrap gap-3 justify-center mt-4">
-            <StoreBadge
-              href={`altstore://source?url=${encodeURIComponent('https://ifly-emu.com/api/altstore')}`}
-              eyebrow="Add to"
-              label="AltStore"
-              icon={<AltStoreIcon className="w-8 h-8" />}
-              external
-              data-proofer-ignore
-            />
-            <StoreBadge
-              href={`sidestore://source?url=${encodeURIComponent('https://ifly-emu.com/api/sidestore')}`}
-              eyebrow="Add to"
-              label="SideStore"
-              icon={<SideStoreIcon className="w-8 h-8" />}
-              external
-              data-proofer-ignore
-            />
-            <StoreBadge
-              href="https://github.com/JoeMatt/iFly-releases/releases"
-              eyebrow="Download from"
-              label="GitHub"
-              icon={<GitHubIcon className="w-6 h-6" />}
-              external
-            />
-          </div>
-        </div>
-      </GridHero>
+      <SharedMediaHero
+        brand="fly"
+        title="Dreamcast, in your hands."
+        description="Play Dreamcast, NAOMI, NAOMI 2, and Atomiswave on iPhone, iPad, and Apple TV."
+        primary={{ src: '/video/hero/gravity-wave.mp4', poster: '/video/hero/gravity-wave.webp', label: 'Gravity Wave · Dreamcast', width: 576, height: 432 }}
+        companion={{ src: '/video/hero/live-vmu.mp4', poster: '/video/hero/live-vmu.webp', label: 'Live VMU · Apple Watch', width: 416, height: 496 }}
+        detail="Apple Watch VMU is a Plus feature in the App Store edition."
+        actions={<>
+          <GradientButton href="/testflight/">TestFlight Beta</GradientButton>
+          <GradientButton href="/downloads/" variant="outline">Download IPA</GradientButton>
+        </>}
+      />
 
       {/* Stats row — reads as part of the hero, so it stays tight to it */}
       <Section spacing="tight">

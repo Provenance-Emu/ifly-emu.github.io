@@ -1,4 +1,5 @@
-import SharedMediaHero from '@/components/SharedMediaHero';
+import SharedMediaHero from '@provenance-emu/web-media/hero';
+import MediaGallery from '@provenance-emu/web-media/gallery';
 import type { Metadata } from 'next';
 import Section from '@/components/ui/Section';
 import GradientButton from '@/components/ui/GradientButton';
@@ -7,7 +8,7 @@ import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/compon
 import Features from '@/components/Features';
 import VideoShowcase from '@/components/VideoShowcase';
 import Link from 'next/link';
-import ScreenshotGallery from '@/components/ScreenshotGallery';
+import { galleryGroups } from '@/data/gallery';
 
 export const metadata: Metadata = {
   title: 'iFly – Dreamcast Emulator for iOS & tvOS',
@@ -79,9 +80,7 @@ export default function Home() {
       <section id="screenshots" className="container mx-auto px-4 py-16">
         <h2 className="mb-5 text-center text-3xl font-bold text-white">See it in action</h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-gray-400">Actual app captures with homebrew games. Game files are imported separately.</p>
-        <ScreenshotGallery device="iphone" title="iPhone" />
-        <ScreenshotGallery device="ipad" title="iPad" />
-        <ScreenshotGallery device="watch" title="Apple Watch Series 12" />
+        <MediaGallery brand="fly" groups={galleryGroups} />
         <p className="text-center text-xs text-gray-400">Serpent XL is a derivative of <a href="https://github.com/jahan-addison/serpent" className="underline">Serpent</a>. <a href="/media/credits/serpent-xl-license.txt" className="underline">BSD license</a>.</p>
       </section>
 

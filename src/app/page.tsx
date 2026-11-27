@@ -5,9 +5,8 @@ import Section from '@/components/ui/Section';
 import GradientButton from '@/components/ui/GradientButton';
 import DownloadSection from '@/components/DownloadSection';
 import SocialButton, { DiscordIcon, XIcon, BmcIcon, PatreonIcon } from '@/components/SocialButton';
-import Features from '@/components/Features';
+import FeatureSpotlight from '@/components/FeatureSpotlight';
 import VideoShowcase from '@/components/VideoShowcase';
-import Link from 'next/link';
 import { galleryGroups } from '@/data/gallery';
 
 export const metadata: Metadata = {
@@ -55,50 +54,43 @@ export default function Home() {
       {/* Download Section */}
       <DownloadSection className="py-16 md:py-24" />
 
+      <section id="screenshots" className="container mx-auto scroll-mt-20 px-4 py-12 md:py-16">
+        <h2 className="mb-5 text-center text-3xl font-bold text-white">See it in action</h2>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-gray-400">Actual app captures with homebrew games. Game files are imported separately.</p>
+        <MediaGallery brand="fly" groups={galleryGroups} />
+        <p className="mt-8 text-center text-xs text-gray-400">Serpent XL is a derivative of <a href="https://github.com/jahan-addison/serpent" className="underline">Serpent</a>. <a href="/media/credits/serpent-xl-license.txt" className="underline">BSD license</a>.</p>
+      </section>
+
+      <section className="border-y border-white/10 bg-white/[.035]">
+        <div className="container mx-auto px-4 py-12 md:py-16">
+          <FeatureSpotlight
+            title="Pick up where you left off."
+            description="Browse Dreamcast and arcade games, jump back into a recent run, and see your save states in one place."
+            href="/features/"
+            linkLabel="Explore features"
+          />
+        </div>
+      </section>
+
       {/* Community + Donate */}
-      <Section>
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-6">
-          <div className="card-glass card-static p-6 md:p-8 text-center">
+      <Section className="border-t border-white/10">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="border-t pt-5 border-white/15">
             <h2 className="text-xl font-semibold text-white mb-1.5">Community</h2>
-            <p className="text-sm leading-relaxed text-gray-400 mb-6">Join for updates, tips, and support.</p>
-            <div className="flex flex-col gap-3 items-center">
+            <p className="text-sm leading-relaxed text-gray-400 mb-6">Ask for help or follow development.</p>
+            <div className="flex flex-wrap items-center gap-3">
               <SocialButton href="https://discord.gg/QF5ZjVT4Sa" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
               <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
             </div>
           </div>
-          <div className="card-glass card-static p-6 md:p-8 text-center">
-            <h2 className="text-xl font-semibold text-white mb-1.5">Support Development</h2>
+          <div className="border-t pt-5 border-white/15">
+            <h2 className="text-xl font-semibold text-white mb-1.5">Support development</h2>
             <p className="text-sm leading-relaxed text-gray-400 mb-6">Help keep iFly free and actively developed.</p>
-            <div className="flex flex-col gap-3 items-center">
+            <div className="flex flex-wrap items-center gap-3">
               <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
               <SocialButton href="https://www.patreon.com/provenance" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
             </div>
           </div>
-        </div>
-      </Section>
-
-      <section id="screenshots" className="container mx-auto px-4 py-16">
-        <h2 className="mb-5 text-center text-3xl font-bold text-white">See it in action</h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-gray-400">Actual app captures with homebrew games. Game files are imported separately.</p>
-        <MediaGallery brand="fly" groups={galleryGroups} />
-        <p className="text-center text-xs text-gray-400">Serpent XL is a derivative of <a href="https://github.com/jahan-addison/serpent" className="underline">Serpent</a>. <a href="/media/credits/serpent-xl-license.txt" className="underline">BSD license</a>.</p>
-      </section>
-
-      {/* Features */}
-      <Section className="border-t border-white/10">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Built for Apple silicon</h2>
-          <p className="text-lg leading-relaxed text-gray-400 max-w-xl mx-auto">Optimized from the ground up for iPhone, iPad, and Apple TV.</p>
-        </div>
-        <Features compact />
-        <div className="text-center mt-12">
-          <Link
-            href="/features/"
-            className="inline-flex items-center gap-2 rounded-full border border-orange-500/40 px-6 py-2.5 text-sm font-semibold text-orange-300 transition-colors hover:border-orange-500/70 hover:bg-orange-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
-          >
-            See all features
-            <span aria-hidden="true">→</span>
-          </Link>
         </div>
       </Section>
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Features from '@/components/Features';
+import FeatureSpotlight from '@/components/FeatureSpotlight';
 import SocialButton, { DiscordIcon, XIcon } from '@/components/SocialButton';
-import PageHeader from '@/components/ui/PageHeader';
 import PlusComparison from '@/components/plus/PlusComparison';
 
 export const metadata: Metadata = {
@@ -14,12 +14,21 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-ink">
-      <PageHeader
-        title="Features"
-        subtitle="A modern Dreamcast emulation experience tailored for iPhone, iPad, and Apple TV. iFly focuses on smooth performance, robust controller support, and a clean interface designed for iOS and tvOS."
-      />
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-5xl mx-auto">
+      <header className="container mx-auto px-4 pt-12 md:pt-16">
+        <div className="mx-auto max-w-6xl">
+          <FeatureSpotlight
+            heading="h1"
+            view="play"
+            title="Dreamcast, built for Apple devices"
+            description="Choose a CRT shader, pair a controller, and pick up a run from a save state. Explore the controls, display options, and Plus features available in iFly."
+            href="/guide/"
+            linkLabel="Read the setup guide"
+          />
+        </div>
+      </header>
+      <section className="container mx-auto px-4 py-12 md:py-16" aria-labelledby="feature-list">
+        <div className="mx-auto max-w-5xl">
+          <h2 id="feature-list" className="mb-7 text-2xl font-bold text-white">Feature list</h2>
           <Features />
 
           {/* The free/paid boundary belongs where people already land, not only

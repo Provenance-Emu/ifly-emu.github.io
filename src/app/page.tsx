@@ -73,20 +73,20 @@ export default function Home() {
       </section>
 
       {/* Community + Donate */}
-      <Section>
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-6">
-          <div className="card-glass card-static p-6 md:p-8 text-center">
+      <Section className="border-t border-white/10">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="border-t pt-5 border-white/15">
             <h2 className="text-xl font-semibold text-white mb-1.5">Community</h2>
-            <p className="text-sm leading-relaxed text-gray-400 mb-6">Join for updates, tips, and support.</p>
-            <div className="flex flex-col gap-3 items-center">
+            <p className="text-sm leading-relaxed text-gray-400 mb-6">Ask for help or follow development.</p>
+            <div className="flex flex-wrap items-center gap-3">
               <SocialButton href="https://discord.gg/QF5ZjVT4Sa" label="Join our Discord" leftIcon={<DiscordIcon className="w-5 h-5" />} variant="discord" />
               <SocialButton href="https://x.com/ProvenanceApp" label="Follow on X/Twitter" leftIcon={<XIcon className="w-5 h-5" />} variant="x" />
             </div>
           </div>
-          <div className="card-glass card-static p-6 md:p-8 text-center">
-            <h2 className="text-xl font-semibold text-white mb-1.5">Support Development</h2>
+          <div className="border-t pt-5 border-white/15">
+            <h2 className="text-xl font-semibold text-white mb-1.5">Support development</h2>
             <p className="text-sm leading-relaxed text-gray-400 mb-6">Help keep iFly free and actively developed.</p>
-            <div className="flex flex-col gap-3 items-center">
+            <div className="flex flex-wrap items-center gap-3">
               <SocialButton href="https://buymeacoffee.com/joemattiello" label="Buy Me a Coffee" leftIcon={<BmcIcon className="w-5 h-5" />} variant="bmc" />
               <SocialButton href="https://www.patreon.com/provenance" label="Support on Patreon" leftIcon={<PatreonIcon className="w-5 h-5" />} variant="patreon" />
             </div>

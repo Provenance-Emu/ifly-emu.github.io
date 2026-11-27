@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import path from 'path';
 import Link from 'next/link';
 import { parseBuilds } from '@/lib/buildParser';
-import PageHeader from '@/components/ui/PageHeader';
 import BuildList from '@/components/BuildList';
 
 export const metadata: Metadata = {
@@ -25,17 +24,38 @@ export default function DownloadsPage() {
 
   return (
     <div className="min-h-screen bg-ink">
-      <PageHeader
-        title="Downloads"
-        subtitle="Download iFly for iOS or tvOS. For sideloading with AltStore or SideStore, add our source feed."
-      />
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <header className="mb-10 grid items-center gap-6 border-b pb-9 md:grid-cols-[minmax(0,1.1fr)_minmax(0,.9fr)] md:gap-12 border-white/15">
+            <div>
+              <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl text-white">Download iFly</h1>
+              <p className="mt-4 max-w-md leading-relaxed text-gray-300">Add the sideload source for automatic updates, or choose a build for your device.</p>
+            </div>
+            <nav aria-label="Download options" className="rounded-xl border p-3 border-white/10 bg-white/[.035]">
+              <a href="#sources" className="flex min-h-14 items-center justify-between gap-3 border-b px-2 last:border-b-0 border-white/15 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">
+                <span><span className="block font-semibold text-white">AltStore and SideStore</span><span className="block text-sm text-gray-300">Add a source for updates</span></span>
+                <span aria-hidden="true" className="text-orange-300">↓</span>
+              </a>
+              <a href="#ios-builds" className="flex min-h-14 items-center justify-between gap-3 border-b px-2 last:border-b-0 border-white/15 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">
+                <span><span className="block font-semibold text-white">iPhone and iPad</span><span className="block text-sm text-gray-300">Get an iOS IPA</span></span>
+                <span aria-hidden="true" className="text-orange-300">↓</span>
+              </a>
+              <a href="#tvos-builds" className="flex min-h-14 items-center justify-between gap-3 border-b px-2 last:border-b-0 border-white/15 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">
+                <span><span className="block font-semibold text-white">Apple TV</span><span className="block text-sm text-gray-300">Get a tvOS IPA</span></span>
+                <span aria-hidden="true" className="text-orange-300">↓</span>
+              </a>
+              <a href="#instructions" className="flex min-h-14 items-center justify-between gap-3 border-b px-2 last:border-b-0 border-white/15 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current">
+                <span><span className="block font-semibold text-white">Installation help</span><span className="block text-sm text-gray-300">Follow the setup steps</span></span>
+                <span aria-hidden="true" className="text-orange-300">↓</span>
+              </a>
+            </nav>
+          </header>
+
           {/* AltStore/SideStore Source — the recommended path, so it carries the
               accent edge and everything below it stays neutral. */}
-          <div className="card-glass card-static card-accent p-6 md:p-8">
+          <div id="sources" className="scroll-mt-24 card-glass card-static card-accent p-6 md:p-8">
             <h2 className="text-xl font-semibold text-white mb-2">
-              AltStore / SideStore Source
+              AltStore and SideStore
             </h2>
             <p className="text-sm leading-relaxed text-gray-400 mb-6">
               Add our source to AltStore or SideStore for easy installation and automatic updates:
@@ -80,7 +100,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* iOS Downloads */}
-          <div className="card-glass card-static p-6 md:p-8">
+          <div id="ios-builds" className="scroll-mt-24 card-glass card-static p-6 md:p-8">
             <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2.5">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm5 18a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/></svg>
               iOS Builds
@@ -89,7 +109,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* tvOS Downloads */}
-          <div className="card-glass card-static p-6 md:p-8">
+          <div id="tvos-builds" className="scroll-mt-24 card-glass card-static p-6 md:p-8">
             <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2.5">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-400" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm8 13h4v1H10v-1Z"/></svg>
               tvOS Builds
@@ -98,7 +118,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* Installation Instructions */}
-          <div className="card-glass card-static p-6 md:p-8">
+          <div id="instructions" className="scroll-mt-24 card-glass card-static p-6 md:p-8">
             <h2 className="text-xl font-semibold text-white mb-6">
               Installation Instructions
             </h2>

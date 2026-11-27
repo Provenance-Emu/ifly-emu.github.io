@@ -12,29 +12,32 @@ export default function GuideIndex() {
   const pages = GUIDE_PAGES.filter((p) => p.href !== '/guide/');
   return (
     <>
-      <h1 className="text-3xl font-black text-white">iFly Guide</h1>
-      <p className="mt-3 max-w-2xl text-gray-400">
-        Everything you need to get games running on iFly. New here? Most Dreamcast games need
-        no BIOS at all — drop a <code>.chd</code> or <code>.cdi</code> into iFly and go.
-      </p>
+      <h1 className="max-w-2xl text-balance text-4xl font-bold tracking-tight sm:text-5xl text-white">Get started with iFly</h1>
+      <p className="mt-4 max-w-prose leading-relaxed text-gray-300">Import your games, check supported formats, or find setup help for your system.</p>
 
-      <div className="mt-8 rounded-xl border border-orange-500/20 bg-orange-500/[0.06] p-5">
-        <h2 className="text-lg font-semibold text-white">First import in 3 steps</h2>
-        <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm text-gray-300">
-          <li>Get a Dreamcast game as <code>.chd</code>, <code>.cdi</code>, or <code>.gdi</code>.</li>
-          <li>Open iFly → import via the Files app, drag-and-drop, or Wi-Fi upload.</li>
-          <li>Tap the game. No BIOS required for Dreamcast.</li>
+      <section className="mt-8 rounded-2xl border p-5 sm:p-7 border-white/10 bg-white/[.035]" aria-labelledby="first-import">
+        <h2 id="first-import" className="text-xl font-bold text-white">Import your first game</h2>
+        <ol className="mt-5 grid list-decimal gap-4 pl-5 leading-relaxed sm:grid-cols-3 sm:gap-8 text-gray-300">
+            <li><strong className="text-white">Prepare your game</strong><p className="mt-1">Use a Dreamcast game you own in CHD, CDI, or GDI format.</p></li>
+            <li><strong className="text-white">Import into iFly</strong><p className="mt-1">Use Files, drag and drop, or Wi-Fi upload.</p></li>
+            <li><strong className="text-white">Start playing</strong><p className="mt-1">Open the game from your library. Dreamcast games can run without a BIOS.</p></li>
         </ol>
-      </div>
+        <Link href="/guide/importing/" className="mt-5 inline-flex min-h-11 items-center font-semibold underline underline-offset-4 text-orange-300">See import instructions <span aria-hidden="true" className="ml-2">→</span></Link>
+      </section>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {pages.map((p) => (
-          <Link key={p.href} href={p.href} className="card-glass block p-5">
-            <h3 className="font-semibold text-white">{p.label}</h3>
-            <p className="mt-1 text-sm text-gray-400">{p.blurb}</p>
-          </Link>
-        ))}
-      </div>
+      <section className="mt-10" aria-labelledby="guide-topics">
+        <h2 id="guide-topics" className="mb-3 text-2xl font-bold text-white">Guide topics</h2>
+        <ul className="grid gap-x-7 sm:grid-cols-2">
+          {pages.map(page => (
+            <li key={page.href} className="border-b border-white/10">
+              <Link href={page.href} className="group block rounded-sm py-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400">
+                <span className="flex items-center justify-between gap-4 font-semibold text-white"><span className="group-hover:underline">{page.label}</span><span aria-hidden="true" className="text-orange-300">→</span></span>
+                <p className="mt-1 text-sm leading-relaxed text-gray-300">{page.blurb}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }
